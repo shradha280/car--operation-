@@ -1,5 +1,3 @@
-# edel-lms-fe
-Edel Assurance frontend
 
 Deployment Process
 ==================
