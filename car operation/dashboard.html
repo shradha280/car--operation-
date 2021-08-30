@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="msapplication-tap-highlight" content="no">
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<title>Edel Assurance LLP</title>
+		<!-- Favicons-->
+		<link rel="icon" href="static/images/favicon.ico" sizes="32x32">
+		<!-- Favicons-->
+		<link rel="apple-touch-icon-precomposed" href="static/images/favicon.ico">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<!-- For iPhone -->
+		<meta name="msapplication-TileColor" content="#00bcd4">
+		<meta name="msapplication-TileImage" content="static/images/mstile-144x144.png">
+		<!-- For Windows Phone -->
+		<!-- CORE CSS-->
+		<link href="static/css/materialize.css" type="text/css" rel="stylesheet">
+		<!-- Custome CSS-->
+		<link href="static/css/custom.css" type="text/css" rel="stylesheet">
+		<link href="static/css/style.css" type="text/css" rel="stylesheet">
+		<link href="static/css/theme.css" type="text/css" rel="stylesheet">
+		<!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
+    	<link href="static/css/perfect-scrollbar.css" type="text/css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+	</head>
+	<body>
+		<header id="header" class="page-topbar">
+			<!-- start header nav-->
+			<div class="navbar-fixed">
+				<nav class="navbar-color ahthemecolor gradient-shadow">
+					<div class="nav-wrapper">
+						<ul class="right hide-on-med-and-down fixedonmob">
+							<li class="last_login">
+								<p>Welcome <span class="login_name_txt_white display_username"></span></p>
+								<p class="login_name_txt_white"><em id="datetime"></em></p>
+							</li>
+							<li>
+								<a href="javascript:void(0);" class="waves-effect waves-block waves-light profile-button" data-activates="profile-dropdown">
+								<span class="avatar-status avatar-online">
+								<img src="static/images/avatar-7.png" alt="avatar">
+								<i></i>
+								</span>
+								</a>
+								<ul id="profile-dropdown" class="dropdown-content">
+									<li class="mobuser">
+										<a class="grey-text text-darken-1">
+										<i class="material-icons">account_circle</i><span class="display_username"></span></a>
+									</li>
+									<li>
+										<a id="logout_link" class="grey-text text-darken-1">
+										<i class="material-icons">keyboard_tab</i> Logout</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</header>
+		<!-- Start Page Loading -->
+		<div id="loader-wrapper">
+			<div id="loader"></div>
+			<div class="loader-section section-left"></div>
+			<div class="loader-section section-right"></div>
+		</div>
+		<!-- End Page Loading -->
+		<!-- //////////////////////////////////////////////////////////////////////////// -->
+		<!-- START HEADER -->
+		<!-- END HEADER -->
+		<!-- //////////////////////////////////////////////////////////////////////////// -->
+		<!-- START MAIN -->
+		<div id="main">
+			<div class="wrapper">
+				<!-- START LEFT SIDEBAR NAV-->
+				<aside id="left-sidebar-nav" class="nav-expanded nav-lock nav-collapsible">
+					<div class="brand-sidebar">
+						<h1 class="logo-wrapper">
+							<a href="#" class="brand-logo darken-1">
+							<img src="static/images/edel-assurance-logo.svg" alt="materialize logo" class="logofordesktop">
+							<img src="static/images/edel-assurance-logo.svg" alt="materialize logo" class="logoformobile">
+							</a>
+						</h1>
+					</div>
+					<ul id="slide-out" class="leftbarthemecolor side-nav fixed leftside-navigation">
+						<li class="active report_dashboard">
+							<a href="dashboard.html">
+							<i class="material-icons">dashboard</i>
+							<span class="nav-text">Dashboard</span>
+							</a>
+						</li>
+						<li class="hos-target">
+							<a href="target.html">
+							<i class="material-icons">dashboard</i>
+							<span class="nav-text">Targets</span>
+							</a>
+						</li>
+						<li class="user-target my-target">
+							<a href="user-target.html">
+							<i class="material-icons">dashboard</i>
+							<span class="nav-text">My Targets</span>
+							</a>
+						</li>
+						<li class="no-padding">
+							<ul class="collapsible" data-collapsible="accordion">
+								<li class="bold contacts-listing">
+									<a class="collapsible-header waves-effect waves-cyan active">
+									<i class="material-icons">verified_user</i>
+									<span class="nav-text">Contacts</span>
+									</a>
+									<div class="collapsible-body">
+										<ul>
+											<li>
+												<a href="contacts-listing.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="acc_all_list">All (<span class="contact_count"></span>)</span>
+												</a>
+											</li>
+											<li>
+												<a href="contacts-todays-followup.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="acc_todays_followup">Today's Followup (<span class="todays_followup_count"></span>)</span>
+												</a>
+											</li>
+											<li>
+												<a href="contacts-pending-followup.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="acc_pending_followup">Pending Followup (<span class="pending_followup_count"></span>)</span>
+												</a>
+											</li>
+											<li>
+												<a href="contacts-future-followup.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="future_followup">Future Followup (<span class="future_followup_count"></span>)</span>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</li>
+								<li class="lead-listing">
+									<a class="collapsible-header waves-effect waves-cyan active">
+									<i class="material-icons">verified_user</i>
+									<span class="nav-text">Leads</span>
+									</a>
+									<div id="leftstatus" class="collapsible-body">
+										<ul>
+											<li>
+												<a href="leads-listing.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="all_lead_count">All ()</span>
+												</a>
+											</li>
+											<div class="followups">
+											<li>
+												<a href="#">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="followups_leads">Today's Followup ()</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="pending_followups">Pending Followup</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="future_followups">Future Followup</span>
+												</a>
+											</li>
+											<li class="not-updated-leads">
+												<a href="#">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="not_updated">Not Updated Leads ()</span>
+												</a>
+											</li>
+											</div>
+										</ul>
+									</div>
+								</li>
+								<li class="eval_scheduled">
+									<a class="collapsible-header waves-effect waves-cyan active">
+									<i class="material-icons">verified_user</i>
+									<span class="nav-text">Evaluation Scheduled</span>
+									</a>
+									<div id="leftstatus" class="collapsible-body">
+										<ul>
+											<li>
+												<a href="all-evaluation.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="all_lead_count">All (<span class="all_eval_count"></span>)</span>
+												</a>
+											</li>
+											<li>
+												<a href="today-evaluation.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="followups_leads">Today's (<span class="today_eval_count"></span>)</span>
+												</a>
+											</li>
+											<li>
+												<a href="pending-evaluation.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="pending_followups">Pending (<span class="pending_eval_count"></span>)</span>
+												</a>
+											</li>
+											<li>
+												<a href="future-evaluation.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="future_followups">Future (<span class="future_eval_count"></span>)</span>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li class="eval-tracker">
+							<a href="evaluation-tracker.html">
+							<i class="material-icons">schedule</i>
+							<span class="nav-text">Evaluation Tracker</span>
+							</a>
+						</li>
+						<li class="eval-report">
+							<a href="reports.html">
+							<i class="material-icons">dashboard</i>
+							<span class="nav-text">Reports</span>
+							</a>
+						</li>
+					</ul>
+					<a href="#" data-activates="slide-out"
+						class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only slideoutnavbtn">
+					<i class="material-icons">menu</i>
+					</a>
+				</aside>
+				<!-- END LEFT SIDEBAR NAV-->
+				<!-- //////////////////////////////////////////////////////////////////////////// -->
+				<!-- START CONTENT -->
+				<section id="content">
+					<!--start container-->
+					<div class="container">
+						<div class="container dashboard">
+							<div class="row">
+								<div class="col s12 m12 l12"> 
+										<ul class="tabs">
+											<li class="tab" id="sales_tab"><a class="active" href="#sales">Sales</a></li>
+											<li class="tab" id="sales_tab"><a href="#crm">CRM</a></li>
+										</ul>										
+										<div id="sales" class="col s12">
+											<div id="sticky">
+												<div class="row white width78">
+													<div class="col s2 m1 l1">
+														<p class="margtop nomrgnbtm"><strong>Filter:</strong></p>
+													</div>
+													<div class="col s2 m1 l1">
+														<span class="margtop left">
+															<input type="checkbox" value="All" id="sales_all_filter">
+															<label for="sales_all_filter">All</label>
+														</span>
+													</div>
+													<div class="sales_from_to_date">
+														<div class="col s4 m2 l2">
+															<input type="date" class="nomrgnbtm" id="sales_dash_filter_fromdate" name="sales_dash_filter_fromdate" placeholder="From Date">
+														</div>
+														<div class="col s4 m2 l2">
+															<input type="date" class="nomrgnbtm" id="sales_dash_filter_todate" name="sales_dash_filter_todate" placeholder="To Date">
+														</div>
+													</div>
+													<div class="col s4 m2 l2">
+														<button type="submit" id="to_from_date" class="waves-effect waves-light btn ahbtncolor box-shadow mt-3">Apply</button>
+													</div>
+													<div class="col s3 m3 l1 margtop">
+														<input name="sales_tab" type="radio" id="sales_mumbai_location" value="Mumbai" />
+														<label for="sales_mumbai_location">Mumbai</label>
+													</div>
+													<div class="col s3 m3 l1 margtop">
+														<input name="sales_tab" type="radio" id="sales_Pune_location" value="Pune" />
+														<label for="sales_Pune_location">Pune</label>
+													</div>
+												</div>
+											</div>
+											<!-- <br/><br/><br/><br/><br/> -->
+											
+											<div class="row">
+												<div class="col s12">
+													<h5><i class="material-icons">insert_chart</i> Report</h5>
+												</div>
+												<div class="col s12 m7 l7">
+													<div class="card relative">
+														<div class="card-content">
+															<div class="row mrgnbottom">
+																<div id="first_report"></div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col s12 m5 l5">
+													<div class="card relative">
+														<div class="card-content">
+															<div class="commontableoverflow_nine">
+															<table class="striped salesteadtable responsive-table">
+																<thead>
+																	<tr>
+																		<th>Months</th>
+																		<th>Contacted</th>
+																		<th>Evaluation Completed</th>
+																		<th>Closure</th>
+																		<th>Total</th>
+																	</tr>    
+																</thead>
+																<tbody id="sales_pie_chart_table">
+																	<!-- <tr>
+																		<td>Jan'21</td>
+																		<td>1</td>
+																		<td>1</td>
+																		<td>1</td>
+																		<td>3</td>
+																	</tr> -->
+																</tbody>
+															</table>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											
+
+											<div class="row">
+												<div class="col s12">
+													<h5><i class="material-icons">insert_chart</i> Sales monthly evaluation (segmentwise)</h5>
+												</div>
+												<div class="col s12 m7 l7">
+													<div class="card relative">
+														<div class="card-content">
+															<div class="row mrgnbottom">
+																<div id="sales_monthly_eval_chart"></div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col s12 m5 l5">
+													<div class="card relative">
+														<div class="card-content">
+															<div class="commontableoverflow_nine">
+																<table class="striped salesteadtable responsive-table">
+																	<thead>
+																		<tr>
+																			<th>SE Name</th>
+																			<th>D</th>
+																			<th>E</th>
+																			<th>Total</th>
+																		</tr>    
+																	</thead>
+																	<tbody id="sales_pie_chart_table">
+																		<tr>
+																			<td>Sales Executive 1</td>
+																			<td>1</td>
+																			<td>1</td>
+																			<td>2</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col s12">
+													<h5><i class="material-icons">insert_chart</i> Make wise leads</h5>
+												</div>
+												<div class="col s12 m7 l7">
+													<div class="card relative">
+														<div class="card-content">
+															<div class="row mrgnbottom">
+																<div id="sales_makewise_lead_chart"></div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col s12 m5 l5">
+													<div class="card relative">
+														<div class="card-content">
+															<div class="commontableoverflow_nine">
+																<!-- <div class="row mrgnbottom">
+																	<div class="col s12 m3 l3">
+																		<h6 class="ratio">Filter by</h6>
+																	</div>
+																	<div class="col s6 m5 l5">
+																		<input name="make_wise_leads" type="radio" id="filter_by_se" value="Consultant" checked="">
+																		<label for="filter_by_se">Sales Executive</label>
+																	</div>
+																	<div class="col s6 m4 l4">
+																		<input name="make_wise_leads" type="radio" id="filter_by_crm" value="Source">
+																		<label for="filter_by_crm">CRM</label>
+																	</div>
+																</div>
+																<hr> -->
+																<table class="striped salesteadtable responsive-table">
+																	<thead>
+																		<tr>
+																			<th>SE Name</th>
+																			<th>Mercedes-Benz</th>
+																			<th>Audi</th>
+																			<th>Total</th>
+																		</tr>    
+																	</thead>
+																	<tbody id="make_sales_pie_chart_table">
+																		<!-- <tr>
+																			<td>Sales Executive 1</td>
+																			<td>1</td>
+																			<td>1</td>
+																			<td>2</td>
+																		</tr> -->
+																	</tbody>
+																</table>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col s12">
+													<h5><i class="material-icons">insert_chart</i> Monthwise Source count</h5>
+												</div>
+												<div class="col s12 m7 l7">
+													<div class="card relative">
+														<div class="card-content">
+															<div class="row mrgnbottom">
+																<div id="sales_monthwise_source_count_chart"></div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col s12 m5 l5">
+													<div class="card relative">
+														<div class="card-content">
+															<div class="commontableoverflow_nine">
+																<table class="striped salesteadtable responsive-table">
+																	<thead>
+																		<tr>
+																			<th>Source</th>
+																			<th>Month</th>
+																			<th>Number</th>
+																		</tr>    
+																	</thead>
+																	<tbody id="sales_pie_chart_table">
+																		<tr>
+																			<td>DSA</td>
+																			<td>Jan'21</td>
+																			<td>10</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col s12">
+													<h5><i class="material-icons">insert_chart</i> Segmentwise monthly Evaluation</h5>
+												</div>
+												<div class="col s12 m7 l7">
+													<div class="card relative">
+														<div class="card-content">
+															<div class="row mrgnbottom">
+																<div id="segmentwise_monthly_eval_count_chart"></div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col s12 m5 l5">
+													<div class="card relative">
+														<div class="card-content">
+															<div class="commontableoverflow_nine">
+																<table class="striped salesteadtable responsive-table">
+																	<thead>
+																		<tr>
+																			<th>ASE Name</th>
+																			<th>J</th>
+																			<th>D</th>
+																			<th>E</th>
+																			<th>Total Count</th>
+																		</tr>    
+																	</thead>
+																	<tbody id="sales_pie_chart_table">
+																		<tr>
+																			<td>ASE 1</td>
+																			<td>1</td>
+																			<td>1</td>
+																			<td>1</td>
+																			<td>3</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col s12">
+													<h5><i class="material-icons">insert_chart</i> Saleswise monthly revenue</h5>
+												</div>
+												<div class="col s12 m7 l7">
+													<div class="card relative">
+														<div class="card-content">
+															<div class="row mrgnbottom">
+																<div id="saleswise_monthly_revenue"></div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col s12 m5 l5">
+													<div class="card relative">
+														<div class="card-content">
+															<div class="commontableoverflow_nine">
+																<table class="striped salesteadtable responsive-table">
+																	<thead>
+																		<tr>
+																			<th>Month</th>
+																			<th>Sales Executive 1</th>
+																			<th>Sales Executive 2</th>
+																		</tr>    
+																	</thead>
+																	<tbody id="sales_pie_chart_table">
+																		<tr>
+																			<td>Jan'21</td>
+																			<td>200000</td>
+																			<td>300000</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col s12">
+													<h5><i class="material-icons">insert_chart</i> Sales Executive monthly count and evaluaton count</h5>
+												</div>
+												<div class="col s12 m7 l7">
+													<div class="card relative">
+														<div class="card-content">
+															<div class="row mrgnbottom">
+																<div id="source_mothly_count_eval_chart"></div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col s12 m5 l5">
+													<div class="card relative">
+														<div class="card-content">
+															<div class="commontableoverflow_nine">
+																<div class="row mrgnbottom">
+																	<div class="col s12 m6 l6">
+																		<select class="browser-default" id="dashboard_sales_executives">
+																			<option selected disabled>Choose</option>
+																			<option value="Sales Executive 1">Sales Executive 1</option>
+																			<option value="Sales Executive 2">Sales Executive 2</option>
+																		</select>
+																	</div>
+																</div>
+																<hr/>
+																<table class="striped salesteadtable responsive-table">
+																	<thead>
+																		<tr>
+																			<th>Month</th>
+																			<th>DSA</th>
+																			<th>Dealer</th>
+																			<th>Total</th>
+																			<th>Evaluation</th>
+																		</tr>    
+																	</thead>
+																	<tbody id="sales_pie_chart_table">
+																		<tr>
+																			<td>Jan'21</td>
+																			<td>1</td>
+																			<td>1</td>
+																			<td>2</td>
+																			<td>10</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col s12">
+													<h5><i class="material-icons">insert_chart</i> Monthwise Source & Revenue</h5>
+												</div>
+												<div class="col s12 m7 l7">
+													<div class="card relative">
+														<div class="card-content">
+															<div class="row mrgnbottom">
+																<div id="sales_monthwise_source_revenue_count_chart"></div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col s12 m5 l5">
+													<div class="card relative">
+														<div class="card-content">
+															<div class="commontableoverflow_nine">
+																<table class="striped salesteadtable responsive-table">
+																	<thead>
+																		<tr>
+																			<th>Source</th>
+																			<th>Jan'21</th>
+																			<th>Feb'21</th>
+																			<th>Total Revenue</th>
+																			<th>Total Count</th>
+																		</tr>    
+																	</thead>
+																	<tbody id="sales_pie_chart_table">
+																		<tr>
+																			<td>DSA</td>
+																			<td>5000</td>
+																			<td>5000</td>
+																			<td>10000</td>
+																			<td>10</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col s12">
+													<h5><i class="material-icons">insert_chart</i> Total Saleswise Count & Revenue</h5>
+												</div>
+												<div class="col s12 m7 l7">
+													<div class="card relative">
+														<div class="card-content">
+															<div class="row mrgnbottom">
+																<div id="saleswise_count_revenue_chart"></div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col s12 m5 l5">
+													<div class="card relative">
+														<div class="card-content">
+															<div class="commontableoverflow_nine">
+																<table class="striped salesteadtable responsive-table">
+																	<thead>
+																		<tr>
+																			<th>SE Name</th>
+																			<th>Numbers</th>
+																			<th>Revenue</th>
+																		</tr>    
+																	</thead>
+																	<tbody id="sales_pie_chart_table">
+																		<tr>
+																			<td>Sales Executive 1</td>
+																			<td>5</td>
+																			<td>500000</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col s12">
+													<h5><i class="material-icons">insert_chart</i> Yearly segmentwise policy count</h5>
+												</div>
+												<div class="col s12 m7 l7">
+													<div class="card relative">
+														<div class="card-content">
+															<div class="row mrgnbottom">
+																<div id="sales_yearly_segment_policy_count_chart"></div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col s12 m5 l5">
+													<div class="card relative">
+														<div class="card-content">
+															<div class="commontableoverflow_nine">
+																<table class="striped salesteadtable responsive-table">
+																	<thead>
+																		<tr>
+																			<th>Segment</th>
+																			<th>2021</th>
+																			<th>2022</th>
+																			<th>Total</th>
+																		</tr>    
+																	</thead>
+																	<tbody id="sales_pie_chart_table">
+																		<tr>
+																			<td>D</td>
+																			<td>5</td>
+																			<td>5</td>
+																			<td>10</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col s12">
+													<h5><i class="material-icons">insert_chart</i> Performace Chart - Sales Team (Numbers)</h5>
+												</div>
+												<div class="col s12 m7 l7">
+													<div class="card relative">
+														<div class="card-content">
+															<div class="row mrgnbottom">
+																<div id="sales_performance_chart"></div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col s12 m5 l5">
+													<div class="card relative">
+														<div class="card-content">
+															<div class="commontableoverflow_nine">
+																<table class="striped salesteadtable responsive-table">
+																	<thead>
+																		<tr>
+																			<th>Month</th>
+																			<th>Sales Executive 1</th>
+																			<th>Sales Executive 2</th>
+																			<th>Total No</th>
+																		</tr>    
+																	</thead>
+																	<tbody id="sales_pie_chart_table">
+																		<tr>
+																			<td>Jan'21</td>
+																			<td>5</td>
+																			<td>5</td>
+																			<td>10</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col s12">
+													<h5><i class="material-icons">insert_chart</i> Yearwise policy count</h5>
+												</div>
+												<div class="col s12 m7 l7">
+													<div class="card relative">
+														<div class="card-content">
+															<div class="row mrgnbottom">
+																<div id="yearwise_policy_count_chart"></div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col s12 m5 l5">
+													<div class="card relative">
+														<div class="card-content">
+															<div class="commontableoverflow_nine">
+																<table class="striped salesteadtable responsive-table">
+																	<thead>
+																		<tr>
+																			<th>Year</th>
+																			<th>2 years</th>
+																			<th>3 years</th>
+																			<th>4 years</th>
+																			<th>Total No</th>
+																		</tr>    
+																	</thead>
+																	<tbody id="sales_pie_chart_table">
+																		<tr>
+																			<td>2021</td>
+																			<td>5</td>
+																			<td>5</td>
+																			<td>10</td>
+																			<td>20</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col s12">
+													<h5><i class="material-icons">insert_chart</i> Yearly Comparison</h5>
+												</div>
+												<div class="col s12">
+													<div class="card relative">
+														<div class="card-content">
+															<div class="row mrgnbottom">
+																<div id="sales_yearly_comparison"></div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col s12">
+													<div class="card relative">
+														<div class="card-content">
+															<table class="striped salesteadtable responsive-table">
+																<thead>
+																	<tr>
+																		<th>Month</th>
+																		<th>Sales (no.)</th>
+																		<th>After Sales (no.)</th>
+																		<th>Total Sales (no.)</th>
+																		<th>Total Evaluation (no.)</th>
+																		<th>Total Discount (amt.)</th>
+																		<th>Sales (amt.)</th>
+																		<th>After Sales (amt.)</th>
+																		<th>Total Amount</th>
+																		<th>Average Sales Price</th>
+																	</tr>    
+																</thead>
+																<tbody id="sales_pie_chart_table">
+																	<tr>
+																		<td>Jan'21</td>
+																		<td>5</td>
+																		<td>5</td>
+																		<td>10</td>
+																		<td>100</td>
+																		<td>0</td>
+																		<td>15000</td>
+																		<td>30000</td>
+																		<td>0</td>
+																		<td>0</td>
+																	</tr>
+																</tbody>
+															</table>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col s12">
+													<h5><i class="material-icons">insert_chart</i> SALES DASHBOARD (Monthwise sales revenue and count)</h5>
+												</div>
+												<div class="col s12">
+													<div class="card relative">
+														<div class="card-content">
+															<div class="row mrgnbottom">
+																<div id="sales_dashboard_count_revenue_chart"></div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col s12">
+													<div class="card relative">
+														<div class="card-content">
+															<table class="striped salesteadtable responsive-table">
+																<thead>
+																	<tr>
+																		<th>Month</th>
+																		<th>Sales (no.)</th>
+																		<th>After Sales (no.)</th>
+																		<th>Total Sales (no.)</th>
+																		<th>Total Evaluation (no.)</th>
+																		<th>Total Discount (amt.)</th>
+																		<th>Sales (amt.)</th>
+																		<th>After Sales (amt.)</th>
+																		<th>Total Amount</th>
+																		<th>Average Sales Price</th>
+																	</tr>    
+																</thead>
+																<tbody id="sales_pie_chart_table">
+																	<tr>
+																		<td>Jan'21</td>
+																		<td>5</td>
+																		<td>5</td>
+																		<td>10</td>
+																		<td>100</td>
+																		<td>0</td>
+																		<td>15000</td>
+																		<td>30000</td>
+																		<td>0</td>
+																		<td>0</td>
+																	</tr>
+																</tbody>
+															</table>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col s12">
+													<h5><i class="material-icons">insert_chart</i> Lost Reason Analysis</h5>
+												</div>
+												<div class="col s12 m7 l7">
+													<div class="card relative">
+														<div class="card-content">
+															<div class="row mrgnbottom">
+																<div id="lost_reason_analysis"></div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col s12 m5 l5">
+													<div class="card relative">
+														<div class="card-content">
+															<div class="commontableoverflow_nine">
+															<table class="striped salesteadtable responsive-table">
+																<thead>
+																	<tr>
+																		<th>Lost Reason</th>
+																		<th>No of Leads</th>
+																	</tr>    
+																</thead>
+																<tbody id="Lost_sales_pie_chart_table">
+																	<!-- <tr>
+																		<td>Contacted</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<td>Evaluation Completed</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<td>Closure</td>
+																		<td></td>
+																	</tr> -->
+																</tbody>
+															</table>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+										</div>
+										
+									
+									
+									
+										<div id="crm" class="col s12">
+											<div id="sticky2">
+												<div class="row white width78">
+													<div class="col s2 m1 l1">
+														<p class="margtop nomrgnbtm"><strong>Filter:</strong></p>
+													</div>
+													<div class="col s2 m1 l1">
+														<span class="margtop left">
+															<input type="checkbox" value="All" id="crm_all_filter">
+															<label for="crm_all_filter">All</label>
+														</span>
+													</div>
+													<div class="col s4 m2 l2">
+														<input type="date" class="nomrgnbtm" id="crm_dash_filter_fromdate" name="crm_dash_filter_fromdate" placeholder="From Date">
+													</div>
+													<div class="col s4 m2 l2">
+														<input type="date" class="nomrgnbtm" id="crm_dash_filter_todate" name="crm_dash_filter_todate" placeholder="To Date">
+													</div>
+													<div class="col s3 m3 l1 margtop">
+														<input name="crm_tab" type="radio" id="crm_mumbai_location" value="Mumbai" />
+														<label for="crm_mumbai_location">Mumbai</label>
+													</div>
+													<div class="col s3 m3 l1 margtop">
+														<input name="crm_tab" type="radio" id="crm_Pune_location" value="Pune" />
+														<label for="crm_Pune_location">Pune</label>
+													</div>
+												</div>
+											</div>
+											<br/><br/><br/>
+
+											<div class="row">
+												<div class="col s12">
+													<h5><i class="material-icons">insert_chart</i> Total CRM wise Count & Revenue</h5>
+												</div>
+												<div class="col s12 m7 l7">
+													<div class="card relative">
+														<div class="card-content">
+															<div class="row mrgnbottom">
+																<div id="crmwise_count_revenue_chart"></div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col s12 m5 l5">
+													<div class="card relative">
+														<div class="card-content">
+															<div class="commontableoverflow_nine">
+																<table class="striped salesteadtable responsive-table">
+																	<thead>
+																		<tr>
+																			<th>CRM Name</th>
+																			<th>Numbers</th>
+																			<th>Revenue</th>
+																			<th>Evaluation</th>
+																		</tr>    
+																	</thead>
+																	<tbody id="sales_pie_chart_table">
+																		<tr>
+																			<td>CRM 1</td>
+																			<td>5</td>
+																			<td>500000</td>
+																			<td>10</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col s12">
+													<h5><i class="material-icons">insert_chart</i> CRM wise (monthly count) (Won Case)</h5>
+												</div>
+												<div class="col s12 m7 l7">
+													<div class="card relative">
+														<div class="card-content">
+															<div class="row mrgnbottom">
+																<div id="crmwise_won_count_chart"></div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col s12 m5 l5">
+													<div class="card relative">
+														<div class="card-content">
+															<div class="commontableoverflow_nine">
+																<table class="striped salesteadtable responsive-table">
+																	<thead>
+																		<tr>
+																			<th>Month</th>
+																			<th>CRM 1</th>
+																			<th>CRM 2</th>
+																		</tr>    
+																	</thead>
+																	<tbody id="sales_pie_chart_table">
+																		<tr>
+																			<td>Jan'21</td>
+																			<td>10</td>
+																			<td>12</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col s12">
+													<h5><i class="material-icons">insert_chart</i> CRM wise (monthly revenue amount)</h5>
+												</div>
+												<div class="col s12 m7 l7">
+													<div class="card relative">
+														<div class="card-content">
+															<div class="row mrgnbottom">
+																<div id="crmwise_monthly_revenue_amt_chart"></div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col s12 m5 l5">
+													<div class="card relative">
+														<div class="card-content">
+															<div class="commontableoverflow_nine">
+																<table class="striped salesteadtable responsive-table">
+																	<thead>
+																		<tr>
+																			<th>Month</th>
+																			<th>CRM 1</th>
+																			<th>CRM 2</th>
+																		</tr>    
+																	</thead>
+																	<tbody id="sales_pie_chart_table">
+																		<tr>
+																			<td>Jan'21</td>
+																			<td>500000</td>
+																			<td>1000000</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col s12">
+													<h5><i class="material-icons">insert_chart</i> total evaluations completed</h5>
+												</div>
+												<div class="col s12 m7 l7">
+													<div class="card relative">
+														<div class="card-content">
+															<div class="row mrgnbottom">
+																<div id="crm_total_eval_comp_count_chart"></div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col s12 m5 l5">
+													<div class="card relative">
+														<div class="card-content">
+															<div class="commontableoverflow_nine">
+																<table class="striped salesteadtable responsive-table">
+																	<thead>
+																		<tr>
+																			<th>CRM Name</th>
+																			<th>Total Count</th>
+																		</tr>    
+																	</thead>
+																	<tbody id="sales_pie_chart_table">
+																		<tr>
+																			<td>CRM 1</td>
+																			<td>10</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col s12">
+													<h5><i class="material-icons">insert_chart</i> total evaluations scheduled</h5>
+												</div>
+												<div class="col s12 m7 l7">
+													<div class="card relative">
+														<div class="card-content">
+															<div class="row mrgnbottom">
+																<div id="crm_total_eval_scheduled_count_chart"></div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col s12 m5 l5">
+													<div class="card relative">
+														<div class="card-content">
+															<div class="commontableoverflow_nine">
+																<table class="striped salesteadtable responsive-table">
+																	<thead>
+																		<tr>
+																			<th>CRM Name</th>
+																			<th>Total Count</th>
+																		</tr>    
+																	</thead>
+																	<tbody id="sales_pie_chart_table">
+																		<tr>
+																			<td>CRM 1</td>
+																			<td>10</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col s12">
+													<h5><i class="material-icons">insert_chart</i> Dealerwise Evaluation Completed</h5>
+												</div>
+												<div class="col s12 m7 l7">
+													<div class="card relative">
+														<div class="card-content">
+															<div class="row mrgnbottom">
+																<div id="crm_dealer_eval_comp_chart"></div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col s12 m5 l5">
+													<div class="card relative">
+														<div class="card-content">
+															<div class="commontableoverflow_nine">
+																<table class="striped salesteadtable responsive-table">
+																	<thead>
+																		<tr>
+																			<th>CRM Name</th>
+																			<th>Dealer Source Name</th>
+																			<th>Total Count</th>
+																		</tr>    
+																	</thead>
+																	<tbody id="sales_pie_chart_table">
+																		<tr>
+																			<td>CRM 1</td>
+																			<td>Shaman</td>
+																			<td>10</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>	
+						<!-- END WRAPPER -->
+					</div>
+			</div>
+		</div>
+		</section>
+		</div>
+		</div>
+		<!-- END MAIN -->
+		<!-- //////////////////////////////////////////////////////////////////////////// -->
+			<!-- <embed type="text/html" src="footer.html"> -->
+		<!-- START FOOTER -->
+		<footer class="page-footer ahthemecolor">
+			<div class="footer-copyright">
+				<div class="container">
+					<div class="row mb-0">
+						<div class="col s12 m7 l7">
+							<span class="right">
+								Copyright Edel Assurance LLP ©
+								<script type="text/javascript">
+									document.write(new Date().getFullYear());
+								</script>
+							</span>
+						</div>
+						<div class="col s12 m5 l5">
+							<span class="right">
+								Designed &amp; Developed by Bluetick Consultants
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- ================================================
+			Scripts
+			================================================ -->
+		<!-- jQuery Library -->
+		<script type="text/javascript" src="static/js/jquery-3.2.1.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
+		<!--materialize js-->
+		<script type="text/javascript" src="static/js/materialize.min.js"></script>
+		<!-- scriptjs -->		
+
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<script src="https://code.highcharts.com/highcharts-more.js"></script>
+		<script src="https://code.highcharts.com/modules/heatmap.js"></script>
+		<script src="https://code.highcharts.com/modules/funnel.js"></script>
+		<script src="https://code.highcharts.com/modules/exporting.js"></script>
+		<script src="https://code.highcharts.com/modules/export-data.js"></script>
+		<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+		<script type="text/javascript" src="static/js/baseurl.js"></script>
+
+		<script type="text/javascript" src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+		<!--plugins.js - Some Specific JS codes for Plugin Settings-->
+		<script type="text/javascript" src="static/js/plugins.js"></script>
+		<script type="text/javascript" src="static/js/reports.js"></script>
+		<!-- <script type="text/javascript" src="static/js/secodary_email.js"></script> -->
+		<!--scrollbar-->
+        <script type="text/javascript" src="static/js/perfect-scrollbar.min.js"></script>
+
+
+		<script type="text/javascript" src="static/js/storage.js"></script>
+
+		<script type="text/javascript" src="static/js/token.js"></script>
+
+		<script type="text/javascript" src="static/js/contacts.js"></script>
+
+		<script type="text/javascript" src="static/js/role.js"></script>
+
+		<script type="text/javascript" src="static/js/jquery.sticky.js"></script> 
+		<script>
+			$(document).ready(function(){
+				$("#sticky").sticky({ topSpacing: 70 });
+				$("#sticky2").sticky({ topSpacing: 70 });
+			});
+		</script>
+
+</html>

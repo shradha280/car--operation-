@@ -1,0 +1,115 @@
+.brand-sidebar .logo-wrapper {
+  font-size: 36px;
+  padding: 3px 10px 5px;
+  white-space: nowrap;
+  line-height: 17px !important;
+  background: #1377bc;
+}
+.ahthemecolor { /*background: #464646;*/ background: #090909; }
+.leftbarthemecolor { /*background: rgba(0,0,0,0.8);*/ background: #090909; }
+ul.side-nav.leftside-navigation li:not(.no-padding).active {
+  /* background-color: #1e1e1e; */ background: #090909;
+}
+.side-nav .collapsible-body > ul:not(.collapsible) > li.active,
+.side-nav.fixed .collapsible-body > ul:not(.collapsible) > li.active {
+  /* background-color: #0d0d0d; */ background: #000;
+}
+.side-nav .collapsible-body,
+.side-nav.fixed .collapsible-body {
+  border: 0;
+  background-color: #141414;
+}
+.teal.darken-4 {
+  background-color: #3f70c5 !important;
+}
+.ahbtncolor { background: #4071df; border-radius: 50px; }
+.name_style a { color: #4071df; }
+a {
+  color: #4071df;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.slideoutnavbtn { background: #4071df; }
+.btn:hover, .btn-large:hover {
+  background-color: #4071df; color: #fff;
+}
+button:focus {
+  outline: none;
+  background: none;
+}
+
+#loader {
+  display: block;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border-radius: 50%;
+  background: url(../images/loading.gif) no-repeat center center;
+  /*border: 3px solid transparent;
+  border-top-color: #2196f3;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;*/
+  z-index: 1001;
+}
+
+#login-page .card-panel { background: #4576b8; box-shadow: 0px 0px 10px rgba(0,0,0,0.3); }
+#login-page i { color: #fff; }
+#login-page label { color: #fff; }
+#login-page input[type=checkbox] { color: #fff; }
+#login-page input:not([type]),#login-page input[type=text]:not(.browser-default),#login-page input[type=password]:not(.browser-default),#login-page input[type=email]:not(.browser-default),#login-page input[type=url]:not(.browser-default),#login-page input[type=time]:not(.browser-default),#login-page input[type=date]:not(.browser-default),#login-page input[type=datetime]:not(.browser-default),#login-page input[type=datetime-local]:not(.browser-default),#login-page input[type=tel]:not(.browser-default),#login-page input[type=number]:not(.browser-default),#login-page input[type=search]:not(.browser-default),#login-page textarea.materialize-textarea { border-bottom: 1px solid #fff; color: #fff; }
+#login-page [type="checkbox"] + label:before,#login-page [type="checkbox"]:not(.filled-in) + label:after { border: 2px solid #fff; }
+#login-page [type="checkbox"]:checked + label:before { border-top: 2px solid #0000; border-left: 2px solid #0000; border-right: 2px solid #fff; border-bottom: 2px solid #fff; }
+#login-page input:not([type]):focus:not([readonly]),#login-page input[type=text]:not(.browser-default):focus:not([readonly]),#login-page input[type=password]:not(.browser-default):focus:not([readonly]),#login-page input[type=email]:not(.browser-default):focus:not([readonly]),#login-page input[type=url]:not(.browser-default):focus:not([readonly]),#login-page input[type=time]:not(.browser-default):focus:not([readonly]),#login-page input[type=date]:not(.browser-default):focus:not([readonly]),#login-page input[type=datetime]:not(.browser-default):focus:not([readonly]), input[type=datetime-local]:not(.browser-default):focus:not([readonly]), input[type=tel]:not(.browser-default):focus:not([readonly]),#login-page input[type=number]:not(.browser-default):focus:not([readonly]),#login-page input[type=search]:not(.browser-default):focus:not([readonly]),#login-page textarea.materialize-textarea:focus:not([readonly]) { border-bottom: 1px solid #fff !important; box-shadow: 0 1px 0 0 #fff !important; }
+
+.ahthemecolor-btn { background-size: 300% 100%; -moz-transition: all .4s ease-in-out; -o-transition: all .4s ease-in-out; -webkit-transition: all .4s ease-in-out; transition: all .4s ease-in-out; }
+.ahthemecolor-btn:hover { background-position: 100% 0; -moz-transition: all .4s ease-in-out; -o-transition: all .4s ease-in-out; -webkit-transition: all .4s ease-in-out; transition: all .4s ease-in-out; }
+.ahthemecolor-btn.color-common { background-image: linear-gradient(45deg, #105b96, #031829, #031829, #105b96); }
+
+/*#loader:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #164c9e;
+  -webkit-animation: spin 3s linear infinite;
+  animation: spin 3s linear infinite;
+}
+
+#loader:after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #06345b;
+  -webkit-animation: spin 1.5s linear infinite;
+  animation: spin 1.5s linear infinite;
+}*/
+
+input:not([type]):focus:not([readonly]),
+input[type=text]:not(.browser-default):focus:not([readonly]),
+input[type=password]:not(.browser-default):focus:not([readonly]),
+input[type=email]:not(.browser-default):focus:not([readonly]),
+input[type=url]:not(.browser-default):focus:not([readonly]),
+input[type=time]:not(.browser-default):focus:not([readonly]),
+input[type=date]:not(.browser-default):focus:not([readonly]),
+input[type=datetime]:not(.browser-default):focus:not([readonly]),
+input[type=datetime-local]:not(.browser-default):focus:not([readonly]),
+input[type=tel]:not(.browser-default):focus:not([readonly]),
+input[type=number]:not(.browser-default):focus:not([readonly]),
+input[type=search]:not(.browser-default):focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #4071df;
+  box-shadow: 0 1px 0 0 #4071df;
+}
+

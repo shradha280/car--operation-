@@ -1,0 +1,2086 @@
+
+  
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="msapplication-tap-highlight" content="no">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<title>Edel Assurance LLP</title>
+	<!-- Favicons-->
+	<link rel="icon" href="static/images/favicon.ico" sizes="32x32">
+	<!-- Favicons-->
+	<link rel="apple-touch-icon-precomposed" href="static/images/favicon.ico">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- For iPhone -->
+	<meta name="msapplication-TileColor" content="#00bcd4">
+	<meta name="msapplication-TileImage" content="static/images/mstile-144x144.png">
+	<!-- For Windows Phone -->
+	<!-- CORE CSS-->
+	<link href="static/css/materialize.css" type="text/css" rel="stylesheet">
+	<!-- Custome CSS-->
+	<link href="static/css/custom.css" type="text/css" rel="stylesheet">
+	<link href="static/css/style.css" type="text/css" rel="stylesheet">
+	<link href="static/css/theme.css" type="text/css" rel="stylesheet">
+	<!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
+	<link href="static/css/perfect-scrollbar.css" type="text/css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+</head>
+
+<body>
+
+	<div id="proposal-modal" class="modal modal-fixed-footer">
+		<div class="modal-content">
+			<h4 class="view-modal"></h4>
+			<div class="attachment-box">
+				<div class="view-attachment1"></div>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<a class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+		</div>
+	</div>
+
+	<header id="header" class="page-topbar">
+		<!-- start header nav-->
+		<div class="navbar-fixed">
+			<nav class="navbar-color ahthemecolor gradient-shadow">
+				<div class="nav-wrapper">
+					<ul class="right hide-on-med-and-down fixedonmob">
+						<li class="last_login">
+							<p>Welcome <span class="login_name_txt_white display_username"></span></p>
+							<p class="login_name_txt_white"><em id="datetime"></em></p>
+						</li>
+						<li>
+							<a href="javascript:void(0);" class="waves-effect waves-block waves-light profile-button"
+								data-activates="profile-dropdown">
+								<span class="avatar-status avatar-online">
+									<img src="static/images/avatar-7.png" alt="avatar">
+									<i></i>
+								</span>
+							</a>
+							<ul id="profile-dropdown" class="dropdown-content">
+								<li class="mobuser">
+									<a class="grey-text text-darken-1">
+										<i class="material-icons">account_circle</i><span
+											class="display_username"></span></a>
+								</li>
+								<li>
+									<a id="logout_link" class="grey-text text-darken-1">
+										<i class="material-icons">keyboard_tab</i> Logout</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</header>
+	<!-- Start Page Loading -->
+	<div id="loader-wrapper">
+		<div id="loader"></div>
+		<div class="loader-section section-left"></div>
+		<div class="loader-section section-right"></div>
+	</div>
+	<div class="loader-wrapper">
+		<img src="static/images/loading.gif" alt="">
+	</div>
+	<!-- End Page Loading -->
+	<!-- //////////////////////////////////////////////////////////////////////////// -->
+	<!-- START HEADER -->
+	<!-- END HEADER -->
+	<!-- //////////////////////////////////////////////////////////////////////////// -->
+	<!-- START MAIN -->
+	<div id="main">
+		<div class="wrapper">
+			<!-- START LEFT SIDEBAR NAV-->
+			<aside id="left-sidebar-nav" class="nav-expanded nav-lock nav-collapsible">
+				<div class="brand-sidebar">
+					<h1 class="logo-wrapper">
+						<a href="#" class="brand-logo darken-1">
+							<img src="static/images/edel-assurance-logo.svg" alt="materialize logo"
+								class="logofordesktop">
+							<img src="static/images/edel-assurance-logo.svg" alt="materialize logo"
+								class="logoformobile">
+						</a>
+					</h1>
+				</div>
+				<ul id="slide-out" class="leftbarthemecolor side-nav fixed leftside-navigation">
+					<li class="report_dashboard">
+						<a href="dashboard.html">
+							<i class="material-icons">dashboard</i>
+							<span class="nav-text">Dashboard</span>
+						</a>
+					</li>
+					<li class="hos-target">
+						<a href="target.html">
+							<i class="material-icons">dashboard</i>
+							<span class="nav-text">Targets</span>
+						</a>
+					</li>
+					<li class="user-target my-target">
+						<a href="user-target.html">
+							<i class="material-icons">dashboard</i>
+							<span class="nav-text">My Target</span>
+						</a>
+					</li>
+					<li class="no-padding">
+						<ul class="collapsible" data-collapsible="accordion">
+							<li class="bold contacts-listing">
+								<a class="collapsible-header waves-effect waves-cyan">
+									<i class="material-icons">verified_user</i>
+									<span class="nav-text">Contacts</span>
+								</a>
+								<div class="collapsible-body">
+									<ul>
+										<li>
+											<a href="contacts-listing.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="acc_all_list">All ()</span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="acc_todays_followup">Today's Followup ()</span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="acc_pending_followup">Pending Followup ()</span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="future_followup">Future Followup ()</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="lead-listing">
+								<a class="collapsible-header waves-effect waves-cyan active">
+									<i class="material-icons">verified_user</i>
+									<span class="nav-text">Leads</span>
+								</a>
+								<div id="leftstatus" class="collapsible-body">
+									<ul>
+										<li class="active">
+											<a href="leads-listing.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="all_lead_count">All (<span class="lead_count"></span>)</span>
+											</a>
+										</li>
+										<div class="followups">
+											<li>
+												<a href="todays-followup.html">
+													<i class="material-icons">keyboard_arrow_right</i>
+													<span id="followups_leads">Today's Followup (<span
+															class="todays_followup_count"></span>)</span>
+												</a>
+											</li>
+											<li>
+												<a href="pending-followup.html">
+													<i class="material-icons">keyboard_arrow_right</i>
+													<span id="followups_leads">Pending Followup (<span
+															class="pending_followup_count"></span>)</span>
+												</a>
+											</li>
+											<li>
+												<a href="future-followup.html">
+													<i class="material-icons">keyboard_arrow_right</i>
+													<span id="followups_leads">Future Followup (<span
+															class="future_followup_count"></span>)</span>
+												</a>
+											</li>
+											<li class="not-updated-leads">
+												<a href="#">
+													<i class="material-icons">keyboard_arrow_right</i>
+													<span id="not_updated">Not Updated Leads ()</span>
+												</a>
+											</li>
+										</div>
+									</ul>
+								</div>
+							</li>
+							<li class="eval_scheduled">
+								<a class="collapsible-header waves-effect waves-cyan active">
+									<i class="material-icons">verified_user</i>
+									<span class="nav-text">Evaluation Scheduled</span>
+								</a>
+								<div id="leftstatus" class="collapsible-body">
+									<ul>
+										<li>
+											<a href="all-evaluation.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="all_lead_count">All (<span
+														class="all_eval_count"></span>)</span>
+											</a>
+										</li>
+										<li>
+											<a href="today-evaluation.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="followups_leads">Today's (<span
+														class="today_eval_count"></span>)</span>
+											</a>
+										</li>
+										<li>
+											<a href="pending-evaluation.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="pending_followups">Pending (<span
+														class="pending_eval_count"></span>)</span>
+											</a>
+										</li>
+										<li>
+											<a href="future-evaluation.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="future_followups">Future (<span
+														class="future_eval_count"></span>)</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li class="eval-tracker">
+						<a href="evaluation-tracker.html">
+							<i class="material-icons">schedule</i>
+							<span class="nav-text">Evaluation Tracker</span>
+						</a>
+					</li>
+					<li class="eval-report">
+						<a href="reports.html">
+							<i class="material-icons">dashboard</i>
+							<span class="nav-text">Reports</span>
+						</a>
+					</li>
+				</ul>
+				<a href="#" data-activates="slide-out"
+					class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only slideoutnavbtn">
+					<i class="material-icons">menu</i>
+				</a>
+			</aside>
+			<!-- END LEFT SIDEBAR NAV-->
+			<!-- //////////////////////////////////////////////////////////////////////////// -->
+			<!-- START CONTENT -->
+			<section id="content">
+				<!--start container-->
+				<div class="container">
+					<div id="daily-data-chart">
+						<div class="row mrgntopbtm10">
+							<div class="col s6 m3 l3">
+								<p class="left leads"><span class="left u_location">User Location: &nbsp;</span><span class="user_location blue accent-4 white-text badge left"></span></p>
+							</div>
+							<div class="col s6 m3 l3">
+								<p class="left leads count_lead_text">All Leads</p>
+								<div class="chip teal darken-4 lead_count"></div>
+							</div>
+							<div class="filter-buttons">
+								<a class="waves-effect waves-light btn ahbtncolor box-shadow chat-collapse right contacttolead"
+									data-activates="newleadform-slide-out"><i class="material-icons">add</i>Add New
+									Lead</a>
+								<a class="waves-effect waves-light btn ahbtncolor box-shadow chat-collapse right"
+									data-activates="filterform-slide-out" id="lead_filter_b"><i class="fa fa-filter"
+										aria-hidden="true"></i>Filter</a>
+								<!-- <a class="btn" id="policy_pdf">Poicy pdf</a> -->
+							</div>
+						</div>
+						<div class="row">
+							<div class="col s12 m12 l12">
+								<!-- <div id="clear_filter" class="chip filter-chips">
+                                    <a>Clear filter<i class="close material-icons">close</i></a>
+                                </div> -->
+								<div id="clear_filter" class="chip filter-chips">
+									<a href="leads-listing.html" id="clear_filter">Clear filter<i
+											class="close material-icons">close</i></a>
+								</div>
+								<!-- <div class="loader-wrapper">
+									<img src="static/images/loading.gif" alt="">
+								</div> -->
+								<table role="table" class="lead-management" id="myTable">
+									<thead role="rowgroup">
+										<tr role="row">
+											<!-- <th role="columnheader">&nbsp;</th> -->
+											<th role="columnheader">Id</th>
+											<th role="columnheader">Created Date</th>
+											<th role="columnheader">Client</th>
+											<th role="columnheader">Car</th>
+											<th role="columnheader">Stage</th>
+											<th role="columnheader">Source</th>
+											<th role="columnheader">Asigned To</th>
+											<th role="columnheader">Created By</th>
+											<th role="columnheader">Next Followup Date</th>
+											<th role="columnheader">&nbsp;</th>
+										</tr>
+									</thead>
+									<!-- <tbody>
+                                        <tr>
+                                            <td colspan="9">
+                                                <div id="card-alert" class="card ahthemecolor center">
+		                                            <div class="card-content white-text center">
+		                                                <i class="material-icons">notifications</i>No Leads<p></p>
+		                                            </div>
+                                        		</div>
+                                    		</td>
+                                        </tr>
+                                    </tbody> -->
+									<tbody role="rowgroup" id="all_lead_data">
+
+									</tbody>
+								</table>
+
+								<div class="pagination">
+									<span class="step-links">
+										<!-- <a class="waves-effect" onclick="return followURL(this,'Previous','{{ all_leads.previous_page_number }}');">Previous</a> -->
+										<a class="waves-effect" href="javascript:prevPage()" id="btn_prev">Previous</a>
+										<span class="current active waves-effect">
+											page: <span id="page"></span>
+										</span>
+										<a class="waves-effect" href="javascript:nextPage()" id="btn_next">Next</a>
+										<!-- <a class="waves-effect" onclick="return followURL(this,'Next','{{ all_leads.next_page_number }}');">Next</a> -->
+									</span>
+								</div>
+							</div>
+						</div>
+						<!-- //////////////////////////////////////////////////////////////////////////// -->
+						<!-- START RIGHT SIDEBAR NAV-->
+						<aside id="right-sidebar-nav">
+							<ul id="newleadform-slide-out" class="side-nav rightside-navigation common-slide-out"
+								style="overflow-y: auto;">
+								<li class="li-hover">
+									<form method="POST" id="create_lead_submit">
+										<!-- Start - Add New Lead Form -->
+										<div class="addnewleadform">
+											<!-- <a class="btn-floating waves-effect waves-light purple lightrn-1 clearform">
+                                                <i class="material-icons">clear</i>
+                                            </a> -->
+											<h5>Add New Sales Lead</h5>
+											<fieldset>
+												<legend>Attached Contact</legend>
+												<label for="attached_contact">Customer<span
+														class="asterik">*</span></label>
+												<input type="text" id="attached_contact" name="attached_contact"
+													class="autocomplete" required>
+											</fieldset>
+
+											<fieldset>
+												<legend>Sales Lead Information</legend>
+												<div class="row">
+													<div class="col s12 m6 l6">
+														<label for="lead_owner">Assigned To</label>
+														<input id="lead_owner" name="lead_owner" type="text" disabled>
+													</div>
+													<div class="col s12 m6 l6">
+														<label for="lead_location">Location</label>
+														<input id="lead_location" name="lead_location" type="text" disabled>
+														<!-- <select class="browser-default" id="lead_location"
+															name="lead_location" required>
+															<option value="" selected>Choose</option>
+															<option value="Mumbai">Mumbai</option>
+															<option value="Pune">Pune</option>
+														</select> -->
+													</div>
+												</div>
+												<fieldset>
+													<legend>Vehicle Information</legend>
+													<div class="row">
+														<div class="col s12 m6 l6">
+															<label for="lead_vin_number">VIN Number</label>
+															<input class="nomrgnbtm uppercase" id="lead_vin_number"
+																name="lead_vin_number" type="text"
+																title="Please add valid 17 digit VIN number"
+																pattern="[0-9,A-Z,a-z]{17}" maxlength="17">
+														</div>
+														<div class="col s12 m6 l6">
+															<label for="lead_engine_number">Engine Number</label>
+															<!-- not mandatory for CRM but Mandatory for Sales Executive -->
+															<input class="nomrgnbtm uppercase" id="lead_engine_number"
+																name="lead_engine_number" type="text">
+														</div>
+													</div>
+												</fieldset>
+												<!-- Insurance fields Not mandatory when create lead. It is mandatory when create policy document -->
+												<fieldset>
+													<legend>Insurance</legend>
+													<div class="row">
+														<div class="col s12 m6 l6">
+															<label for="lead_ins_provider">Service Provider</label>
+															<input id="lead_ins_provider" name="lead_ins_provider"
+																type="text">
+														</div>
+														<div class="col s12 m3 l3">
+															<label for="lead_ins_startdate">Start Date</label>
+															<input id="lead_ins_startdate" name="lead_ins_startdate"
+																type="date">
+														</div>
+														<div class="col s12 m3 l3">
+															<label for="lead_ins_enddate">End Date</label>
+															<input id="lead_ins_enddate" name="lead_ins_enddate"
+																type="date">
+														</div>
+													</div>
+												</fieldset>
+												<div class="row">
+													<div class="col s12 m4 l4">
+														<label for="lead_idv_amt">IDV Amount</label>
+														<!-- Not Mandatory for CRM but Mandatory for Sales Executive -->
+														<input id="lead_idv_amt" name="lead_idv_amt" type="number">
+													</div>
+													<div class="col s12 m4 l4">
+														<label for="lead_policy_age">Policy Age</label>
+														<input id="lead_policy_age" name="lead_policy_age"
+															type="number">
+													</div>
+													<div class="col s12 m4 l4">
+														<label for="lead_temprature">Lead Temprature</label>
+														<select class="browser-default" id="lead_temprature"
+															name="lead_temprature">
+															<option value="" selected>Choose</option>
+															<option value="COLD">COLD</option>
+															<option value="WARM">WARM</option>
+															<option value="HOT">HOT</option>
+														</select>
+													</div>
+												</div>
+												<fieldset>
+													<legend>Source | Sub-source</legend>
+													<div class="row">
+														<div class="col s12 m4 l4">
+															<label for="lead_source">Lead Source<span
+																	class="asterik">*</span></label>
+															<select class="browser-default" id="lead_source"
+																name="lead_source" required>
+																<option value="" selected>Choose</option>
+															</select>
+														</div>
+														<div class="col s12 m4 l4">
+															<label for="lead_subsource">Lead Sub-Source</label>
+															<select class="browser-default" id="lead_subsource"
+																name="lead_subsource">
+																<!-- <option value="" selected>Choose</option> -->
+															</select>
+														</div>
+													</div>
+												</fieldset>
+												<fieldset>
+													<legend>Car Details</legend>
+													<div class="row">
+														<div class="col s12 m4 l4 mb-1">
+															<label for="lead_car_make">Make<span
+																	class="asterik">*</span></label>
+															<select class="browser-default" id="lead_car_make"
+																name="lead_car_make" required>
+																<option value="" selected>Choose</option>
+															</select>
+														</div>
+														<div class="col s12 m4 l4 mb-1">
+															<label for="lead_car_model">Model<span
+																	class="asterik">*</span></label>
+															<select class="browser-default" id="lead_car_model"
+																name="lead_car_model" required>
+															</select>
+														</div>
+														<div class="col s12 m4 l4 mb-1">
+															<label for="lead_car_variant">Variant</label>
+															<select class="browser-default" id="lead_car_variant"
+																name="lead_car_variant">
+															</select>
+														</div>
+														<div class="col s12 m4 l4 mb-1">
+															<label for="lead_car_current_km">Current KM</label>
+															<input id="lead_car_current_km" name="lead_car_current_km"
+																type="number">
+														</div>
+														<div class="col s12 m4 l4 mb-1">
+															<label for="lead_car_mfg_date">Manufacturer date</label>
+															<input id="lead_car_mfg_date" name="lead_car_mfg_date"
+																type="date">
+														</div>
+														<div class="col s12 m4 l4 mb-1">
+															<label for="lead_car_reg_date">Registration date</label>
+															<input id="lead_car_reg_date" name="lead_car_reg_date"
+																type="date">
+														</div>
+														<!-- <div class="col s12 m4 l4 mb-1">
+		                                                    <label for="lead_car_vehicle_number">Vehicle Number</label>
+		                                                    <input class="uppercase" id="lead_car_vehicle_number" name="lead_car_vehicle_number" type="text">
+                                        				</div> -->
+													</div>
+													<fieldset>
+														<legend>Registration/Vehicle Number</legend>
+														<div class="row">
+															<div class="col s12 m4 l4">
+																<label for="lead_car_vehicle_number_first">First 6
+																	Alphanumeric<span class="asterik">*</span></label>
+																<input class="uppercase vehicle_mask"
+																	id="lead_car_vehicle_number_first"
+																	name="lead_car_vehicle_number_first" type="text"
+																	required>
+															</div>
+															<div class="col s12 m4 l4">
+																<label for="lead_car_vehicle_number_last">Last 4
+																	digit<span class="asterik">*</span></label>
+																<input class="uppercase"
+																	id="lead_car_vehicle_number_last"
+																	name="lead_car_vehicle_number_last" type="number"
+																	onkeypress="if(this.value.length==4) return false;"
+																	maxlength="4" required>
+															</div>
+														</div>
+													</fieldset>
+												</fieldset>
+												<div class="row">
+													<div class="col s12 mb-1">
+														<label for="lead_remark">Reamrk<span
+																class="asterik">*</span></label>
+														<textarea name="lead_remark" id="lead_remark"
+															class="materialize-textarea" required></textarea>
+													</div>
+													<!-- <div class="col s12 m4 l4">
+                                                        <label for="lead_state">Lead State<span class="asterik">*</span></label>
+                                                        <select class="browser-default" id="lead_state" name="lead_state" required>
+                                                            <option value="" selected>Choose</option>
+                                                            <option value="Unqualified">Unqualified</option>
+                                                            <option value="Qualified">Qualified</option>
+                                                        </select>
+                                                    </div> -->
+													<!-- <div class="col s12 m4 l4">
+                                                        <label for="lead_stage">Lead Stage</label>
+                                                        <select class="browser-default" id="lead_stage" name="lead_stage" required>
+                                                            <option value="" selected>Choose</option>
+                                                            <option value="Assigned">Assigned</option>
+                                                        </select>
+                                                    </div> -->
+												</div>
+											</fieldset>
+											<div class="input-field col s12">
+												<button class="btn waves-effect waves-light ahbtncolor submit"
+													type="submit">Submit
+													<i class="material-icons right">send</i>
+												</button>
+											</div>
+										</div>
+										<!-- End - Add New Lead Form -->
+									</form>
+								</li>
+							</ul>
+
+							<ul id="filterform-slide-out" class="side-nav rightside-navigation common-slide-out"
+								style="overflow-y:auto;">
+								<li class="li-hover">
+									<form method="get" id="filterleadform">
+										<!-- Start - Filter Form -->
+										<div class="filterform">
+											<h5>Filter</h5>
+											<div class="row">
+												<div class="col s12 m3 l3">
+													<label for="filter_created_date">Created Date</label>
+													<input id="filter_created_date" name="filter_created_date"
+														type="date" class="validate mb-0">
+												</div>
+												<div class="col s12 m3 l3">
+													<label for="filter_from_created_date">From Created Date</label>
+													<input id="filter_from_created_date" name="filter_from_created_date"
+														type="date" class="validate mb-0">
+												</div>
+												<div class="col s12 m3 l3">
+													<label for="filter_to_created_date">To Created Date</label>
+													<input id="filter_to_created_date" name="filter_to_created_date"
+														type="date" class="validate mb-0">
+												</div>
+												<div class="col s12 m3 l3">
+													<label for="filter_assignto_ase">Assigned To ASE</label>
+													<input id="filter_assignto_ase" name="filter_assignto_ase"
+														type="text">
+												</div>
+												<div class="col s12 m3 l3">
+													<label for="filter_first_name">Customer First Name</label>
+													<input id="filter_first_name" name="filter_first_name" type="text">
+												</div>
+												<div class="col s12 m3 l3">
+													<label for="filter_primary_email">Customer Primary Email</label>
+													<input id="filter_primary_email" name="filter_primary_email"
+														type="email">
+												</div>
+												<div class="col s12 m3 l3">
+													<label for="filter_mob_no">Customer Mobile No.</label>
+													<input id="filter_mob_no" name="filter_mob_no" type="text">
+												</div>
+												<div class="col s12 m3 l3">
+													<label for="filter_assignto_crm">Assigned To CRM</label>
+													<input id="filter_assignto_crm" name="filter_assignto_crm"
+														type="text">
+												</div>
+												<div class="col s12 m3 l3">
+													<label for="filter_created_by">Created By</label>
+													<input id="filter_created_by" name="filter_created_by" type="text">
+												</div>
+												<div class="col s12 m3 l3 mb-1">
+													<label for="filter_lead_stage">Lead Stage</label>
+													<select class="browser-default" id="filter_lead_stage"
+														name="filter_lead_stage">
+														<option value="" selected>Choose</option>
+														<option value="Assigned">Assigned</option>
+														<!-- <option value="Proposal Sent">Proposal Sent</option> -->
+														<option value="Evaluation Completed">Evaluation Completed
+														</option>
+														<option value="Quotation Sent">Quotation Sent</option>
+														<option value="Negotiation">Negotiation</option>
+														<option value="Payment Done">Payment Done</option>
+														<option value="Won">Won</option>
+														<option value="Lost">Lost</option>
+													</select>
+												</div>
+												<div class="col s12 m3 l3 mb-3">
+													<label for="filter_lead_source">Lead Source</label>
+													<select class="browser-default" id="filter_lead_source"
+														name="filter_lead_source">
+														<option value="" selected>Choose</option>
+													</select>
+												</div>
+												<div class="col s12 m3 l3 mb-3">
+													<label for="filter_lead_subsource">Lead Sub-Source</label>
+													<select class="browser-default" id="filter_lead_subsource"
+														name="filter_lead_subsource">
+														<option value="" selected>Choose</option>
+													</select>
+												</div>
+
+
+												<!-- <div class="col s12 m3 l3">
+                                                    <label for="filter_last_name">Customer Last Name</label>
+                                                    <input id="filter_last_name" name="filter_last_name" type="text">
+                                                </div>
+                                                <div class="col s12 m3 l3 mb-3">
+                                                    <label for="filter_lead_temprature">Lead Temprature</label>
+                                                    <select class="browser-default" id="filter_lead_temprature" name="filter_lead_temprature">
+                                                        <option value="" selected>Choose</option>
+                                                        <option value="Cold">Cold</option>
+                                                        <option value="Warm">Warm</option>
+                                                        <option value="Hot">Hot</option>
+                                                    </select>
+                                                </div>
+                                                
+                                                <div class="col s12 m3 l3 mb-1">
+                                                    <label for="filter_lead_car_make">Make</label>
+                                                    <select class="browser-default" id="filter_lead_car_make" name="filter_lead_car_make">
+                                                        <option value="" selected>Choose</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col s12 m3 l3 mb-1">
+                                                    <label for="filter_lead_car_model">Model</label>
+                                                    <select class="browser-default" id="filter_lead_car_model" name="filter_lead_car_model">
+                                                        <option value="" selected>Choose</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col s12 m3 l3 mb-1">
+                                                    <label for="filter_lead_car_variant">Variant</label>
+                                                    <select class="browser-default" id="filter_lead_car_variant" name="filter_lead_car_variant">
+                                                        <option value="" selected>Choose</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col s12 m3 l3 mb-1">
+                                                    <label for="filter_lead_car_vehicle_number">Vehicle Number</label>
+                                                    <input class="uppercase" id="filter_lead_car_vehicle_number" name="filter_lead_car_vehicle_number" type="text">
+                                				</div> -->
+
+												<div class="input-field col s12">
+													<button class="btn waves-effect waves-light ahbtncolor submit mr-2"
+														type="submit" name="action" id="apply_filter">Apply
+														<i class="material-icons right">send</i>
+													</button>
+
+													<button class="btn waves-effect waves-light ahbtncolor submit"
+														type="reset" name="action" id="apply_filter">Clear
+														<i class="material-icons right">close</i>
+													</button>
+												</div>
+											</div>
+										</div>
+										<!-- End - Filter Form -->
+									</form>
+								</li>
+							</ul>
+
+							<ul id="opencreatequotation-slide-out"
+								class="side-nav rightside-navigation common-slide-out" style="overflow-y:auto;">
+								<li class="li-hover">
+									<!-- Start - Filter Form -->
+									<div class="addnewleadform">
+										Lead ID: <span class="lead_id"></span>
+										<h5>Create Quotation</h5>
+										<form onsubmit="return false;">
+											<fieldset>
+												<legend>Quotation Sent</legend>
+												<fieldset>
+													<legend>Emails</legend>
+													<div class="row">
+														<div class="col s12 m6 l6">
+															<h6>Primary</h6>
+															<p class="m-0">
+																<input type="radio" class="with-gap" name="quot_cust_email" id="quote_primary_email">
+																<label for="quote_primary_email" class="quote_primary_email"></label>
+															</p>
+														</div>
+														<div class="col s12 m6 l6">
+															<h6>Secondary</h6>
+															<div id="quote_second_email"></div>
+															<!-- <p class="m-0">
+																<input type="radio" class="with-gap"
+																	name="quot_cust_email" id="secondary_email">
+																<label for="secondary_email">abc.xyz@gmail.com</label>
+															</p>
+															<p class="m-0">
+																<input type="radio" class="with-gap"
+																	name="quot_cust_email" id="secondary_email2">
+																<label for="secondary_email2">def.ghi@gmail.com</label>
+															</p> -->
+														</div>
+													</div>
+												</fieldset>
+												<div class="row">
+													<div class="col s12 m3 l3">
+														<label for="quote_start_year">quote start year<span
+																class="asterik">*</span></label></label>
+														<input id="quote_start_year" name="quote_start_year"
+															type="number" required>
+													</div>
+													<div class="col s12 m3 l3">
+														<label for="quote_criteria">Criteria<span
+																class="asterik">*</span></label></label>
+														<!-- <input id="quote_criteria" name="quote_criteria" type="text" disabled> -->
+														<select class="browser-default" id="quote_criteria"
+															name="quote_criteria" required>
+															<option value="" selected disabled>Choose</option>
+															<option value="criteria1">Criteria 1</option>
+															<option value="criteria2">Criteria 2</option>
+														</select>
+													</div>
+													<div class="col s12 m3 l3">
+														<label for="quote_warraty_discount">Discount (in percentage)</label>
+														<input id="quote_warraty_discount" name="quote_warraty_discount" type="number">
+													</div>
+													<div class="col s12 m3 l3">
+														<label for="quot_location_city">Quote Location City</label>
+														<input id="quot_location_city" name="quot_location_city" type="text" disabled>
+													</div>
+													<div class="input-field col s12 mb-2">
+														<button type="submit" class="smallbtn" id="see_quote_table_prices">click to see prices</button>
+													</div>
+												</div>
+											</fieldset>
+										</form>
+										<form method="POST" onsubmit="return false;" id="createquotationform">
+											<div class="quotation_table" id="quote_table_prices">
+												<table border="0" cellpadding="0" cellspacing="0" width="30%"
+													class="width30">
+													<tbody>
+														<tr>
+															<!-- <div id="common_left_table"> -->
+															<td width="30%" style="padding: 0;">
+																<div class="col s12" style="height: 28px;">
+																</div>
+																<table border="0" cellpadding="0" cellspacing="0"
+																	width="100%"
+																	style="width: 100%; border-left: 2px solid #000; border-top: 2px solid #000; border-bottom: 2px solid #000; border-right: 1px solid #000;">
+																	<thead>
+																		<tr valign="middle" bgcolor="#dde5ef"
+																			style="background: #dde5ef;">
+																			<th height="40" valign="middle" align="left"
+																				style="padding: 5px 10px; border-right: 2px solid #000; border-bottom: 2px solid #000;">
+																				Qty
+																			</th>
+																			<th height="40" valign="middle" align="left"
+																				style="padding: 5px 10px; border-left: 1px solid #000; border-bottom: 2px solid #000;">
+																				Description
+																			</th>
+																		</tr>
+																	</thead>
+																	<tbody>
+																		<tr valign="middle">
+																			<td valign="middle" height="22px"
+																				style="padding: 0 10px; border-right: 2px solid #000;">
+																				1
+																			</td>
+																			<td valign="middle" height="22px"
+																				style="padding: 0 10px; border-left: 1px solid #000;">
+																				<span class="segment"></span> Segment -
+																				Unit Price
+																			</td>
+																		</tr>
+																		<tr valign="middle">
+																			<td height="20px" bgcolor="#dde5ef"
+																				style="padding: 1px 10px; background: #dde5ef; border-right: 2px solid #000;">
+																			</td>
+																			<td height="20px" bgcolor="#dde5ef"
+																				style="padding: 1px 10px; background: #dde5ef; border-left: 1px solid #000;">
+																			</td>
+																		</tr>
+																		<tr valign="middle">
+																			<td valign="middle" height="22px"
+																				style="padding: 0 10px; border-right: 2px solid #000;">
+																			</td>
+																			<td valign="middle" height="22px"
+																				style="padding: 0 10px; border-left: 1px solid #000;">
+																				Processing Fees</td>
+																		</tr>
+																		<tr valign="middle">
+																			<td height="20px" bgcolor="#dde5ef"
+																				style="padding: 1px 10px; background: #dde5ef; border-right: 2px solid #000;">
+																			</td>
+																			<td height="20px" bgcolor="#dde5ef"
+																				style="padding: 1px 10px; background: #dde5ef; border-left: 1px solid #000;">
+																			</td>
+																		</tr>
+																		<tr valign="middle">
+																			<td valign="middle" height="22px"
+																				style="padding: 0 10px; border-right: 2px solid #000;">
+																			</td>
+																			<td valign="middle" height="22px"
+																				style="padding: 0 10px; border-left: 1px solid #000;">
+																				Total Taxable Value</td>
+																		</tr>
+																		<tr valign="middle">
+																			<td height="20px" bgcolor="#dde5ef"
+																				style="padding: 1px 10px; background: #dde5ef; border-right: 2px solid #000;">
+																			</td>
+																			<td height="20px" bgcolor="#dde5ef"
+																				style="padding: 1px 10px; background: #dde5ef; border-left: 1px solid #000;">
+																			</td>
+																		</tr>
+																		<tr valign="middle">
+																			<td valign="middle" height="22px"
+																				style="padding: 0 10px; border-right: 2px solid #000;">
+																			</td>
+																			<td valign="middle" height="22px"
+																				style="padding: 0 10px; border-left: 1px solid #000;">
+																				SGST @ 9%</td>
+																		</tr>
+																		<tr valign="middle">
+																			<td height="20px" bgcolor="#dde5ef"
+																				style="padding: 1px 10px; background: #dde5ef; border-right: 2px solid #000;">
+																			</td>
+																			<td height="20px" bgcolor="#dde5ef"
+																				style="padding: 1px 10px; background: #dde5ef; border-left: 1px solid #000;">
+																			</td>
+																		</tr>
+																		<tr valign="middle">
+																			<td valign="middle" height="22px"
+																				style="padding: 0 10px; border-right: 2px solid #000;">
+																			</td>
+																			<td valign="middle" height="22px"
+																				style="padding: 0 10px; border-left: 1px solid #000;">
+																				CGST @ 9%</td>
+																		</tr>
+																		<tr valign="middle">
+																			<td height="20px" bgcolor="#dde5ef"
+																				style="padding: 1px 10px; background: #dde5ef; border-right: 2px solid #000;">
+																			</td>
+																			<td height="20px" bgcolor="#dde5ef"
+																				style="padding: 1px 10px; background: #dde5ef; border-left: 1px solid #000;">
+																			</td>
+																		</tr>
+																		<tr valign="middle">
+																			<td colspan="2" valign="middle"
+																				height="22px"
+																				style="padding: 0 10px; border-top: 2px solid #000;">
+																				Total Price of Extended Warranty</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</td>
+															
+															<div id="price_table"></div>
+
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											<div class="row">
+												<div class="input-field col s12 mt-2">
+													<label for="custom_quote_email_text">Customize Email Description</label>
+													<textarea name="custom_quote_email_text" id="custom_quote_email_text" class="materialize-textarea"></textarea>				
+												</div>	
+												<div class="col s12 mb-3">
+													<p>Select Email Attachment<span class="asterik">*</span></p>
+													<div id="quote_proposal_pdf_attachmet"></div>
+													<div id="quote_inclusion_attachmet"></div>
+													<div id="quote_exclusion_attachmet"></div>
+												</div>
+												<div class="col s12">					
+													<button class="btn waves-effect waves-light ahbtncolor submit"
+														id="btncreatequote">create quotation
+														<i class="material-icons right">send</i>
+													</button>
+												</div>
+											</div>
+										</form>
+										</fieldset>
+									</div>
+									<!-- End - Filter Form -->
+								</li>
+							</ul>
+
+							<ul id="opencreatenegotiation-slide-out" class="side-nav rightside-navigation common-slide-out" style="overflow-y:auto;">
+								<li class="li-hover">
+									<!-- Start - Filter Form -->
+									<div class="addnewleadform">
+										Lead ID: <span class="lead_id"></span>
+										<h5>Create Final Quotation</h5>
+										<form onsubmit="return false;">
+											<fieldset>
+												<legend>Final Quotation</legend>
+												<fieldset>
+													<legend>Emails<span class="asterik">*</span></legend>
+													<div class="row">
+														<div class="col s12 m6 l6">
+															<h6>Primary</h6>
+															<p class="m-0">
+																<input type="radio" class="with-gap"
+																	name="nego_cust_email" id="nego_primary_email">
+																<label for="nego_primary_email"
+																	class="nego_primary_email"></label>
+															</p>
+														</div>
+														<div class="col s12 m6 l6">
+															<h6>Secondary</h6>
+															<div id="nego_second_email"></div>
+														</div>
+													</div>
+												</fieldset>
+												<div class="row">
+													<div class="col s12 m3 l3">
+														<label for="nego_start_year">quote start year<span class="asterik">*</span></label>
+														<input id="nego_start_year" name="nego_start_year" type="number"
+															required>
+													</div>
+													<div class="col s12 m3 l3">
+														<label for="nego_criteria">Criteria<span class="asterik">*</span></label>
+														<!-- <input id="nego_criteria" name="nego_criteria" type="text" disabled> -->
+														<select class="browser-default" id="nego_criteria"
+															name="nego_criteria" required>
+															<option value="" selected disabled>Choose</option>
+															<option value="criteria1">Criteria 1</option>
+															<option value="criteria2">Criteria 2</option>
+														</select>
+													</div>
+													<div class="col s12 m3 l3">
+														<label for="nego_warranty_covered_km">Warranty Covered
+															Km</label>
+														<input id="nego_warranty_covered_km"
+															name="nego_warranty_covered_km" type="number">
+													</div>
+													<div class="col s12 m3 l3">
+														<label for="nego_warraty_discount">Discount</label>
+														<input id="nego_warraty_discount" name="nego_warraty_discount"
+															type="number">
+													</div>
+													<div class="col s12 m3 l3">
+														<label for="nego_location_city">Quote Location City</label>
+														<input id="nego_location_city" name="nego_location_city"
+															type="text" disabled>
+														<!-- <select class="browser-default" id="quot_location_city" name="quot_location_city">
+                                                            <option value="" selected disabled>Choose</option>
+                                                            <option value="Mumbai">Mumbai</option>
+                                                            <option value="Pune">Pune</option>
+                                                        </select> -->
+													</div>
+													<!-- <div class="col s12 m3 l3">
+                                                        <label for="quote_segment">Quote Segment</label>
+                                                        <input id="quote_segment" name="quote_segment" type="text">
+                                                    </div> -->
+													
+													<!-- <div class="col s12 m4 l4">
+														<label for="nego_eval_approved_by">Aproved By</label>
+														<input id="nego_eval_approved_by" name="nego_eval_approved_by"
+															type="text" value="sanman-hos" disabled>
+													</div> -->
+													
+													<div class="input-field col s12 mb-2">
+														<button type="submit" class="smallbtn" id="see_nego_table_prices">click to see prices</button>
+														<!-- <button type="reset" class="smallbtn" id="reset_nego_form">Reset</button> -->
+													</div>
+												</div>
+										</form>
+										<form method="POST" onsubmit="return false;" id="createnegotiationform">
+											<div class="quotation_table" id="nego_table_prices">
+												<table border="0" cellpadding="0" cellspacing="0" width="30%" class="width30">
+													<tbody>
+														<tr>
+															<!-- <div id="common_left_table"> -->
+															<td width="30%" style="padding: 0;">
+																<div class="col s12" style="height: 28px;">
+																</div>
+																<table border="0" cellpadding="0" cellspacing="0"
+																	width="100%"
+																	style="width: 100%; border-left: 2px solid #000; border-top: 2px solid #000; border-bottom: 2px solid #000; border-right: 1px solid #000;">
+																	<thead>
+																		<tr valign="middle" bgcolor="#dde5ef"
+																			style="background: #dde5ef;">
+																			<th height="40" valign="middle" align="left"
+																				style="padding: 5px 10px; border-right: 2px solid #000; border-bottom: 2px solid #000;">
+																				Qty
+																			</th>
+																			<th height="40" valign="middle" align="left"
+																				style="padding: 5px 10px; border-left: 1px solid #000; border-bottom: 2px solid #000;">
+																				Description
+																			</th>
+																		</tr>
+																	</thead>
+																	<tbody>
+																		<tr valign="middle">
+																			<td valign="middle" height="22px"
+																				style="padding: 0 10px; border-right: 2px solid #000;">
+																				1
+																			</td>
+																			<td valign="middle" height="22px"
+																				style="padding: 0 10px; border-left: 1px solid #000;">
+																				<span class="nego_segment"></span>
+																				Segment - Unit Price
+																			</td>
+																		</tr>
+																		<tr valign="middle">
+																			<td height="20px" bgcolor="#dde5ef"
+																				style="padding: 1px 10px; background: #dde5ef; border-right: 2px solid #000;">
+																			</td>
+																			<td height="20px" bgcolor="#dde5ef"
+																				style="padding: 1px 10px; background: #dde5ef; border-left: 1px solid #000;">
+																			</td>
+																		</tr>
+																		<tr valign="middle">
+																			<td valign="middle" height="22px"
+																				style="padding: 0 10px; border-right: 2px solid #000;">
+																			</td>
+																			<td valign="middle" height="22px"
+																				style="padding: 0 10px; border-left: 1px solid #000;">
+																				Processing Fees</td>
+																		</tr>
+																		<tr valign="middle">
+																			<td height="20px" bgcolor="#dde5ef"
+																				style="padding: 1px 10px; background: #dde5ef; border-right: 2px solid #000;">
+																			</td>
+																			<td height="20px" bgcolor="#dde5ef"
+																				style="padding: 1px 10px; background: #dde5ef; border-left: 1px solid #000;">
+																			</td>
+																		</tr>
+																		<tr valign="middle">
+																			<td valign="middle" height="22px"
+																				style="padding: 0 10px; border-right: 2px solid #000;">
+																			</td>
+																			<td valign="middle" height="22px"
+																				style="padding: 0 10px; border-left: 1px solid #000;">
+																				Total Taxable Value</td>
+																		</tr>
+																		<tr valign="middle">
+																			<td height="20px" bgcolor="#dde5ef"
+																				style="padding: 1px 10px; background: #dde5ef; border-right: 2px solid #000;">
+																			</td>
+																			<td height="20px" bgcolor="#dde5ef"
+																				style="padding: 1px 10px; background: #dde5ef; border-left: 1px solid #000;">
+																			</td>
+																		</tr>
+																		<tr valign="middle">
+																			<td valign="middle" height="22px"
+																				style="padding: 0 10px; border-right: 2px solid #000;">
+																			</td>
+																			<td valign="middle" height="22px"
+																				style="padding: 0 10px; border-left: 1px solid #000;">
+																				SGST @ 9%</td>
+																		</tr>
+																		<tr valign="middle">
+																			<td height="20px" bgcolor="#dde5ef"
+																				style="padding: 1px 10px; background: #dde5ef; border-right: 2px solid #000;">
+																			</td>
+																			<td height="20px" bgcolor="#dde5ef"
+																				style="padding: 1px 10px; background: #dde5ef; border-left: 1px solid #000;">
+																			</td>
+																		</tr>
+																		<tr valign="middle">
+																			<td valign="middle" height="22px"
+																				style="padding: 0 10px; border-right: 2px solid #000;">
+																			</td>
+																			<td valign="middle" height="22px"
+																				style="padding: 0 10px; border-left: 1px solid #000;">
+																				CGST @ 9%</td>
+																		</tr>
+																		<tr valign="middle">
+																			<td height="20px" bgcolor="#dde5ef"
+																				style="padding: 1px 10px; background: #dde5ef; border-right: 2px solid #000;">
+																			</td>
+																			<td height="20px" bgcolor="#dde5ef"
+																				style="padding: 1px 10px; background: #dde5ef; border-left: 1px solid #000;">
+																			</td>
+																		</tr>
+																		<tr valign="middle">
+																			<td colspan="2" valign="middle"
+																				height="22px"
+																				style="padding: 0 10px; border-top: 2px solid #000;">
+																				Total Price of Extended Warranty</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</td>
+															<!-- </div> -->
+															<div id="nego_price_table"></div>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											<div class="row">
+												<div class="input-field col s12 mt-2">
+													<label for="custom_nego_email_text">Customize Email Description</label>
+													<textarea name="custom_nego_email_text" id="custom_nego_email_text" class="materialize-textarea"></textarea>				
+												</div>	
+												<div class="col s12 mb-3">
+													<p>Select Email Attachment<span class="asterik">*</span></p>
+													<div id="nego_proposal_pdf_attachmet"></div>
+													<div id="nego_inclusion_attachmet"></div>
+													<div id="nego_exclusion_attachmet"></div>
+												</div>
+												<div class="col s12">					
+													<button class="btn waves-effect waves-light ahbtncolor submit" id="btncreatenego">create negotiation <i class="material-icons right">send</i>
+													</button>
+												</div>
+											</div>
+											
+										</form>
+										</fieldset>
+									</div>
+									<!-- End - Filter Form -->
+								</li>
+							</ul>
+
+							<ul id="editsalesleadform-slide-out" class="side-nav rightside-navigation common-slide-out"
+								style="overflow-y: auto;">
+								<li class="li-hover">
+									<form method="POST" id="updateleadform">
+										<input type="hidden" name="lead_id" id="edit_lead_id">
+										<!-- Start - Edit Lead Form -->
+										<div class="addnewleadform">
+											<!-- <div class="lead_number">
+												Lead ID: <span class="lead_id"></span>
+											</div> -->
+											Lead ID: <span class="lead_id"></span>
+											<h5>Edit Lead</h5>
+											<p>Fields marked with <span class="asterik">*</span> are required</p>
+											<fieldset>
+												<legend>Sales Lead Information</legend>
+												<div class="row">
+													<div class="col s12 m6 l6">
+														<label for="edit_lead_owner">Assigned To</label>
+														<input id="edit_lead_owner" name="edit_lead_owner" type="text"
+															disabled>
+													</div>
+													<div class="col s12 m6 l6">
+														<label for="edit_lead_location">Location</label>
+														<input id="edit_lead_location" name="edit_lead_location" type="text" disabled>
+														<!--  required -->
+														<!-- <select class="browser-default" id="edit_lead_location"
+															name="edit_lead_location">
+															<option value="" selected>Choose</option>
+															<option value="Mumbai">Mumbai</option>
+															<option value="Pune">Pune</option>
+														</select> -->
+													</div>
+												</div>
+												<fieldset>
+													<legend>Vehicle Information</legend>
+													<div class="row">
+														<div class="col s12 m6 l6">
+															<label for="edit_lead_vin_number">VIN Number</label>
+															<input class="uppercase" id="edit_lead_vin_number"
+																name="edit_lead_vin_number" type="text"
+																title="Please add valid 17 digit VIN number"
+																pattern="[0-9,A-Z,a-z]{17}" maxlength="17">
+														</div>
+														<div class="col s12 m6 l6">
+															<label for="edit_lead_engine_number">Engine Number</label>
+															<!-- not mandatory for CRM but Mandatory for Sales Executive -->
+															<input class="uppercase"
+																id="edit_lead_engine_number"
+																name="edit_lead_engine_number" type="text">
+														</div>
+													</div>
+												</fieldset>
+												<!-- Insurance fields Not mandatory when create lead. It is mandatory when create policy document -->
+												<fieldset>
+													<legend>Insurance</legend>
+													<div class="row">
+														<div class="col s12 m6 l6">
+															<label for="edit_lead_ins_provider">Service Provider</label>
+															<input id="edit_lead_ins_provider"
+																name="edit_lead_ins_provider" type="text">
+														</div>
+														<div class="col s12 m3 l3">
+															<label for="edit_lead_ins_startdate">Start Date</label>
+															<input id="edit_lead_ins_startdate"
+																name="edit_lead_ins_startdate" type="date">
+														</div>
+														<div class="col s12 m3 l3">
+															<label for="edit_lead_ins_enddate">End Date</label>
+															<input id="edit_lead_ins_enddate"
+																name="edit_lead_ins_enddate" type="date">
+														</div>
+													</div>
+												</fieldset>
+												<div class="row">
+													<div class="col s12 m4 l4">
+														<label for="edit_lead_idv_amt">IDV Amount</label>
+														<!-- Not Mandatory for CRM but Mandatory for Sales Executive -->
+														<input id="edit_lead_idv_amt" name="edit_lead_idv_amt"
+															type="number">
+													</div>
+													<div class="col s12 m4 l4">
+														<label for="edit_lead_policy_age">Policy Age</label>
+														<input id="edit_lead_policy_age" name="edit_lead_policy_age"
+															type="number">
+													</div>
+													<div class="col s12 m4 l4">
+														<label for="edit_lead_temprature">Lead Temprature</label>
+														<select class="browser-default" id="edit_lead_temprature"
+															name="edit_lead_temprature">
+															<option value="" selected>Choose</option>
+															<option value="COLD">COLD</option>
+															<option value="WARM">WARM</option>
+															<option value="HOT">HOT</option>
+														</select>
+													</div>
+												</div>
+												<fieldset>
+													<legend>Source | Sub-source</legend>
+													<div class="row">
+														<div class="col s12 m4 l4">
+															<label for="edit_lead_source">Lead Source<span
+																	class="asterik">*</span></label>
+															<select class="browser-default" id="edit_lead_source"
+																name="edit_lead_source" required>
+																<option value="" selected>Choose</option>
+															</select>
+														</div>
+														<div class="col s12 m4 l4">
+															<label for="edit_lead_subsource">Lead Sub-Source</label>
+															<select class="browser-default" id="edit_lead_subsource"
+																name="edit_lead_subsource">
+																<!-- <option value="" selected>Choose</option> -->
+															</select>
+														</div>
+													</div>
+												</fieldset>
+												<fieldset>
+													<legend>Car Details</legend>
+													<div class="row">
+														<div class="col s12 m4 l4 mb-1">
+															<label for="edit_lead_car_make">Make<span
+																	class="asterik">*</span></label>
+															<select class="browser-default" id="edit_lead_car_make"
+																name="edit_lead_car_make" required>
+																<option value="" selected>Choose</option>
+															</select>
+														</div>
+														<div class="col s12 m4 l4 mb-1">
+															<label for="edit_lead_car_model">Model<span
+																	class="asterik">*</span></label>
+															<select class="browser-default" id="edit_lead_car_model"
+																name="edit_lead_car_model" required>
+																<!-- <option value="" selected>Choose</option> -->
+															</select>
+														</div>
+														<div class="col s12 m4 l4 mb-1">
+															<label for="edit_lead_car_variant">Variant</label>
+															<select class="browser-default" id="edit_lead_car_variant"
+																name="edit_lead_car_variant">
+																<!-- <option value="" selected>Choose</option> -->
+															</select>
+														</div>
+														<div class="col s12 m4 l4 mb-1">
+															<label for="edit_lead_car_current_km">Current KM</label>
+															<input id="edit_lead_car_current_km"
+																name="edit_lead_car_current_km" type="number">
+														</div>
+														<div class="col s12 m4 l4 mb-1">
+															<label for="edit_lead_car_mfg_date">Manufacturer
+																date</label>
+															<input id="edit_lead_car_mfg_date"
+																name="edit_lead_car_mfg_date" type="date">
+														</div>
+														<div class="col s12 m4 l4 mb-1">
+															<label for="edit_lead_car_reg_date">Registration
+																date</label>
+															<input id="edit_lead_car_reg_date"
+																name="edit_lead_car_reg_date" type="date">
+														</div>
+														<div class="col s12">
+															<fieldset>
+																<legend>Registration/Vehicle Number</legend>
+																<div class="row">
+																	<div class="col s12 m4 l4">
+																		<label
+																			for="edit_lead_car_vehicle_number_first">First
+																			6 Alphanumeric</label>
+																		<input class="uppercase vehicle_mask"
+																			id="edit_lead_car_vehicle_number_first"
+																			name="edit_lead_car_vehicle_number_first"
+																			type="text">
+																	</div>
+																	<div class="col s12 m4 l4">
+																		<label
+																			for="edit_lead_car_vehicle_number_last">Last
+																			4 digit</label>
+																		<input class="uppercase"
+																			id="edit_lead_car_vehicle_number_last"
+																			name="edit_lead_car_vehicle_number_last"
+																			type="number"
+																			onkeypress="if(this.value.length==4) return false;"
+																			maxlength="4">
+																	</div>
+																</div>
+															</fieldset>
+														</div>
+													</div>
+												</fieldset>
+												<div class="row">
+													<!-- <div class="col s12 m4 l4">
+                                                        <label for="lead_state">Lead State<span class="asterik">*</span></label>
+                                                        <select class="browser-default" id="lead_state" name="lead_state" required>
+                                                            <option value="" selected>Choose</option>
+                                                            <option value="Unqualified">Unqualified</option>
+                                                            <option value="Qualified">Qualified</option>
+                                                        </select>
+                                                    </div> -->
+													<div class="col s12 mb-1">
+														<label for="edit_lead_remark">Reamrk<span
+																class="asterik">*</span></label>
+														<textarea name="edit_lead_remark" id="edit_lead_remark"
+															class="materialize-textarea" required></textarea>
+													</div>
+													<div class="col s12 m6 l6 assign-to-se-manually">
+														<label for="assign_se_manually">Assign To Sales
+															Executive</label>
+														<!--  required -->
+														<select class="browser-default" id="assign_se_manually"
+															name="assign_se_manually">
+															<option value="" selected>Choose</option>
+														</select>
+													</div>
+													<!-- <div class="col s12 m4 l4 mb-2">
+                                                        <label for="edit_lead_stage">Lead Stage</label>
+                                                        <select class="browser-default update_stages" id="edit_lead_stage" name="edit_lead_stage" required>
+                                                            <option value="" selected>Choose</option>
+                                                            <option value="New">New</option>
+                                                            <option value="Assigned">Assigned</option>
+                                                            <option value="Proposal Sent">Proposal Sent</option>
+                                                            <option value="Evaluation Completed">Evaluation Completed</option>
+                                                            <option value="Quotation Sent">Quotation Sent</option>
+                                                            <option value="Negotiation">Negotiation</option>
+                                                            <option value="Payment Done">Payment Done</option>
+															<option value="Payment Received">Payment Received</option>
+                                                            <option value="Won">Won</option>
+                                                            <option value="Lost">Lost</option>
+                                                        </select>
+                                                    </div> -->
+												</div>
+											</fieldset>
+
+											<!-- <form method="POST" id="multiple_attachments"> -->
+
+											<!-- </form> -->
+
+											<div class="input-field col s12">
+												<button class="btn waves-effect waves-light ahbtncolor submit"
+													id="edit_lead_form_submit">Update
+													<i class="material-icons right">send</i>
+												</button>
+											</div>
+										</div>
+										<!-- End - Edit Lead Form -->
+									</form>
+								</li>
+							</ul>
+
+							<!-- Add Follow-up -->
+							<ul id="leadfollowup-slide-out" class="side-nav rightside-navigation common-slide-out"
+								style="overflow-y: auto;">
+								<li class="li-hover">
+									<form method="POST" id="create_lead_followup_form">
+										<!-- Start - Schedule follow-up Form -->
+										<div class="addnewleadform">
+											Lead ID: <span class="lead_id"></span>
+											<h5>Follow-up</h5>
+											<fieldset>
+												<legend>Follow-up data</legend>
+												<div class="row">
+													<div class="col s12 m12 l12">
+														<label for="leadfollowup_today_date">Follow-up Date</label>
+														<input class="default_todaydate" type="date"
+															id="leadfollowup_today_date" name="leadfollowup_today_date"
+															disabled>
+													</div>
+												</div>
+												<fieldset>
+													<legend class="nobg">
+														<!-- <input type="checkbox" name="lead_meeting_done" id="lead_meeting_done"> -->
+														<label for="lead_meeting_done">Meeting Done<span
+																class="asterik">*</span></label>
+													</legend>
+													<div class="row mb-2">
+														<div class="col s12 m2 l2">
+															<!-- lead_meet_yes_no -->
+															<input class="with-gap" name="lead_meet_yes_no" type="radio"
+																id="meeting_done_yes" value="True" required />
+															<label for="meeting_done_yes">Yes</label>
+														</div>
+														<div class="col s12 m2 l2">
+															<input class="with-gap" name="lead_meet_yes_no" type="radio"
+																id="meeting_done_no" value="False" />
+															<label for="meeting_done_no">No</label>
+														</div>
+													</div>
+													<div class="row">
+														<div class="input-field col s12 m12 l12">
+															<textarea id="lead_follow_up_remark"
+																name="lead_follow_up_remark"
+																class="materialize-textarea" required></textarea>
+															<label for="lead_follow_up_remark">Remarks<span
+																	class="asterik">*</span></label>
+														</div>
+													</div>
+												</fieldset>
+												<!-- <div class="row">
+                                                    <div class="input-field col s12 m12 l12">
+                                                        <textarea id="lead_follow_up_remark" name="lead_follow_up_remark" class="materialize-textarea" required></textarea>
+                                                        <label for="lead_follow_up_remark">Remarks</label>
+                                                    </div>
+                                                </div> -->
+											</fieldset>
+											<fieldset>
+												<legend class="nobg">
+													<!-- <input type="checkbox" name="lead_nf_status" id="lead_nf_status"> -->
+													<label for="lead_nf_status">Next Follow up</label>
+												</legend>
+												<div class="row">
+													<!-- lead_nf_status-->
+													<div class="col s12 m3 l3">
+														<label for="lead_nfd_date">Next Follow-up Date<span
+																class="asterik">*</span></label>
+														<input type="text" id="lead_nfd_date" name="lead_nfd_date"
+															placeholder="YYYY-MM-DD" required>
+													</div>
+													<div class="col s12 m2 l2">
+														<label for="lead_follow_up_time_interval">Time<span
+																class="asterik">*</span></label>
+														<input type="text" id="lead_follow_up_time_interval"
+															placeholder="click to select time"
+															name="lead_follow_up_time_interval" class="timepicker"
+															required>
+													</div>
+												</div>
+											</fieldset>
+
+											<div class="row">
+												<div class="input-field col s12 m12 l12">
+													<button class="btn waves-effect waves-light ahbtncolor submit"
+														type="submit" name="action"
+														id="lead_follow_up_form_submit">Submit
+														<i class="material-icons right">send</i>
+													</button>
+												</div>
+											</div>
+										</div>
+										<!-- End - Schedule follow-up Form -->
+									</form>
+								</li>
+							</ul>
+
+							<!-- Add Schedule Evaluation -->
+							<ul id="scheduleevaluation-slide-out" class="side-nav rightside-navigation common-slide-out"
+								style="overflow-y: auto;">
+								<li class="li-hover">
+									<form method="POST" id="create_evaluation">
+										<!-- Start - Schedule follow-up Form -->
+										<div class="addnewleadform">
+											Lead ID: <span class="lead_id"></span>
+											<h5>Schedule Evaluation</h5>
+											<!-- <div id="calendar"></div> -->
+											<div class="row">
+												<div class="col s12 m6 l6">
+													<label for="lead_scheduled_date">Scheduled Date<span
+															class="asterik">*</span></label>
+													<input type="text" id="lead_scheduled_date"
+														name="lead_scheduled_date" placeholder="YYYY-MM-DD" required>
+												</div>
+												<div class="col s12 m6 l6">
+													<label for="lead_scheduled_time">Scheduled Time<span
+															class=""></span></label>
+													<select class="browser-default" id="lead_scheduled_time"
+														name="lead_scheduled_time" required>
+														<option value="9AM-11AM">9AM-11AM</option>
+														<option value="11AM-1PM">11AM-1PM</option>
+														<option value="1PM-3PM">1PM-3PM</option>
+														<option value="3PM-5PM">3PM-5PM</option>
+														<!-- <option value="" selected>Choose</option> -->
+														<!-- <option value="9AM-11AM">9AM-11AM</option>
+														<option value="11AM-1PM">11AM-1PM</option>
+														<option value="1PM-3PM">1PM-3PM</option>
+														<option value="3PM-5PM">3PM-5PM</option>
+														<option value="5PM-7PM">5PM-7PM</option> -->
+													</select>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col s12">
+													<h6>Choose Address<span class="asterik">*</span></h6>
+												</div>
+												<div class="col s12 m4 l4">
+													<input class="with-gap" type="radio" name="select_address"
+														id="radio_select_home_address" required>
+													<label for="radio_select_home_address">Home Address</label>
+													<textarea class="materialize-textarea" id="select_home_address"
+														name="select_home_address" disabled></textarea>
+												</div>
+												<div class="col s12 m4 l4">
+													<input class="with-gap" type="radio" name="select_address"
+														id="radio_select_office_address">
+													<label for="radio_select_office_address">Office Address</label>
+													<textarea class="materialize-textarea" id="select_office_address"
+														name="select_office_address" disabled></textarea>
+												</div>
+												<div class="col s12 m4 l4">
+													<input class="with-gap" type="radio" name="select_address"
+														id="radio_select_other_address">
+													<label for="radio_select_other_address">Other Address</label>
+													<textarea class="materialize-textarea" id="select_other_address"
+														name="select_other_address" disabled></textarea>
+												</div>
+												<div class="col s12">
+													<label for="scheduled_remark">Remark</label>
+													<textarea class="materialize-textarea" id="scheduled_remark" name="scheduled_remark"></textarea>
+												</div>
+											</div>
+											<div class="row">
+												<div class="input-field col s12 m12 l12">
+													<button class="btn waves-effect waves-light ahbtncolor submit"
+														type="submit" name="action">Submit
+														<i class="material-icons right">send</i>
+													</button>
+												</div>
+											</div>
+										</div>
+										<!-- End - Schedule follow-up Form -->
+									</form>
+								</li>
+							</ul>
+
+							<!-- edit Schedule Evaluation -->
+							<ul id="editscheduleevaluation-slide-out"
+								class="side-nav rightside-navigation common-slide-out" style="overflow-y: auto;">
+								<li class="li-hover">
+									<form method="POST" id="update_evaluation">
+										<!-- Start - Schedule follow-up Form -->
+										<div class="addnewleadform">
+											Lead ID: <span class="lead_id"></span>
+											<h5>Update Schedule Evaluation</h5>
+											<!-- <div id="calendar"></div> -->
+											<div class="row">
+												<div class="col s12 m6 l6">
+													<label for="edit_lead_scheduled_date">Scheduled Date<span
+															class="asterik">*</span></label>
+													<input type="text" id="edit_lead_scheduled_date"
+														name="edit_lead_scheduled_date" required>
+												</div>
+												<div class="col s12 m6 l6">
+													<label for="edit_lead_scheduled_time">Scheduled Time<span
+															class="asterik">*</span></label>
+													<select class="browser-default" id="edit_lead_scheduled_time"
+														name="edit_lead_scheduled_time" required>
+														<!-- <option value="" selected>Choose</option> -->
+														<!-- <option value="9AM-11AM">9AM-11AM</option>
+														<option value="11AM-1PM">11AM-1PM</option>
+														<option value="1PM-3PM">1PM-3PM</option>
+														<option value="3PM-5PM">3PM-5PM</option>
+														<option value="5PM-7PM">5PM-7PM</option> -->
+													</select>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col s12">
+													<h6>Choose Address<span class="asterik">*</span></h6>
+													<div class="col s12 m4 l4">
+														<input class="with-gap" type="radio" name="edit_select_address"
+															id="radio_edit_select_home_address" required>
+														<label for="radio_edit_select_home_address">Home Address</label>
+
+														<textarea class="materialize-textarea"
+															id="edit_select_home_address"
+															name="edit_select_home_address" disabled></textarea>
+													</div>
+													<div class="col s12 m4 l4">
+														<input class="with-gap" type="radio" name="edit_select_address"
+															id="radio_edit_select_office_address">
+														<label for="radio_edit_select_office_address">Office
+															Address</label>
+
+														<textarea class="materialize-textarea"
+															id="edit_select_office_address"
+															name="edit_select_office_address" disabled></textarea>
+													</div>
+													<div class="col s12 m4 l4">
+														<input class="with-gap" type="radio" name="edit_select_address"
+															id="radio_edit_select_other_address">
+														<label for="radio_edit_select_other_address">Other
+															Address</label>
+
+														<textarea class="materialize-textarea"
+															id="edit_select_other_address"
+															name="edit_select_other_address" disabled></textarea>
+													</div>
+													<div class="col s12">
+														<label for="edit_scheduled_remark">Remark</label>
+														<textarea class="materialize-textarea" id="edit_scheduled_remark" name="edit_scheduled_remark"></textarea>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="input-field col s12 m12 l12">
+													<button class="btn waves-effect waves-light ahbtncolor submit"
+														type="submit" name="action">Update
+														<i class="material-icons right">send</i>
+													</button>
+												</div>
+											</div>
+										</div>
+										<!-- End - Schedule follow-up Form -->
+									</form>
+								</li>
+							</ul>
+
+							<ul id="openpaymentdone-slide-out" class="side-nav rightside-navigation common-slide-out"
+								style="overflow-y: auto;">
+								<li class="li-hover">
+									<form method="POST" id="add_payment_done">
+										<!-- Start - Add New Lead Form -->
+										<div class="addnewleadform">
+											Lead ID: <span class="lead_id"></span>
+											<h5>Add Payment Done Details</h5>
+											<fieldset>
+												<legend>Payment Done</legend>
+												<div class="row">
+													<div class="col s12 m4 l4">
+														<label for="payment_date">Date of Payment<span
+																class="asterik">*</span></label>
+														<input id="payment_date" name="payment_date" type="date"
+															required>
+													</div>
+													<div class="col s12 m4 l4">
+														<label for="payment_amt">Amount<span
+																class="asterik">*</span></label>
+														<input id="payment_amt" name="payment_amt" type="number"
+															required>
+													</div>
+													<div class="col s12 m4 l4">
+														<label for="payment_mode">Mode of payment<span
+																class="asterik">*</span></label>
+														<select class="browser-default" id="payment_mode"
+															name="payment_mode" required>
+															<option value="" selected>Choose</option>
+															<option value="Cheque">Cheque</option>
+															<option value="RTGS">RTGS</option>
+															<option value="NEFT">NEFT</option>
+															<option value="IMPS">IMPS</option>
+															<option value="Payment through payment gateway">Payment
+																through payment gateway</option>
+														</select>
+													</div>
+													<div class="col s12">
+														<label for="payment_des">Description</label>
+														<textarea name="payment_des" id="payment_des"
+															class="materialize-textarea mb-0"></textarea>
+													</div>
+													<div class="input-field col s12">
+														<button
+															class="btn waves-effect waves-light ahbtncolor submit">Update
+															<i class="material-icons right">send</i>
+														</button>
+													</div>
+												</div>
+											</fieldset>
+										</div>
+										<!-- End - Add New Lead Form -->
+									</form>
+								</li>
+							</ul>
+
+							<ul id="openwon-slide-out" class="side-nav rightside-navigation common-slide-out"
+								style="overflow-y: auto;">
+								<li class="li-hover">
+									<form method="POST" id="add_won">
+										<input type="hidden" name="lead_id" id="edit_lead_id">
+										<input type="hidden" id="won_current_km">
+										<input type="hidden" id="won_eng_no">
+										<!-- Start - Add New Lead Form -->
+										<div class="addnewleadform">
+											Lead ID: <span class="lead_id"></span>
+											<h5>Won</h5>
+											<fieldset class="eval_completed">
+												<legend>Won</legend>
+												<div class="row">
+													<div class="col s12 m4 l4">
+														<label for="expiry_date">Expiry Date<span class="asterik">*</span></label>
+														<input type="text" id="expiry_date" name="expiry_date" required>
+													</div>
+													<div class="col s12 m4 l4">
+														<label for="expiry_km">Expiry Km<span class="asterik">*</span></label>
+														<input type="number" id="expiry_km" name="expiry_km" required>
+													</div>
+													<div class="col s12 m4 l4">
+														<label for="date_of_approval">Approval Date<span class="asterik">*</span></label>
+														<input type="text" id="date_of_approval" name="date_of_approval" required>
+													</div>
+													<div class="col s12">
+														<label for="policy_remark">Policy Remark</label>
+														<textarea name="policy_remark" id="policy_remark" class="materialize-textarea"></textarea>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col s12 m6 l6">
+														<label for="vehicle_rc_copy"><i
+																class="material-icons">filter_1</i> Vehicle RC copy (pdf
+															Format)</label>
+														<div class="file-field input-field col s12">
+															<div class="btn">
+																<span>File</span>
+																<input type="file" data-name="vehicle_rc_copy"
+																	accept="application/pdf"
+																	class="upload_vehicle_registration"
+																	data-attachtype="pdf">
+															</div>
+															<div class="file-path-wrapper">
+																<input class="file-path validate" type="text">
+															</div>
+														</div>
+													</div>
+													<div class="col s12 m6 l6">
+														<label for="insurance_copy"><i
+																class="material-icons">filter_2</i> Insurance copy (pdf
+															Format)</label>
+														<div class="file-field input-field col s12">
+															<div class="btn">
+																<span>File</span>
+																<input type="file" data-name="insurance_copy"
+																	accept="application/pdf"
+																	class="upload_vehicle_registration"
+																	data-attachtype="pdf">
+															</div>
+															<div class="file-path-wrapper">
+																<input class="file-path validate" type="text">
+															</div>
+														</div>
+													</div>
+													<div class="col s12 m6 l6">
+														<label for="signed_registration_form"><i
+																class="material-icons">filter_3</i> Signed Registration
+															Form<span class="asterik">*</span> (pdf Format)</label>
+														<div class="file-field input-field col s12">
+															<div class="btn">
+																<span>File</span>
+																<input type="file" data-name="signed_registration_form"
+																	accept="application/pdf"
+																	class="upload_vehicle_registration"
+																	data-attachtype="pdf" required>
+															</div>
+															<div class="file-path-wrapper">
+																<input class="file-path validate" type="text">
+															</div>
+														</div>
+													</div>
+													<div class="col s12 m6 l6">
+														<label for="inclu_exclu_form"><i
+																class="material-icons">filter_4</i> Signed
+															Inclusion/Exclusion document<span class="asterik">*</span>
+															(pdf Format)</label>
+														<div class="file-field input-field col s12">
+															<div class="btn">
+																<span>File</span>
+																<input type="file" data-name="inclu_exclu_form"
+																	accept="application/pdf"
+																	class="upload_vehicle_registration"
+																	data-attachtype="pdf" required>
+															</div>
+															<div class="file-path-wrapper">
+																<input class="file-path validate" type="text">
+															</div>
+														</div>
+													</div>
+													<div class="col s12 m6 l6">
+														<label for="pan_aadhar"><i class="material-icons">filter_5</i>
+															PAN card or Adhaar card<span class="asterik">*</span> (pdf
+															Format)</label>
+														<div class="file-field input-field col s12">
+															<div class="btn">
+																<span>File</span>
+																<input type="file" data-name="pan_aadhar"
+																	accept="application/pdf"
+																	class="upload_vehicle_registration"
+																	data-attachtype="pdf" required>
+															</div>
+															<div class="file-path-wrapper">
+																<input class="file-path validate" type="text">
+															</div>
+														</div>
+													</div>
+													<div class="col s12 m6 l6">
+														<label for="company_gst_cert"><i
+																class="material-icons">filter_6</i> Company GST
+															Certificate (pdf Format)</label>
+														<div class="file-field input-field col s12">
+															<div class="btn">
+																<span>File</span>
+																<input type="file" data-name="company_gst_cert"
+																	accept="application/pdf"
+																	class="upload_vehicle_registration"
+																	data-attachtype="pdf">
+															</div>
+															<div class="file-path-wrapper">
+																<input class="file-path validate" type="text">
+															</div>
+														</div>
+													</div>
+													<div class="col s12 m6 l6">
+														<label for="company_pan_card"><i
+																class="material-icons">filter_7</i> Company PAN card
+															(pdf Format)</label>
+														<div class="file-field input-field col s12">
+															<div class="btn">
+																<span>File</span>
+																<input type="file" data-name="company_pan_card"
+																	accept="application/pdf"
+																	class="upload_vehicle_registration"
+																	data-attachtype="pdf">
+															</div>
+															<div class="file-path-wrapper">
+																<input class="file-path validate" type="text">
+															</div>
+														</div>
+													</div>
+													<div class="col s12 m6 l6">
+														<label for="final_cluster_photo"><i
+																class="material-icons">filter_8</i> Final Cluster
+															Photo<span class="asterik">*</span> (JPG Format)</label>
+														<div class="file-field input-field col s12">
+															<div class="btn">
+																<span>File</span>
+																<input type="file" data-name="final_cluster_photo"
+																	accept=".jpg" class="upload_vehicle_registration"
+																	data-attachtype="jpg" required>
+															</div>
+															<div class="file-path-wrapper">
+																<input class="file-path validate" type="text">
+															</div>
+														</div>
+													</div>
+													<div class="col s12 m6 l6">
+														<label for="payment_source"><i
+																class="material-icons">filter_9</i> Payment Source (JPG Format)</label>
+														<div class="file-field input-field col s12">
+															<div class="btn">
+																<span>File</span>
+																<input type="file" data-name="payment_source"
+																	accept=".jpg" class="upload_vehicle_registration"
+																	data-attachtype="jpg">
+															</div>
+															<div class="file-path-wrapper">
+																<input class="file-path validate" type="text">
+															</div>
+														</div>
+													</div>
+													<div class="col s12 mb-3">
+														<p>Select Email Attachment<span class="asterik">*</span></p>
+														<div id="won_proposal_pdf_attachmet"></div>
+														<div id="won_inclusion_attachmet"></div>
+														<div id="won_exclusion_attachmet"></div>
+													</div>
+												</div>
+											</fieldset>
+											<div class="input-field col s12">
+												<button class="btn waves-effect waves-light ahbtncolor submit">Update
+													<i class="material-icons right">send</i>
+												</button>
+											</div>
+										</div>
+										<!-- End - Add New Lead Form -->
+									</form>
+								</li>
+							</ul>
+
+							<ul id="openlost-slide-out" class="side-nav rightside-navigation common-slide-out"
+								style="overflow-y: auto;">
+								<li class="li-hover">
+									<form method="POST" id="add_lost">
+										<!-- Start - Add New Lead Form -->
+										<div class="addnewleadform">
+											Lead ID: <span class="lead_id"></span>
+											<h5>Lost</h5>
+											<fieldset>
+												<legend>Lost</legend>
+												<div class="row">
+													<div class="col s12 m4 l4">
+														<label for="lost_reason_list">Lost Reason<span
+																class="asterik">*</span></label>
+														<select class="browser-default" id="lost_reason_list"
+															name="lost_reason_list" required>
+															<option value="" selected>Choose</option>
+														</select>
+													</div>
+													<div class="col s12 m8 l8">
+														<label for="lost_reason">Reason<span
+																class="asterik">*</span></label>
+														<textarea id="lost_reason" name="lost_reason"
+															class="materialize-textarea" required></textarea>
+													</div>
+												</div>
+											</fieldset>
+											<div class="input-field col s12">
+												<button class="btn waves-effect waves-light ahbtncolor submit">Update
+													<i class="material-icons right">send</i>
+												</button>
+											</div>
+										</div>
+										<!-- End - Add New Lead Form -->
+									</form>
+								</li>
+							</ul>
+
+							
+
+						</aside>
+						<!-- END RIGHT SIDEBAR NAV-->
+					</div>
+					<!-- END WRAPPER -->
+				</div>
+
+		</div>
+	</div>
+	</section>
+	</div>
+	</div>
+	<!-- END MAIN -->
+	<!-- //////////////////////////////////////////////////////////////////////////// -->
+	<!-- START FOOTER -->
+	<footer class="page-footer ahthemecolor">
+		<div class="footer-copyright">
+			<div class="container">
+				<div class="row mb-0">
+					<div class="col s12 m7 l7">
+						<span class="right">
+							Copyright Edel Assurance LLP ©
+							<script type="text/javascript">
+								document.write(new Date().getFullYear());
+							</script>
+						</span>
+					</div>
+					<div class="col s12 m5 l5">
+						<span class="right">
+							Designed &amp; Developed by Bluetick Consultants
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- ================================================
+			Scripts
+			================================================ -->
+	<!-- jQuery Library -->
+	<!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
+	<script type="text/javascript" src="static/js/jquery-3.2.1.min.js"></script>
+	<!--materialize js-->
+	<script type="text/javascript" src="static/js/materialize.min.js"></script>
+
+	<!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
+	<script type="text/javascript" src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+	<!--plugins.js - Some Specific JS codes for Plugin Settings-->
+
+	<script type="text/javascript" src="static/js/baseurl.js"></script>
+
+	<script type="text/javascript" src="static/js/plugins.js"></script>
+	<!--scrollbar-->
+	<script type="text/javascript" src="static/js/perfect-scrollbar.min.js"></script>
+	<!-- scriptjs -->
+
+
+	<script type="text/javascript" src="static/js/storage.js"></script>
+
+	<script type="text/javascript" src="static/js/lead.js"></script>
+
+	<script type="text/javascript" src="static/js/jquery.formatter.min.js"></script>
+
+	<script type="text/javascript" src="static/js/role.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
+
+	<script type="text/javascript">
+			$(document).ready(function () {
+				$("#btncreatequote").attr("disabled",true);
+				$('#price_table').click(function() {
+					if($('input[type=checkbox]').is(':checked')) {
+						$("#btncreatequote").attr("disabled",false);
+					} else {
+						$("#btncreatequote").attr("disabled",true);
+					}
+				});
+
+				$("#btncreatenego").attr("disabled",true);
+				$('#nego_price_table').click(function() {
+					if($('input[type=radio]').is(':checked')) {
+						$("#btncreatenego").attr("disabled",false);
+					} else {
+						$("#btncreatenego").attr("disabled",true);
+					}
+				});
+
+
+				// $("#edit_lead_subsource").attr("disabled",true);
+			});
+
+	</script>
+
+
+	<script type="text/javascript">
+		$(function () {
+			$(".vehicle_mask").formatter(
+				{
+					// pattern:"m{{*}}-{{999}}-{{999}}-C{{99}}",
+					// persistent:!0
+					pattern: "{{**}}-{{99}}-{{**}}-",
+					persistent: 0
+				})
+
+
+			var fl = document.getElementById('01');
+
+			fl.onchange = function (e) {
+				var ext = this.value.match(/\.(.+)$/)[1];
+				switch (ext) {
+					case 'jpg':
+						// alert('allowed');
+						break;
+					default:
+						alert('file format not supported');
+						this.value = '';
+				}
+			};
+		});
+
+		$(document).ready(function () {
+			$('input.timepicker').timepicker({});
+		});
+	</script>
+</body>
+
+</html>

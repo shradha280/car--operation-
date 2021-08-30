@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="msapplication-tap-highlight" content="no">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<title>Edel Assurance LLP</title>
+	<!-- Favicons-->
+	<link rel="icon" href="static/images/favicon.ico" sizes="32x32">
+	<!-- Favicons-->
+	<link rel="apple-touch-icon-precomposed" href="static/images/favicon.ico">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- For iPhone -->
+	<meta name="msapplication-TileColor" content="#00bcd4">
+	<meta name="msapplication-TileImage" content="static/images/mstile-144x144.png">
+	<!-- For Windows Phone -->
+	<!-- CORE CSS-->
+	<link href="static/css/materialize.css" type="text/css" rel="stylesheet">
+	<!-- Custome CSS-->
+	<link href="static/css/custom.css" type="text/css" rel="stylesheet">
+	<link href="static/css/style.css" type="text/css" rel="stylesheet">
+	<link href="static/css/theme.css" type="text/css" rel="stylesheet">
+	<!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
+	<link href="static/css/perfect-scrollbar.css" type="text/css" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+</head>
+
+<body>
+	<!-- Attachment Preview Structure -->
+	<div id="proposal-modal" class="modal modal-fixed-footer">
+		<div class="modal-content">
+			<h4 class="view-modal"></h4>
+			<div class="attachment-box">
+				<div class="view-attachment1"></div>
+				<!-- <embed src="static/images/sample.pdf" style="width: 100%; height: 100%; position: absolute; left: 0; top: 0;"> -->
+				<!-- <img src="" alt=""/> -->
+			</div>
+		</div>
+		<div class="modal-footer">
+			<a class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+		</div>
+	</div>
+	<header id="header" class="page-topbar">
+		<!-- start header nav-->
+		<div class="navbar-fixed">
+			<nav class="navbar-color ahthemecolor gradient-shadow">
+				<div class="nav-wrapper">
+					<ul class="right hide-on-med-and-down fixedonmob">
+						<li class="last_login">
+							<p>Welcome <span class="login_name_txt_white display_username"></span></p>
+							<p class="login_name_txt_white"><em id="datetime"></em></p>						
+						</li>
+						<li>
+							<a href="javascript:void(0);" class="waves-effect waves-block waves-light profile-button"
+								data-activates="profile-dropdown">
+								<span class="avatar-status avatar-online">
+									<img src="static/images/avatar-7.png" alt="avatar">
+									<i></i>
+								</span>
+							</a>
+							<ul id="profile-dropdown" class="dropdown-content">
+								<li class="mobuser">
+									<a class="grey-text text-darken-1">
+										<i class="material-icons">account_circle</i><span
+											class="display_username"></span></a>
+								</li>
+								<li>
+									<a id="logout_link" class="grey-text text-darken-1">
+										<i class="material-icons">keyboard_tab</i> Logout</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</header>
+	<!-- Start Page Loading -->
+	<div id="loader-wrapper">
+		<div id="loader"></div>
+		<div class="loader-section section-left"></div>
+		<div class="loader-section section-right"></div>
+	</div>
+	<div class="loader-wrapper">
+		<img src="static/images/loading.gif" alt="">
+	</div>
+	<!-- End Page Loading -->
+	<!-- //////////////////////////////////////////////////////////////////////////// -->
+	<!-- START HEADER -->
+	<!-- END HEADER -->
+	<!-- //////////////////////////////////////////////////////////////////////////// -->
+	<!-- START MAIN -->
+	<div id="main">
+		<div class="wrapper">
+			<!-- START LEFT SIDEBAR NAV-->
+			<aside id="left-sidebar-nav" class="nav-expanded nav-lock nav-collapsible">
+				<div class="brand-sidebar">
+					<h1 class="logo-wrapper">
+						<a href="#" class="brand-logo darken-1">
+							<img src="static/images/edel-assurance-logo.svg" alt="materialize logo"
+								class="logofordesktop">
+							<img src="static/images/edel-assurance-logo.svg" alt="materialize logo"
+								class="logoformobile">
+						</a>
+					</h1>
+				</div>
+				<ul id="slide-out" class="leftbarthemecolor side-nav fixed leftside-navigation">
+					<li class="report_dashboard">
+						<a href="dashboard.html">
+							<i class="material-icons">dashboard</i>
+							<span class="nav-text">Dashboard</span>
+						</a>
+					</li>
+					<li class="hos-target">
+						<a href="target.html">
+							<i class="material-icons">dashboard</i>
+							<span class="nav-text">Targets</span>
+						</a>
+					</li>
+					<li class="user-target my-target">
+						<a href="user-target.html">
+							<i class="material-icons">dashboard</i>
+							<span class="nav-text">My Targets</span>
+						</a>
+					</li>
+					<li class="no-padding">
+						<ul class="collapsible" data-collapsible="accordion">
+							<li class="bold contacts-listing">
+								<a class="collapsible-header waves-effect waves-cyan active">
+									<i class="material-icons">verified_user</i>
+									<span class="nav-text">Contacts</span>
+								</a>
+								<div class="collapsible-body">
+									<ul>
+										<li class="active">
+											<a href="contacts-listing.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="acc_all_list">All (<span class="contact_count"></span>)</span>
+											</a>
+										</li>
+										<li>
+											<a href="contacts-todays-followup.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="acc_todays_followup">Today's Followup (<span
+														class="todays_followup_count"></span>)</span>
+											</a>
+										</li>
+										<li>
+											<a href="contacts-pending-followup.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="acc_pending_followup">Pending Followup (<span
+														class="pending_followup_count"></span>)</span>
+											</a>
+										</li>
+										<li>
+											<a href="contacts-future-followup.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="future_followup">Future Followup (<span
+														class="future_followup_count"></span>)</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="lead-listing">
+								<a class="collapsible-header waves-effect waves-cyan active">
+									<i class="material-icons">verified_user</i>
+									<span class="nav-text">Leads</span>
+								</a>
+								<div id="leftstatus" class="collapsible-body">
+									<ul>
+										<li>
+											<a href="leads-listing.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="all_lead_count">All ()</span>
+											</a>
+										</li>
+										<div class="followups">
+											<li>
+												<a href="#">
+													<i class="material-icons">keyboard_arrow_right</i>
+													<span id="followups_leads">Today's Followup ()</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<i class="material-icons">keyboard_arrow_right</i>
+													<span id="pending_followups">Pending Followup</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<i class="material-icons">keyboard_arrow_right</i>
+													<span id="future_followups">Future Followup</span>
+												</a>
+											</li>
+											<li class="not-updated-leads">
+												<a href="#">
+													<i class="material-icons">keyboard_arrow_right</i>
+													<span id="not_updated">Not Updated Leads ()</span>
+												</a>
+											</li>
+										</div>
+									</ul>
+								</div>
+							</li>
+							<li class="eval_scheduled">
+								<a class="collapsible-header waves-effect waves-cyan active">
+									<i class="material-icons">verified_user</i>
+									<span class="nav-text">Evaluation Scheduled</span>
+								</a>
+								<div id="leftstatus" class="collapsible-body">
+									<ul>
+										<li>
+											<a href="all-evaluation.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="all_lead_count">All (<span
+														class="all_eval_count"></span>)</span>
+											</a>
+										</li>
+										<li>
+											<a href="today-evaluation.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="followups_leads">Today's (<span
+														class="today_eval_count"></span>)</span>
+											</a>
+										</li>
+										<li>
+											<a href="pending-evaluation.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="pending_followups">Pending (<span
+														class="pending_eval_count"></span>)</span>
+											</a>
+										</li>
+										<li>
+											<a href="future-evaluation.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="future_followups">Future (<span
+														class="future_eval_count"></span>)</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li class="eval-tracker">
+						<a href="evaluation-tracker.html">
+							<i class="material-icons">schedule</i>
+							<span class="nav-text">Evaluation Tracker</span>
+						</a>
+					</li>
+					<li class="eval-report">
+						<a href="reports.html">
+							<i class="material-icons">dashboard</i>
+							<span class="nav-text">Reports</span>
+						</a>
+					</li>
+				</ul>
+				<a href="#" data-activates="slide-out"
+					class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only slideoutnavbtn">
+					<i class="material-icons">menu</i>
+				</a>
+			</aside>
+			<!-- END LEFT SIDEBAR NAV-->
+			<!-- //////////////////////////////////////////////////////////////////////////// -->
+			<!-- START CONTENT -->
+			<section id="content">
+				<!--start container-->
+				<div class="container">
+					<div id="daily-data-chart">
+						<div class="row mrgntopbtm10">
+							<div class="col s6 m3 l3">
+								<p class="left leads"><span class="left u_location">User Location: &nbsp;</span><span class="user_location blue accent-4 white-text badge left"></span></p>
+							</div>
+							<div class="col s6 m3 l3">
+								<p class="left leads count_lead_text">All Contacts</p>
+								<div class="chip teal darken-4 contact_count"></div>
+							</div>
+							<div class="filter-buttons">
+								<a class="waves-effect waves-light btn ahbtncolor box-shadow chat-collapse right"
+									data-activates="newcontactform-slide-out"><i class="material-icons">add</i>Add New
+									Contact</a>
+								<a class="waves-effect waves-light btn ahbtncolor box-shadow chat-collapse right"
+									data-activates="filterform-slide-out"><i class="fa fa-filter"
+										aria-hidden="true"></i>Filter</a>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col s12 m12 l12">
+								<div id="clear_filter" class="chip filter-chips">
+									<a href="contacts-listing.html" id="clear_filter">Clear filter<i
+											class="close material-icons">close</i></a>
+								</div>
+								<table role="table" class="lead-management" id="myTable">
+									<thead role="rowgroup">
+										<tr role="row">
+											<!-- <th role="columnheader">&nbsp;</th> -->
+											<th role="columnheader">Id</th>
+											<th role="columnheader">Created Date</th>
+											<th role="columnheader">First Name</th>
+											<th role="columnheader">Last Name</th>
+											<th role="columnheader">Mobile Number</th>
+											<th role="columnheader">Email</th>
+											<th role="columnheader">Contact Status</th>
+											<th role="columnheader">Next Follow-up Date</th>
+											<th role="columnheader">&nbsp;</th>
+											<th role="columnheader">&nbsp;</th>
+										</tr>
+									</thead>
+									<!-- <tbody>
+											<tr>
+												<td colspan="8">
+													<div id="card-alert" class="card ahthemecolor center">
+														<div class="card-content white-text center">
+															<i class="material-icons">notifications</i>No Customers<p></p>
+														</div>
+													</div>
+												</td>
+											</tr>
+											</tbody> -->
+									<!-- <tbody>
+											<tr>
+												<td colspan="8">
+													<div id="card-alert" class="card ahthemecolor center">
+														<div class="card-content white-text center">
+															<i class="material-icons">notifications</i>Customer Already
+															Exist<p></p>
+														</div>
+													</div>
+												</td>
+											</tr>
+											</tbody> -->
+									<tbody role="rowgroup" id="all_contact_data">
+										<!-- <tr role="row" class="topborder">
+												<td width="5%" role="cell">
+													<div class="table_show_on_mobile"><strong>Id</strong></div>
+													1111
+												</td>
+												<td width="10%" role="cell">
+													<div class="table_show_on_mobile"><strong>Created Date</strong></div>
+													24-3-2021
+												</td>
+												<td width="10%" role="cell">
+													<div class="table_show_on_mobile"><strong>First Name</strong></div>
+													<p class="name_style"><a href="contacts-view.html" title="Click to view">Sanman</a></p>
+												</td>
+												<td width="10%" role="cell">
+													<div class="table_show_on_mobile"><strong>Last Name</strong></div>
+													<p>Mandlik</p>
+												</td>
+												<td width="10%" role="cell">
+													<div class="table_show_on_mobile"><strong>Mobile Number</strong></div>
+													<span>9773041504</span>
+												</td>
+												<td width="10%" role="cell">
+													<div class="table_show_on_mobile"><strong>Email Id</strong></div>
+													<p>sanman.mandlik@bluetickconsultants.com</p>
+												</td>
+												<td width="10%" role="cell">
+													<div class="table_show_on_mobile"><strong>Contact Status</strong></div>
+													<p>Call Back</p>
+												</td>
+												<td width="10%" role="cell">
+													<div class="table_show_on_mobile"><strong>Next Follow-up Date</strong></div>
+													<p>1-4-2021</p>
+												</td>
+												<td width="5%" role="cell">
+													<a href="javascript:void(0);"
+														class="waves-effect waves-block waves-light profile-button threedotsmob right"
+														data-activates="moreoption-dropdown">
+													<i class="material-icons more_vert_mob right">more_vert</i>
+													</a>
+													<ul id="moreoption-dropdown" class="dropdown-content">
+														<li>
+															<a href="#"
+																class="grey-text text-darken-1 chat-collapse openEditCustomerForm" data-activates="editcontactform-slide-out">
+															<i class="material-icons">edit</i> Edit Info
+															</a>
+														</li>
+														<li>
+															<a href="#" class="grey-text text-darken-1 chat-collapse"
+																id="accountfollowUpForm"
+																data-activates="contactfollowup-slide-out">
+															<i class="material-icons">contact_phone</i>Add Follow-Up
+															</a>
+														</li>
+														<li>
+															<a href="#" class="grey-text text-darken-1 chat-collapse"
+																data-activates="sendproposalform-slide-out">
+															<i class="material-icons">send</i>Send Proposal
+															</a>
+														</li>
+													</ul>
+												</td>
+											</tr> -->
+									</tbody>
+								</table>
+								<div class="pagination">
+									<span class="step-links">
+										<!-- <a class="waves-effect" onclick="return followURL(this,'Previous','{{ all_leads.previous_page_number }}');">Previous</a> -->
+										<a class="waves-effect" href="javascript:prevPage()" id="btn_prev">Previous</a>
+										<span class="current active waves-effect">
+											page: <span id="page"></span>
+										</span>
+										<a class="waves-effect" href="javascript:nextPage()" id="btn_next">Next</a>
+										<!-- <a class="waves-effect" onclick="return followURL(this,'Next','{{ all_leads.next_page_number }}');">Next</a> -->
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- //////////////////////////////////////////////////////////////////////////// -->
+					<!-- START RIGHT SIDEBAR NAV-->
+					<aside id="right-sidebar-nav">
+						<ul id="newcontactform-slide-out" class="side-nav rightside-navigation common-slide-out"
+							style="overflow-y: auto;">
+							<li class="li-hover">
+								<form method="POST" id="createcontact">
+									<!-- Start - Add New Lead Form -->
+									<div class="addnewleadform">
+										<!-- <a class="btn-floating waves-effect waves-light purple lightrn-1 clearform">
+													<i class="material-icons">clear</i>
+													</a> -->
+										<h5>Add New Contact</h5>
+										<fieldset>
+											<legend>Person Account Detail</legend>
+											<div class="row">
+												<div class="col s12 m2 l2">
+													<label for="customer_type">Type<span
+															class="asterik">*</span></label>
+													<select class="browser-default validate" id="customer_type"
+														name="customer_type" required="required">
+														<option value="" selected disabled>Choose</option>
+														<option value="Individual">Individual</option>
+														<option value="Corporate">Corporate</option>
+													</select>
+												</div>
+												<div class="col s12 m2 l2">
+													<label for="customer_title">Title<span
+															class="asterik">*</span></label>
+													<select class="browser-default" id="customer_title"
+														name="customer_title" required="required">
+														<option value="" selected disabled>Choose</option>
+														<option value="Mr.">Mr.</option>
+														<option value="Ms.">Ms.</option>
+														<option value="Mrs.">Mrs.</option>
+														<option value="Prof.">Prof.</option>
+														<option value="Dr">Dr</option>
+													</select>
+												</div>
+												<div class="input-field col s12 m4 l4">
+													<label for="first_name">Customer First Name<span
+															class="asterik">*</span></label>
+													<input id="first_name" name="first_name" type="text"
+														required="required" class="validate">
+												</div>
+												<div class="input-field col s12 m4 l4">
+													<label for="last_name">Customer Last Name<span
+															class="asterik">*</span></label>
+													<input id="last_name" name="last_name" type="text"
+														required="required" class="validate">
+												</div>
+												<div class="input-field col s12 m8 l8">
+													<label for="company_name">Company Name</label>
+													<input id="company_name" name="company_name" type="text">
+												</div>
+												<div class="input-field col s12 m4 l4">
+													<label for="mobile_number">Mobile Number<span
+															class="asterik">*</span></label>
+													<input id="mobile_number" name="mobile_number" type="tel"
+														required="required" title="Please add 10 digit mobile number"
+														pattern="[0-9]{10}" maxlength="10" class="validate">
+												</div>
+												<div class="col s12">
+													<fieldset>
+														<legend>Email ID</legend>
+														<div class="input-field col s12">
+															<label for="primary_email_id">Primary Email ID<span
+																	class="asterik">*</span></label>
+															<input id="primary_email_id" name="primary_email_id"
+																type="email" required="required" class="validate"
+																pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}">
+														</div>
+														<fieldset>
+															<legend>Secondary Email ID</legend>
+															<p>To add multiple email addresses just type the each email address seperated by comma (,)</p>
+															<div class="input-field col s12 user_data">
+																<label for="secodary_email_id">Secodary Email Id</label>
+																<input id="secodary_email_id" name="secodary_email_id" type="email" multiple pattern="^([\w+-.%]+@[\w-.]+\.[A-Za-z]{2,4},*[\W]*)+$">
+															</div>
+														</fieldset>
+														<!-- <fieldset>
+															<legend>Secondary Email ID</legend>
+															<p>multiple email addresses separated by a comma character (,)</p>
+															<div class="input-field col s12">
+																<label for="secodary_email_id">Secodary Email Id</label>
+																<input id="secodary_email_id" name="secodary_email_id" type="text">
+															</div>
+														</fieldset> -->
+														<!-- <div class="user-details">
+															<div class="input-field col s12 m8 l8 user_data">
+																<label for="secodary_email_id">Secodary Email Id</label>
+																<input id="secodary_email_id" name="secodary_email_id" type="text">
+																<div class="chips" id="secodary_email_id"></div>
+															</div>
+														</div> -->
+														<!-- <div class="col s12">
+																	<a class="add_details"><span class="fa fa-plus-circle" aria-hidden="true"></span> add more</a>
+																</div> -->
+													</fieldset>
+												</div>
+												<div class="col s12">
+													<fieldset>
+														<legend>Address</legend>
+														<div class="col s12">
+															<fieldset>
+																<legend>
+																	<label for="home_address_type">Home</label>
+																</legend>
+																<div class="input-field col s12 m12 l12">
+																	<label for="home_address">Address</label>
+																	<input id="home_address" name="home_address"
+																		type="text"
+																		placeholder="for ex. 31/C, Ramkutir Chs, C wing, 3rd floor">
+																</div>
+																<div class="input-field col s12 m4 l4">
+																	<label for="home_street">Street</label>
+																	<input id="home_street" name="home_street"
+																		type="text"
+																		placeholder="for ex. Pandit Gunidas Road">
+																</div>
+																<div class="input-field col s12 m4 l4">
+																	<label for="home_city">City</label>
+																	<input id="home_city" name="home_city" type="text"
+																		placeholder="for ex. Mumbai">
+																</div>
+																<div class="col s12 m4 l4 mb-3">
+																	<label for="home_area">Area</label>
+																	<select class="browser-default" id="home_area"
+																		name="home_area" searchable>
+																		<option selected disabled>Choose</option>
+																	</select>
+																</div>
+																<div class="input-field col s12 m4 l4">
+																	<label for="home_zipcode">Zip Code</label>
+																	<input id="home_zipcode" name="home_zipcode"
+																		type="text" placeholder="for ex. 400016">
+																</div>
+																<div class="col s12 m4 l4">
+																	<label for="home_state">State</label>
+																	<select class="browser-default" id="home_state"
+																		name="home_state">
+																		<option selected disabled>Choose</option>
+																	</select>
+																</div>
+																<div class="input-field col s12 m4 l4">
+																	<label for="home_country">Country</label>
+																	<input id="home_country" name="home_country"
+																		type="text" placeholder="for ex. India">
+																</div>
+															</fieldset>
+														</div>
+														<div class="col s12">
+															<fieldset>
+																<legend>
+																	<label for="office_address_type">Office</label>
+																</legend>
+																<div class="input-field col s12 m12 l12">
+																	<label for="office_address">Address</label>
+																	<input id="office_address" name="office_address"
+																		type="text">
+																</div>
+																<div class="input-field col s12 m4 l4">
+																	<label for="office_street">Street</label>
+																	<input id="office_street" name="office_street"
+																		type="text">
+																</div>
+																<div class="input-field col s12 m4 l4">
+																	<label for="office_city">City</label>
+																	<input id="office_city" name="office_city"
+																		type="text">
+																</div>
+																<div class="col s12 m4 l4 mb-3">
+																	<label for="office_area">Area</label>
+																	<select class="browser-default" id="office_area"
+																		name="office_area" searchable>
+																		<option selected disabled>Choose</option>
+																	</select>
+																</div>
+																<div class="input-field col s12 m4 l4">
+																	<label for="office_zipcode">Zip Code</label>
+																	<input id="office_zipcode" name="office_zipcode"
+																		type="text">
+																</div>
+																<div class="col s12 m4 l4">
+																	<label for="office_state">State</label>
+																	<select class="browser-default" id="office_state"
+																		name="office_state">
+																		<option selected disabled>Choose</option>
+																	</select>
+																</div>
+																<div class="input-field col s12 m4 l4">
+																	<label for="office_country">Country</label>
+																	<input id="office_country" name="office_country"
+																		type="text">
+																</div>
+															</fieldset>
+														</div>
+														<div class="col s12">
+															<fieldset>
+																<legend>
+																	<label for="other_address_type">Other</label>
+																</legend>
+																<div class="input-field col s12 m12 l12">
+																	<label for="other_address">Address</label>
+																	<input id="other_address" name="other_address"
+																		type="text">
+																</div>
+																<div class="input-field col s12 m4 l4">
+																	<label for="other_street">Street</label>
+																	<input id="other_street" name="other_street"
+																		type="text">
+																</div>
+																<div class="input-field col s12 m4 l4">
+																	<label for="other_city">City</label>
+																	<input id="other_city" name="other_city"
+																		type="text">
+																</div>
+																<div class="col s12 m4 l4 mb-3">
+																	<label for="other_area">Area</label>
+																	<select class="browser-default" id="other_area"
+																		name="other_area" searchable>
+																		<option selected disabled>Choose</option>
+																	</select>
+																</div>
+																<div class="input-field col s12 m4 l4">
+																	<label for="other_zipcode">Zip Code</label>
+																	<input id="other_zipcode" name="other_zipcode"
+																		type="text">
+																</div>
+																<div class="col s12 m4 l4">
+																	<label for="other_state">State</label>
+																	<select class="browser-default" id="other_state"
+																		name="other_state">
+																		<option selected disabled>Choose</option>
+																	</select>
+																</div>
+																<div class="input-field col s12 m4 l4">
+																	<label for="other_country">Country</label>
+																	<input id="other_country" name="other_country"
+																		type="text">
+																</div>
+															</fieldset>
+														</div>
+													</fieldset>
+												</div>
+												<div class="input-field col s12 m12 l12">
+													<label for="contact_remark">Remark<span
+															class="asterik">*</span></label>
+													<textarea id="contact_remark" name="contact_remark"
+														class="materialize-textarea validate"
+														required="required"></textarea>
+												</div>
+												<div class="col s12 m6 l6">
+													<label for="location">Location</label>
+													<input id="location" name="location" type="text" disabled>
+													<!-- <select class="browser-default" id="location" name="location"
+														required="required">
+														<option value="" selected disabled>Choose</option>
+														<option value="Mumbai">Mumbai</option>
+														<option value="Pune">Pune</option>
+													</select>
+													<div class="input-field"></div> -->
+												</div>
+												<div class="col s12 m6 l6">
+													<label for="contact_status">Contact Status</label>
+													<select class="browser-default contact_status" id="contact_status"
+														name="contact_status">
+														<option selected disabled>Choose</option>
+														<option value="Attempted to contact">Attempted to contact
+														</option>
+														<option value="Contacted">Contacted</option>
+														<option value="Invalid number">Invalid number</option>
+														<option value="Wrong number">Wrong number</option>
+														<!-- <option value="Call Back">Call Back</option> -->
+														<option value="Not Interested">Not Interested</option>
+														<option value="Out of Criteria">Out of Criteria</option>
+														<option value="Interested">Interested</option>
+													</select>
+													<div class="input-field"></div>
+												</div>
+												<!-- <div id="call-back-date-time">
+															<div class="col s12 m4 l4">
+																<label for="contact_today_date">Today's Folloup-up Date</label>
+																<input class="default_todaydate" type="date" id="contact_today_date" name="contact_today_date" disabled>
+															</div>
+															<div class="col s12 m4 l4">
+																<label for="contact_nfd_date">Next Folloup-up Date<span class="asterik">*</span></label>
+																<input type="datetime-local" id="contact_nfd_date" name="contact_nfd_date">
+															</div>
+															<div class="col s12 m4 l4">
+																<label for="contact_follow_up_time_interval">Time<span class="asterik">*</span></label>
+																<input type="time" id="contact_follow_up_time_interval" name="contact_follow_up_time_interval" required="required">
+															</div>
+														</div> -->
+												<div id="not-interested-description">
+													<div class="input-field col s12 m12 l12">
+														<label for="contact_notinterested">Description<span
+																class="asterik">*</span></label>
+														<textarea id="contact_notinterested"
+															name="contact_notinterested"
+															class="materialize-textarea validate"></textarea>
+													</div>
+												</div>
+												<div id="outofcriteria-description">
+													<div class="input-field col s12 m12 l12">
+														<label for="contact_outofcriteria">Description<span
+																class="asterik">*</span></label>
+														<textarea id="contact_outofcriteria"
+															name="contact_outofcriteria"
+															class="materialize-textarea validate"></textarea>
+													</div>
+												</div>
+											</div>
+										</fieldset>
+										<div class="input-field col s12">
+											<button class="btn waves-effect waves-light ahbtncolor submit" type="submit"
+												name="action" id="customer_form_submit">Submit
+												<i class="material-icons right">send</i>
+											</button>
+										</div>
+									</div>
+									<!-- End - Add New Lead Form -->
+								</form>
+							</li>
+						</ul>
+						
+						<ul id="editcontactform-slide-out" class="side-nav rightside-navigation common-slide-out"
+							style="overflow-y: auto;">
+							<li class="li-hover">
+								<form id="updatecontactform" method="POST">
+									<!-- Start - Add New Lead Form -->
+									<div class="addnewleadform">
+										<!-- <a class="btn-floating waves-effect waves-light purple lightrn-1 clearform">
+													<i class="material-icons">clear</i>
+													</a> -->
+										Contact ID: <span class="contact_id"></span>
+										<h5>Edit Contact</h5>
+										<fieldset>
+											<legend>Person Account Detail</legend>
+											<div class="row">
+												<div class="col s12 m2 l2">
+													<label for="edit_customer_type">Type</label>
+													<select class="browser-default" id="edit_customer_type"
+														name="edit_customer_type" required="required">
+														<option selected disabled>Choose</option>
+														<option value="Individual">Individual</option>
+														<option value="Corporate">Corporate</option>
+													</select>
+												</div>
+												<div class="col s12 m2 l2">
+													<label for="edit_customer_title">Title<span
+															class="asterik">*</span></label>
+													<select class="browser-default" id="edit_customer_title"
+														name="edit_customer_title" required="required">
+														<option selected disabled>Choose</option>
+														<option value="Mr.">Mr.</option>
+														<option value="Ms.">Ms.</option>
+														<option value="Mrs.">Mrs.</option>
+														<option value="Prof.">Prof.</option>
+														<option value="Dr">Dr</option>
+													</select>
+												</div>
+												<div class="col s12 m4 l4">
+													<label for="edit_first_name">Customer First Name<span
+															class="asterik">*</span></label>
+													<input id="edit_first_name" name="edit_first_name" type="text"
+														required="required">
+												</div>
+												<div class="col s12 m4 l4">
+													<label for="edit_last_name">Customer Last Name<span
+															class="asterik">*</span></label>
+													<input id="edit_last_name" name="edit_last_name" type="text"
+														required="required">
+												</div>
+												<div class="col s12 m8 l8">
+													<label for="edit_company_name">Company Name</label>
+													<input id="edit_company_name" name="edit_company_name" type="text">
+												</div>
+												<div class="col s12 m4 l4">
+													<label for="edit_mobile_number">Mobile Number<span
+															class="asterik">*</span></label>
+													<input id="edit_mobile_number" name="edit_mobile_number" type="tel"
+														required="required" title="Please add 10 digit mobile number"
+														pattern="[0-9]{10}" maxlength="10" class="validate">
+												</div>
+												<div class="col s12">
+													<fieldset>
+														<legend>Email ID</legend>
+														<div class="col s12">
+															<label for="edit_email_id">Primary Email ID<span class="asterik">*</span></label>
+															<input id="edit_email_id" name="edit_email_id" type="email" required="required" class="validate" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}">
+														</div>
+														<fieldset>
+															<legend>Secondary Email ID</legend>
+															<p>To add multiple email addresses just type the each email address seperated by comma (,)</p>
+															<div class="col s12 user_data">
+																<label for="edit_second_email">Secodary Email Id</label>
+																<input id="edit_second_email" name="edit_second_email" type="email" multiple pattern="^([\w+-.%]+@[\w-.]+\.[A-Za-z]{2,4},*[\W]*)+$">
+															</div>
+														</fieldset>
+														<!-- <fieldset>
+															<legend>Secondary Email ID</legend>
+															<p>multiple email addresses separated by a comma character (,)</p>
+															<div class="input-field col s12">
+																<label for="edit_second_email">Secodary Email Id</label>
+																<input id="edit_second_email" name="edit_second_email" type="text">
+															</div>
+														</fieldset> -->
+														<!-- <div class="user-details">
+															<div class="col s12 m8 l8 user_data">
+																<label for="edit_second_email">Secondary Email
+																	ID</label>
+																<input id="edit_second_email" name="edit_second_email"
+																	type="email" multiple value="">
+															</div>
+														</div> -->
+														<!-- <div class="col s12">
+																	<a class="add_details"><span class="fa fa-plus-circle" aria-hidden="true"></span> add more</a>
+																</div> -->
+													</fieldset>
+												</div>
+												<div class="col s12">
+													<fieldset>
+														<legend>Address</legend>
+														<div class="col s12">
+															<fieldset>
+																<legend>
+																	<label for="edit_home_address_type">Home</label>
+																</legend>
+																<div class="col s12 m12 l12">
+																	<label for="edit_home_address">Address</label>
+																	<input id="edit_home_address" name="home_address"
+																		type="text"
+																		placeholder="for ex. 31/C, Ramkutir Chs, C wing, 3rd floor">
+																</div>
+																<div class="col s12 m4 l4">
+																	<label for="edit_home_street">Street</label>
+																	<input id="edit_home_street" name="edit_home_street"
+																		type="text"
+																		placeholder="for ex. Pandit Gunidas Road">
+																</div>
+																<div class="col s12 m4 l4">
+																	<label for="edit_home_city">City</label>
+																	<input id="edit_home_city" name="edit_home_city"
+																		type="text" placeholder="for ex. Mumbai">
+																</div>
+																<div class="col s12 m4 l4 mb-4">
+																	<label for="edit_home_area">Area</label>
+																	<select class="browser-default" id="edit_home_area"
+																		name="edit_home_area" searchable>
+																		<option selected disabled>Choose</option>
+
+																	</select>
+																</div>
+																<div class="col s12 m4 l4">
+																	<label for="edit_home_zipcode">Zip Code</label>
+																	<input id="edit_home_zipcode"
+																		name="edit_home_zipcode" type="text"
+																		placeholder="for ex. 400016">
+																</div>
+																<div class="col s12 m4 l4">
+																	<label for="edit_home_state">State</label>
+																	<select class="browser-default" id="edit_home_state"
+																		name="edit_home_state">
+																		<option selected disabled>Choose</option>
+																	</select>
+																</div>
+																<div class="col s12 m4 l4">
+																	<label for="edit_home_country">Country</label>
+																	<input id="edit_home_country"
+																		name="edit_home_country" type="text"
+																		placeholder="for ex. India">
+																</div>
+															</fieldset>
+														</div>
+														<div class="col s12">
+															<fieldset>
+																<legend>
+																	<label for="edit_office_address_type">Office</label>
+																</legend>
+																<div class="col s12 m12 l12">
+																	<label for="edit_office_address">Address</label>
+																	<input id="edit_office_address"
+																		name="edit_office_address" type="text">
+																</div>
+																<div class="col s12 m4 l4">
+																	<label for="edit_office_street">Street</label>
+																	<input id="edit_office_street"
+																		name="edit_office_street" type="text">
+																</div>
+																<div class="col s12 m4 l4">
+																	<label for="edit_office_city">City</label>
+																	<input id="edit_office_city" name="edit_office_city"
+																		type="text">
+																</div>
+																<div class="col s12 m4 l4 mb-4">
+																	<label for="edit_office_area">Area</label>
+																	<select class="browser-default"
+																		id="edit_office_area" name="edit_office_area"
+																		searchable>
+																		<option selected disabled>Choose</option>
+
+																	</select>
+																</div>
+																<div class="col s12 m4 l4">
+																	<label for="edit_office_zipcode">Zip Code</label>
+																	<input id="edit_office_zipcode"
+																		name="edit_office_zipcode" type="text">
+																</div>
+																<div class="col s12 m4 l4">
+																	<label for="edit_office_state">State</label>
+																	<select class="browser-default"
+																		id="edit_office_state" name="edit_office_state">
+																		<option selected disabled>Choose</option>
+																	</select>
+																</div>
+																<div class="col s12 m4 l4">
+																	<label for="edit_office_country">Country</label>
+																	<input id="edit_office_country"
+																		name="edit_office_country" type="text">
+																</div>
+															</fieldset>
+														</div>
+														<div class="col s12">
+															<fieldset>
+																<legend>
+																	<label for="edit_other_address_type">Other</label>
+																</legend>
+																<div class="col s12 m12 l12">
+																	<label for="edit_other_address">Address</label>
+																	<input id="edit_other_address"
+																		name="edit_other_address" type="text">
+																</div>
+																<div class="col s12 m4 l4">
+																	<label for="edit_other_street">Street</label>
+																	<input id="edit_other_street"
+																		name="edit_other_street" type="text">
+																</div>
+																<div class="col s12 m4 l4">
+																	<label for="edit_other_city">City</label>
+																	<input id="edit_other_city" name="edit_other_city"
+																		type="text">
+																</div>
+																<div class="col s12 m4 l4 mb-4">
+																	<label for="edit_other_area">Area</label>
+																	<select class="browser-default" id="edit_other_area"
+																		name="edit_other_area" searchable>
+																		<option selected disabled>Choose</option>
+
+																	</select>
+																</div>
+																<div class="col s12 m4 l4">
+																	<label for="edit_other_zipcode">Zip Code</label>
+																	<input id="edit_other_zipcode"
+																		name="edit_other_zipcode" type="text">
+																</div>
+																<div class="col s12 m4 l4">
+																	<label for="edit_other_state">State</label>
+																	<select class="browser-default"
+																		id="edit_other_state" name="edit_other_state">
+																		<option selected disabled>Choose</option>
+																	</select>
+																</div>
+																<div class="col s12 m4 l4">
+																	<label for="edit_other_country">Country</label>
+																	<input id="edit_other_country"
+																		name="edit_other_country" type="text">
+																</div>
+															</fieldset>
+														</div>
+													</fieldset>
+												</div>
+												<div class="col s12 m12 l12">
+													<label for="edit_contact_remark">Remark</label>
+													<textarea id="edit_contact_remark" name="edit_contact_remark"
+														class="materialize-textarea"></textarea>
+												</div>
+												<div class="col s12 m6 l6">
+													<label for="edit_location">Location</label>
+															<input id="edit_location" name="edit_location" type="text" disabled>
+													<!-- <select class="browser-default" id="edit_location"
+														name="edit_location" required="required">
+														<option selected disabled>Choose</option>
+														<option value="Mumbai">Mumbai</option>
+														<option value="Pune">Pune</option>
+													</select>
+													<div class="input-field"></div> -->
+												</div>
+												<div class="col s12 m6 l6">
+													<label for="edit_contact_status">Contact Status</label>
+													<select class="browser-default edit_contact_status" id="edit_contact_status" name="edit_contact_status">
+														<option value="" selected>Choose</option>
+														<option value="Attempted to contact">Attempted to contact</option>
+														<option value="Contacted">Contacted</option>
+														<option value="Invalid number">Invalid number</option>
+														<option value="Wrong number">Wrong number</option>
+														<option value="Call Back">Call Back</option>
+														<option value="Not Interested">Not Interested</option>
+														<option value="Out of Criteria">Out of Criteria</option>
+														<option value="Interested">Interested</option>
+													</select>
+													<div class="input-field"></div>
+												</div>
+												<div id="edit_not-interested-description">
+													<div class="input-field col s12 m12 l12">
+														<label for="edit_contact_notinterested">Description<span class="asterik">*</span></label>
+														<textarea id="edit_contact_notinterested" name="edit_contact_notinterested" class="materialize-textarea validate"></textarea>
+													</div>
+												</div>
+												<div id="edit_outofcriteria-description">
+													<div class="input-field col s12 m12 l12">
+														<label for="edit_contact_outofcriteria">Description<span class="asterik">*</span></label>
+														<textarea id="edit_contact_outofcriteria" name="edit_contact_outofcriteria" class="materialize-textarea validate"></textarea>
+													</div>
+												</div>
+											</div>
+										</fieldset>
+										<div class="input-field col s12">
+											<button class="btn waves-effect waves-light ahbtncolor submit" type="submit"
+												name="action" id="customer_form_submit">Submit
+												<i class="material-icons right">send</i>
+											</button>
+										</div>
+									</div>
+									<!-- End - Add New Lead Form -->
+								</form>
+							</li>
+						</ul>
+						<ul id="contactfollowup-slide-out" class="side-nav rightside-navigation common-slide-out"
+							style="overflow-y: auto;">
+							<li class="li-hover">
+								<form method="POST" id="create_contact_followup">
+									<!-- Start - Schedule follow-up Form -->
+									<div class="addnewleadform">
+										Contact ID: <span class="contact_id"></span>
+										<h5>Follow-up</h5>
+										<fieldset>
+											<legend>Follow-up data</legend>
+											<div class="row">
+												<div class="col s12 m12 l12">
+													<label for="contact_follow_up_date">Follow-up Date</label>
+													<input class="default_todaydate" type="date"
+														id="contact_follow_up_date" name="contact_follow_up_date"
+														disabled>
+												</div>
+											</div>
+											<div class="row">
+												<div class="input-field col s12 m12 l12">
+													<label for="contact_follow_up_remark">Remarks<span
+															class="asterik">*</span></label>
+													<textarea id="contact_follow_up_remark"
+														name="contact_follow_up_remark"
+														class="materialize-textarea validate"
+														required="required"></textarea>
+												</div>
+											</div>
+										</fieldset>
+										<fieldset class="nfd">
+											<legend>Next Follow-up</legend>
+											<div class="row">
+												<div class="col s12 m3 l3">
+													<label for="contact_nfd_date2">Next Folloup-up Date<span
+															class="asterik">*</span></label>
+													<input type="text" id="contact_nfd_date2" name="contact_nfd_date2"
+														required>
+												</div>
+												<div class="col s12 m3 l3">
+													<label for="contact_follow_up_time_interval2">Time<span
+															class="asterik">*</span></label>
+													<input type="text" id="contact_follow_up_time_interval2"
+														name="contact_follow_up_time_interval2" class="timepicker"
+														required>
+												</div>
+												<div class="col s12 m4 l4">
+													<label for="followup_contact_status">Contact Status</label>
+													<select class="browser-default" id="followup_contact_status"
+														name="followup_contact_status">
+														<option selected disabled>Choose</option>
+														<option value="Attempted to contact">Attempted to contact
+														</option>
+														<option value="Contacted">Contacted</option>
+														<option value="Invalid number">Invalid number</option>
+														<option value="Wrong number">Wrong number</option>
+														<option value="Call Back">Call Back</option>
+														<!-- <option value="Not Interested">Not Interested</option> -->
+														<!-- <option value="Out of Criteria">Out of Criteria</option> -->
+														<option value="Interested">Interested</option>
+													</select>
+												</div>
+											</div>
+										</fieldset>
+										<div class="row">
+											<div class="input-field col s12 m12 l12">
+												<button class="btn waves-effect waves-light ahbtncolor submit"
+													type="submit" name="action">Submit
+													<i class="material-icons right">send</i>
+												</button>
+											</div>
+										</div>
+									</div>
+									<!-- End - Schedule follow-up Form -->
+								</form>
+							</li>
+						</ul>
+						<ul id="sendproposalform-slide-out" class="side-nav rightside-navigation common-slide-out"
+							style="overflow-y: auto;">
+							<li class="li-hover">
+								<form method="POST" id="sendproposalform">
+									<!-- Start - Add New Lead Form -->
+									<div class="addnewleadform">
+										Contact ID: <span class="contact_id"></span>
+										<h5>Send Proposal</h5>
+										<div class="col s12 m12 l12">
+											<div id="proposal_pdf_attachmet"></div>
+											<div id="inclusion_attachmet"></div>
+											<div id="exclusion_attachmet"></div>
+
+											<!-- <p>
+												     <input class="with-gap" name="group1" type="radio" id="proposal_pdf" required  />
+												     <label for="proposal_pdf"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> Proposal</label>
+												   </p> -->
+											<!-- <p>
+												     <input class="with-gap" name="group2" type="radio" id="inclusion_exclusion1" required  />
+												     <label for="inclusion_exclusion1"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> Inclusion/Exclusion List 1</label>
+												   </p> -->
+											<!-- <p>
+												     <input class="with-gap" name="group2" type="radio" id="inclusion_exclusion2"  />
+												     <label for="inclusion_exclusion2"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> Inclusion/Exclusion List 2 (Air Suspension) </label>
+												   </p> -->
+											<!-- <p>
+												     <input class="with-gap" name="group3" type="radio" id="send_to_customer" required  />
+												     <label for="send_to_customer"><i class="fa fa-envelope-o" aria-hidden="true"></i> Send Mail to the customer</label>
+												   </p> -->
+										</div>
+										<!-- class="upload_vehicle_registration"-->
+										<!-- <div class="col s12 m6 l6 mt-5 eval_completed">
+											<label for="brand_specific_attachment"> Brand Specific Attachment</label>
+											<div class="file-field input-field col s12">
+												<div class="btn">
+													<span>File</span> 
+													<input type="file" data-name="brand_specific_attachment" accept="application/pdf" data-attachtype="pdf">
+												</div>
+												<div class="file-path-wrapper">
+													<input class="file-path validate" type="text">
+												</div>
+											</div>
+										</div> -->
+										<div class="row">
+											<div class="input-field col s12 m12 l12">
+												<button class="btn waves-effect waves-light ahbtncolor submit"
+													type="submit" name="action" id="send_proposal_submit">Send
+													<i class="material-icons right">send</i>
+												</button>
+											</div>
+										</div>
+									</div>
+								</form>
+							</li>
+						</ul>
+						<ul id="filterform-slide-out" class="side-nav rightside-navigation common-slide-out"
+							style="overflow-y: auto;">
+							<li class="li-hover">
+								<form method="get" id="filtercontactform">
+
+									<!-- Start - Filter Form -->
+									<div class="filterform">
+										<h5>Filter</h5>
+										<div class="row">
+											<div class="col s12 m3 l3">
+												<label for="filter_from_created_date">From Created Date</label>
+												<input id="filter_from_created_date" name="filter_from_created_date"
+													type="date" class="validate mb-0">
+											</div>
+											<div class="col s12 m3 l3">
+												<label for="filter_to_created_date">To Created Date</label>
+												<input id="filter_to_created_date" name="filter_to_created_date"
+													type="date" class="validate mb-0">
+											</div>
+											<div class="input-field col s12 m3 l3">
+												<label for="filter_first_name">Customer First Name</label>
+												<input id="filter_first_name" name="filter_first_name" type="text"
+													class="validate">
+											</div>
+											<div class="input-field col s12 m3 l3">
+												<label for="filter_last_name">Customer Last Name</label>
+												<input id="filter_last_name" name="filter_last_name" type="text"
+													class="validate">
+											</div>
+											<div class="input-field col s12 m3 l3">
+												<label for="filter_email_id">Email Id</label>
+												<input id="filter_email_id" name="filter_email_id" type="text">
+											</div>
+											<div class="input-field col s12 m3 l3">
+												<label for="filter_company_name">Company Name</label>
+												<input id="filter_company_name" name="filter_company_name" type="text">
+											</div>
+											<div class="input-field col s12 m3 l3">
+												<label for="filter_mobile_number">Mobile Number</label>
+												<input id="filter_mobile_number" name="filter_mobile_number"
+													type="number" onkeypress="if(this.value.length==10) return false;"
+													maxlength="10" class="validate">
+											</div>
+											<div class="col s12 m3 l3">
+												<label for="filter_contact_status">Contact Status</label>
+												<select class="browser-default" id="filter_contact_status"
+													name="filter_contact_status">
+													<option></option>
+													<option value="Attempted to contact">Attempted to contact</option>
+													<option value="Contacted">Contacted</option>
+													<option value="Invalid number">Invalid number</option>
+													<option value="Wrong number">Wrong number</option>
+													<option value="Call Back">Call Back</option>
+													<option value="Not Interested">Not Interested</option>
+													<option value="Out of Criteria">Out of Criteria</option>
+													<option value="Interested">Interested</option>
+												</select>
+												<div class="input-field"></div>
+											</div>
+										</div>
+										<div class="input-field col s12">
+											<button class="btn waves-effect waves-light ahbtncolor submit mr-2"
+												type="submit" name="action" id="apply_filter">Apply
+												<i class="material-icons right">send</i>
+											</button>
+
+											<button class="btn waves-effect waves-light ahbtncolor submit" type="reset"
+												name="action" id="apply_filter">Clear
+												<i class="material-icons right">close</i>
+											</button>
+										</div>
+									</div>
+									<!-- End - Filter Form -->
+								</form>
+							</li>
+						</ul>
+					</aside>
+					<!-- END RIGHT SIDEBAR NAV-->
+				</div>
+				<!-- END WRAPPER -->
+		</div>
+	</div>
+	</div>
+	</section>
+	</div>
+	</div>
+	<!-- END MAIN -->
+	<!-- //////////////////////////////////////////////////////////////////////////// -->
+	<!-- <embed type="text/html" src="footer.html"> -->
+	<!-- START FOOTER -->
+	<footer class="page-footer ahthemecolor">
+		<div class="footer-copyright">
+			<div class="container">
+				<div class="row mb-0">
+					<div class="col s12 m7 l7">
+						<span class="right">
+							Copyright Edel Assurance LLP ©
+							<script type="text/javascript">
+								document.write(new Date().getFullYear());
+							</script>
+						</span>
+					</div>
+					<div class="col s12 m5 l5">
+						<span class="right">
+							Designed &amp; Developed by Bluetick Consultants
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- ================================================
+			Scripts
+			================================================ -->
+	<!-- jQuery Library -->
+	<script type="text/javascript" src="static/js/jquery-3.2.1.min.js"></script>
+	<!--materialize js-->
+	<script type="text/javascript" src="static/js/materialize.min.js"></script>
+	<!-- scriptjs -->
+
+	<script type="text/javascript" src="static/js/baseurl.js"></script>
+
+	<script type="text/javascript" src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+	<!--plugins.js - Some Specific JS codes for Plugin Settings-->
+	<script type="text/javascript" src="static/js/plugins.js"></script>
+	<script src="https://trentrichardson.com/examples/timepicker/jquery-ui-timepicker-addon.js"></script>
+	<!-- <script type="text/javascript" src="static/js/secodary_email.js"></script> -->
+	<!--scrollbar-->
+	<script type="text/javascript" src="static/js/perfect-scrollbar.min.js"></script>
+
+
+	<script type="text/javascript" src="static/js/storage.js"></script>
+
+	<script type="text/javascript" src="static/js/token.js"></script>
+
+	<script type="text/javascript" src="static/js/contacts.js"></script>
+
+	<script type="text/javascript" src="static/js/role.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('input.timepicker').timepicker({});
+		});
+
+		// $("#secodary_email_id").multiEmails()
+		// $("#edit_second_email").multiEmails()
+
+		$('#secodary_email_id,#edit_second_email').on('keypress', function(e) {
+            if (e.which == 32){
+                return false;
+            }
+        });
+	</script>
+
+
+</body>
+
+</html>

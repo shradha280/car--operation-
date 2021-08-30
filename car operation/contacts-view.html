@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="msapplication-tap-highlight" content="no">
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<title>Edel Assurance LLP</title>
+		<!-- Favicons-->
+		<link rel="icon" href="static/images/favicon.ico" sizes="32x32">
+		<!-- Favicons-->
+		<link rel="apple-touch-icon-precomposed" href="static/images/favicon.ico">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<!-- For iPhone -->
+		<meta name="msapplication-TileColor" content="#00bcd4">
+		<meta name="msapplication-TileImage" content="static/images/mstile-144x144.png">
+		<!-- For Windows Phone -->
+		<!-- CORE CSS-->
+		<link href="static/css/materialize.css" type="text/css" rel="stylesheet">
+		<!-- Custome CSS-->
+		<link href="static/css/custom.css" type="text/css" rel="stylesheet">
+		<link href="static/css/style.css" type="text/css" rel="stylesheet">
+		<link href="static/css/theme.css" type="text/css" rel="stylesheet">
+		<!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
+    	<link href="static/css/perfect-scrollbar.css" type="text/css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+	</head>
+	<body>
+
+		<!-- Attachment Preview Structure -->
+	<div id="modal1" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <h4 class="view-modal"></h4>
+            <div class="attachment-box">
+				<div class="view-attachment"></div>
+                    <!-- <embed src="static/images/sample.pdf" style="width: 100%; height: 100%; position: absolute; left: 0; top: 0;"> -->
+                    <!-- <img src="" alt=""/> -->
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+        </div>
+    </div>
+
+		<header id="header" class="page-topbar">
+			<!-- start header nav-->
+			<div class="navbar-fixed">
+				<nav class="navbar-color ahthemecolor gradient-shadow">
+					<div class="nav-wrapper">
+						<ul class="right hide-on-med-and-down fixedonmob">
+							<li class="last_login">
+								<p>Welcome <span class="login_name_txt_white display_username"></span></p>
+								<p class="login_name_txt_white"><em id="datetime"></em></p>
+							</li>
+							<li>
+								<a href="javascript:void(0);" class="waves-effect waves-block waves-light profile-button" data-activates="profile-dropdown">
+								<span class="avatar-status avatar-online">
+								<img src="static/images/avatar-7.png" alt="avatar">
+								<i></i>
+								</span>
+								</a>
+								<ul id="profile-dropdown" class="dropdown-content">
+									<li class="mobuser">
+										<a class="grey-text text-darken-1">
+										<i class="material-icons">account_circle</i><span class="display_username"></span></a>
+									</li>
+									<li>
+										<a id="logout_link" class="grey-text text-darken-1">
+										<i class="material-icons">keyboard_tab</i> Logout</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</header>
+		<!-- Start Page Loading -->
+		<div id="loader-wrapper">
+			<div id="loader"></div>
+			<div class="loader-section section-left"></div>
+			<div class="loader-section section-right"></div>
+		</div>
+		<!-- End Page Loading -->
+		<!-- //////////////////////////////////////////////////////////////////////////// -->
+		<!-- START HEADER -->
+		<!-- END HEADER -->
+		<!-- //////////////////////////////////////////////////////////////////////////// -->
+		<!-- START MAIN -->
+		<div id="main">
+			<div class="wrapper">
+				<!-- START LEFT SIDEBAR NAV-->
+				<aside id="left-sidebar-nav" class="nav-expanded nav-lock nav-collapsible">
+					<div class="brand-sidebar">
+						<h1 class="logo-wrapper">
+							<a href="#" class="brand-logo darken-1">
+							<img src="static/images/edel-assurance-logo.svg" alt="materialize logo" class="logofordesktop">
+							<img src="static/images/edel-assurance-logo.svg" alt="materialize logo" class="logoformobile">
+							</a>
+						</h1>
+					</div>
+					<ul id="slide-out" class="leftbarthemecolor side-nav fixed leftside-navigation">
+						<li class="report_dashboard">
+							<a href="dashboard.html">
+							<i class="material-icons">dashboard</i>
+							<span class="nav-text">Dashboard</span>
+							</a>
+						</li>
+						<li class="hos-target">
+							<a href="target.html">
+							<i class="material-icons">dashboard</i>
+							<span class="nav-text">Targets</span>
+							</a>
+						</li>
+						<li class="user-target my-target">
+							<a href="user-target.html">
+							<i class="material-icons">dashboard</i>
+							<span class="nav-text">My Target</span>
+							</a>
+						</li>
+						<li class="no-padding">
+							<ul class="collapsible" data-collapsible="accordion">
+								<li class="bold contacts-listing">
+									<a class="collapsible-header waves-effect waves-cyan active">
+									<i class="material-icons">verified_user</i>
+									<span class="nav-text">Contacts</span>
+									</a>
+									<div class="collapsible-body">
+										<ul>
+											<li class="active">
+												<a href="contacts-listing.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="acc_all_list">All ()</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="acc_todays_followup">Today's Followup ()</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="acc_pending_followup">Pending Followup ()</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="future_followup">Future Followup ()</span>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</li>
+								<li class="lead-listing">
+									<a class="collapsible-header waves-effect waves-cyan active">
+									<i class="material-icons">verified_user</i>
+									<span class="nav-text">Leads</span>
+									</a>
+									<div id="leftstatus" class="collapsible-body">
+										<ul>
+											<li>
+												<a href="leads-listing.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="all_lead_count">All ()</span>
+												</a>
+											</li>
+											<div class="followups">
+											<li>
+												<a href="#">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="followups_leads">Today's Followup ()</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="pending_followups">Pending Followup</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="future_followups">Future Followup</span>
+												</a>
+											</li>
+											<li class="not-updated-leads">
+												<a href="#">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="not_updated">Not Updated Leads ()</span>
+												</a>
+											</li>
+											</div>
+										</ul>
+									</div>
+								</li>
+								<li class="eval_scheduled">
+									<a class="collapsible-header waves-effect waves-cyan active">
+									<i class="material-icons">verified_user</i>
+									<span class="nav-text">Evaluation Scheduled</span>
+									</a>
+									<div id="leftstatus" class="collapsible-body">
+										<ul>
+											<li>
+												<a href="all-evaluation.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="all_lead_count">All (<span class="all_eval_count"></span>)</span>
+												</a>
+											</li>
+											<li>
+												<a href="today-evaluation.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="followups_leads">Today's (<span class="today_eval_count"></span>)</span>
+												</a>
+											</li>
+											<li>
+												<a href="pending-evaluation.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="pending_followups">Pending (<span class="pending_eval_count"></span>)</span>
+												</a>
+											</li>
+											<li>
+												<a href="future-evaluation.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="future_followups">Future (<span class="future_eval_count"></span>)</span>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li class="eval-tracker">
+							<a href="evaluation-tracker.html">
+							<i class="material-icons">schedule</i>
+							<span class="nav-text">Evaluation Tracker</span>
+							</a>
+						</li>
+						<li class="eval-report">
+							<a href="reports.html">
+							<i class="material-icons">dashboard</i>
+							<span class="nav-text">Reports</span>
+							</a>
+						</li>
+					</ul>
+					<a href="#" data-activates="slide-out"
+						class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only slideoutnavbtn">
+					<i class="material-icons">menu</i>
+					</a>
+				</aside>
+				<!-- END LEFT SIDEBAR NAV-->
+				<!-- //////////////////////////////////////////////////////////////////////////// -->
+				            <!-- START CONTENT -->
+            <section id="content">
+
+                <!--start container-->
+                <div class="container">
+                    <div class="row mrgntopbtm10">
+                        <div class="col s12 m12 l12">
+                            <div class="viewform">
+                                <div class="view-row">
+                                    <h5 class="left">View Contact</h5>
+                                    <!-- <a href="contacts-listing.html" id="back_to_list" title="back to list">
+                                        <span class="backtolist"><i class="material-icons">subdirectory_arrow_left</i>
+                                            <div class="left">back to list</div>
+                                        </span>
+                                    </a> -->
+									<a onclick="if(localStorage.getItem('cpath')){ location.href = localStorage.getItem('cpath');} else {location.href = '/contacts-listing.html';}" title="back to list">
+										<span class="backtolist"><i class="material-icons">subdirectory_arrow_left</i>
+                                            <div class="left">back to list</div>
+                                        </span>
+									</a>
+                                </div>
+                                <div class="col s12 m12 l9">
+                                    <fieldset>
+                                        <legend>Person Account Details</legend>
+                                        <div class="col s12 m12 l12">
+                                        	<div class="col s12 m6 l6">
+                                                <div class="col s6 m6 l6">
+                                                    <label for="view_contact_id">Id:</label>
+                                                </div>
+                                                <div class="col s6 m6 l6">
+                                                    <input id="view_contact_id" name="view_contact_id" type="text" value="" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="col s12 m6 l6">
+                                                <div class="col s6 m6 l6">
+                                                    <label for="view_customer_type">Type:</label>
+                                                </div>
+                                                <div class="col s6 m6 l6">
+                                                    <input id="view_customer_type" name="view_customer_type" type="text" value="" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="col s12 m6 l6">
+                                                <div class="col s6 m6 l6">
+                                                    <label for="view_customer_title">Title:</label>
+                                                </div>
+                                                <div class="col s6 m6 l6">
+                                                    <input id="view_customer_title" name="view_customer_title" type="text" value="" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="col s12 m6 l6">
+                                                <div class="col s6 m6 l6">
+                                                    <label for="view_first_name">Customer First Name:</label>
+                                                </div>
+                                                <div class="col s6 m6 l6">
+                                                    <input id="view_first_name" name="view_first_name" type="text" value="" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="col s12 m6 l6">
+                                                <div class="col s6 m6 l6">
+                                                    <label for="view_last_name">Customer Last Name:</label>
+                                                </div>
+                                                <div class="col s6 m6 l6">
+                                                    <input id="view_last_name" name="view_last_name" type="text" value="" disabled>
+                                                </div>
+                                            </div>
+
+                                            <div class="col s12 m6 l6">
+                                                <div class="col s6 m6 l6">
+                                                    <label for="view_company_name">Company Name:</label>
+                                                </div>
+                                                <div class="col s6 m6 l6">
+                                                    <input id="view_company_name" name="view_company_name" type="text" value="" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="col s12 m6 l6">
+                                                <div class="col s6 m6 l6">
+                                                    <label for="view_mobile_number">Mobile Number:</label>
+                                                </div>
+                                                <div class="col s6 m6 l6">
+                                                    <input id="view_mobile_number" name="view_mobile_number" type="text" value="" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="col s12 m6 l6">
+                                                <div class="col s6 m6 l6">
+                                                    <label for="view_mobile_number">&nbsp;</label>
+                                                </div>
+                                                <div class="col s6 m6 l6">
+
+                                                </div>
+                                            </div>
+                                            <fieldset>
+                                            	<legend>Email Id</legend>
+                                            	<div class="col s12">
+	                                                <div class="col s6 m3 l3">
+	                                                    <label for="view_primary_email_id">Primary:</label>
+	                                                </div>
+	                                                <div class="col s6 m9 l9">
+	                                                    <input id="view_primary_email_id" name="view_primary_email_id" type="text" value="" disabled>
+	                                                </div>
+	                                            </div>
+	                                            <div class="col s12">
+	                                                <div class="col s6 m3 l3">
+	                                                    <label for="view_secondary_email_id">Secondary:</label>
+	                                                </div>
+	                                                <div class="col s6 m9 l9">
+	                                                    <input id="view_secondary_email_id" name="view_secondary_email_id" type="text" value="" disabled>
+	                                                </div>
+	                                            </div>
+                                        	</fieldset>
+                                        	<fieldset>
+                                            	<legend>Address</legend>
+                                            	<div class="col s12 m4 l4">
+                                            		<label for="view_home_address" class="label_address">Home:</label>
+                                            		<textarea class="materialize-textarea" id="view_home_address" name="view_home_address" disabled>
+	                                                </textarea>
+	                                            </div>
+	                                            <div class="col s12 m4 l4">
+	                                            	<label for="view_office_address" class="label_address">Office:</label>
+	                                            	<textarea class="materialize-textarea" id="view_office_address" name="view_office_address" disabled>
+	                                                </textarea>
+	                                            </div>
+	                                            <div class="col s12 m4 l4">
+	                                            	<label for="view_other_address" class="label_address">Other:</label>
+	                                            	<textarea class="materialize-textarea" id="view_other_address" name="view_other_address" disabled>
+	                                                </textarea>
+	                                            </div>
+                                            </fieldset>
+                                            <div class="col s6 m6 l6">
+                                                <div class="col s6 m6 l6">
+                                                    <label for="view_location">Location:</label>
+                                                </div>
+                                                <div class="col s6 m6 l6">
+                                                    <input id="view_location" name="view_location" type="text" value="" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="col s6 m6 l6">
+                                                <div class="col s6 m6 l6">
+                                                    <label for="view_contact_status">Contact Status:</label>
+                                                </div>
+                                                <div class="col s6 m6 l6">
+                                                    <input id="view_contact_status" name="view_contact_status" type="text" value="" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="col s12 m12 l12">
+                                                <div class="col s6 m3 l3">
+                                                    <label for="view_cotact_remark">Remark:</label>
+                                                </div>
+                                                <div class="col s6 m9 l9">
+                                                    <textarea class="materialize-textarea" id="view_cotact_remark" name="view_cotact_remark" disabled></textarea>
+                                                </div>
+                                            </div>
+											<div class="col s12 m6 l6">
+												<label for="view_not_interested" class="label_address">Not Interested Reason:</label>
+												<textarea class="materialize-textarea" id="view_not_interested" name="view_not_interested" disabled>
+												</textarea>
+											</div>
+											<div class="col s12 m6 l6">
+												<label for="view_outof_criteria" class="label_address">Out Of Criteria Reason:</label>
+												<textarea class="materialize-textarea" id="view_outof_criteria" name="view_outof_criteria" disabled>
+												</textarea>
+											</div>
+                                        </div>
+                                    </fieldset>
+                                    <fieldset>
+                                        <legend>Warraty Policy Details</legend>
+                                        <div class="col s12 m12 l12">
+                                            <div class="col s12 m6 l6">
+                                            	<div class="col s6 m6 l6">
+                                                    <label for="policy_contract_no">Cotract Number:</label>
+                                                </div>
+                                                <div class="col s6 m6 l6">
+                                                    <input id="policy_contract_no" name="policy_contract_no" type="text" value="" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="col s12 m6 l6">
+                                            	<div class="col s6 m6 l6">
+                                                    <label for="policy_payment_received_date">Date:</label>
+                                                </div>
+                                                <div class="col s6 m6 l6">
+                                                    <input id="policy_payment_received_date" name="policy_payment_received_date" type="text" value="" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="col s12 m6 l6">
+                                            	<div class="col s6 m6 l6">
+                                                    <label for="policy_vin_number">VIN Number:</label>
+                                                </div>
+                                                <div class="col s6 m6 l6">
+                                                    <input id="policy_vin_number" name="policy_vin_number" type="text" value="" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="col s12 m6 l6">
+                                            	<div class="col s6 m6 l6">
+                                                    <label for="policy_engine_number">Engine Number:</label>
+                                                </div>
+                                                <div class="col s6 m6 l6">
+                                                    <input id="policy_engine_number" name="policy_engine_number" type="text" value="" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="col s12 m6 l6">
+                                            	<fieldset>
+                                            		<legend>Contract Start</legend>
+                                            		<div class="col s12">
+	                                            		<div class="col s6 m6 l6">
+		                                                    <label for="policy_start_km">Mileage:</label>
+		                                                </div>
+		                                                <div class="col s6 m6 l6">
+		                                                    <input id="policy_start_km" name="policy_start_km" type="text" value="" disabled>
+		                                                </div>
+	                                                </div>
+	                                                <div class="col s12">
+	                                            		<div class="col s6 m6 l6">
+		                                                    <label for="policy_start_date">Date:</label>
+		                                                </div>
+		                                                <div class="col s6 m6 l6">
+		                                                    <input id="policy_start_date" name="policy_start_date" type="text" value="" disabled>
+		                                                </div>
+	                                                </div>
+	                                                <div class="col s12">
+	                                            		<div class="col s6 m6 l6">
+		                                                    <label for="policy_car_make">Make:</label>
+		                                                </div>
+		                                                <div class="col s6 m6 l6">
+		                                                    <input id="policy_car_make" name="policy_car_make" type="text" value="" disabled>
+		                                                </div>
+	                                                </div>
+	                                                <div class="col s12">
+	                                            		<div class="col s6 m6 l6">
+		                                                    <label for="policy_car_variant">Variant:</label>
+		                                                </div>
+		                                                <div class="col s6 m6 l6">
+		                                                    <input id="policy_car_variant" name="policy_car_variant" type="text" value="" disabled>
+		                                                </div>
+	                                                </div>
+	                                                <div class="col s12">
+	                                            		<div class="col s6 m6 l6">
+		                                                    <label for="policy_reg_date">Registration Date:</label>
+		                                                </div>
+		                                                <div class="col s6 m6 l6">
+		                                                    <input id="policy_reg_date" name="policy_reg_date" type="text" value="" disabled>
+		                                                </div>
+	                                                </div>
+	                                                <div class="col s12">
+	                                            		<div class="col s6 m6 l6">
+		                                                    <label for="policy_insurance_declare_value_amt">IDV:</label>
+		                                                </div>
+		                                                <div class="col s6 m6 l6">
+		                                                    <input id="policy_insurance_declare_value_amt" name="policy_insurance_declare_value_amt" type="text" value="" disabled>
+		                                                </div>
+	                                                </div>
+                                            	</fieldset>
+                                            </div>
+                                            <div class="col s12 m6 l6">
+                                            	<fieldset>
+                                            		<legend>Contract Expiry</legend>
+                                            		<div class="col s12">
+	                                            		<div class="col s6 m6 l6">
+		                                                    <label for="policy_end_km">Mileage:</label>
+		                                                </div>
+		                                                <div class="col s6 m6 l6">
+		                                                    <input id="policy_end_km" name="policy_end_km" type="text" value="" disabled>
+		                                                </div>
+	                                                </div>
+	                                                <div class="col s12">
+	                                            		<div class="col s6 m6 l6">
+		                                                    <label for="policy_end_date">Date:</label>
+		                                                </div>
+		                                                <div class="col s6 m6 l6">
+		                                                    <input id="policy_end_date" name="policy_end_date" type="text" value="" disabled>
+		                                                </div>
+	                                                </div>
+	                                                <div class="col s12">
+	                                            		<div class="col s6 m6 l6">
+		                                                    <label for="policy_car_model">Model:</label>
+		                                                </div>
+		                                                <div class="col s6 m6 l6">
+		                                                    <input id="policy_car_model" name="policy_car_model" type="text" value="" disabled>
+		                                                </div>
+	                                                </div>
+	                                                <div class="col s12">
+	                                            		<div class="col s6 m6 l6">
+		                                                    <label for="policy_reg_no">Registration No.:</label>
+		                                                </div>
+		                                                <div class="col s6 m6 l6">
+		                                                    <input id="policy_reg_no" name="policy_reg_no" type="text" value="" disabled>
+		                                                </div>
+	                                                </div>
+	                                                <div class="col s12">
+	                                            		<div class="col s6 m6 l6">
+		                                                    <label for="policy_mfg_date">Manufacture Date:</label>
+		                                                </div>
+		                                                <div class="col s6 m6 l6">
+		                                                    <input id="policy_mfg_date" name="policy_mfg_date" type="text" value="" disabled>
+		                                                </div>
+	                                                </div>
+	                                                <div class="col s12">
+	                                            		<div class="col s6 m6 l6">
+		                                                    <label for="policy_final_price">Price:</label>
+		                                                </div>
+		                                                <div class="col s6 m6 l6">
+		                                                    <input id="policy_final_price" name="policy_final_price" type="text" value="" disabled>
+		                                                </div>
+	                                                </div>
+                                            	</fieldset>
+                                            </div>
+                                            <div class="col s12">
+                                            	<div class="col s6 m3 l3">
+                                                    <label for="policy_additional_remarks">Additioal Remarks:</label>
+                                                </div>
+                                                <div class="col s6 m9 l9">
+                                                    <textarea class="materialize-textarea" id="policy_additional_remarks" name="policy_additional_remarks" disabled></textarea>
+                                                </div>
+                                            </div>
+											<div class="col s12">
+												<div class="col s6 m3 l3">
+													<label for="warranty_pdf_url">Warranty PDF URL:</label>
+												</div>
+												<div class="col s6 m9 l9">
+													<div id="warranty_attachment"></div>
+												</div>
+											</div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <div class="col s12 m12 l3">
+			                      <ul class="tabs">
+			                        <li class="tab col s3"><a class="active" href="#test1">Follow-ups</a></li>
+			                        <li class="tab col s3"><a href="#test2">Send<br/>Proposal</a></li>
+			                      </ul>
+			                      <div id="test1" class="col s12 description">
+									  <div id="contact-followup"></div>
+	                              </div>
+			                      <div id="test2" class="col s12 description">
+									<div id="send_proposal"></div>
+									<div id="proposal_attachment"></div>
+									
+			                          <!-- <div class="cust-followup-wrap">
+		                                 <p class="view-date left"><strong>Sent Date:</strong> 4/4/2021</p>
+		                                 <p class="view-date left"><strong>Proposal PDF:</strong> Yes/No</p>
+		                                 <p class="view-date"><strong>Inclusion/Exclusion List 1:</strong> Yes/No</p>
+		                                 <p class="view-date"><strong>Inclusion/Exclusion List 2:</strong> Yes/No</p>
+		                                 <p class="view-date"><strong>Created by:</strong> CRM Executive</p>
+	                                 </div>
+	                                 <div class="cust-followup-wrap">
+		                                 <p class="view-date left"><strong>Sent Date:</strong> 4/4/2021</p>
+		                                 <p class="view-date left"><strong>Proposal PDF:</strong> Yes/No</p>
+		                                 <p class="view-date"><strong>Inclusion/Exclusion List 1:</strong> Yes/No</p>
+		                                 <p class="view-date"><strong>Inclusion/Exclusion List 2:</strong> Yes/No</p>
+		                                 <p class="view-date"><strong>Send Mail to the customer:</strong> Yes/No</p>
+		                                 <p class="view-date"><strong>Created by:</strong> Sales Executive 1</p>
+	                                 </div> -->
+			                      </div>
+			                  	</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end container-->
+            </section>
+            <!-- END CONTENT -->
+
+		</div>
+		</div>
+		<!-- END MAIN -->
+		<!-- //////////////////////////////////////////////////////////////////////////// -->
+		<!-- START FOOTER -->
+		<footer class="page-footer ahthemecolor">
+			<div class="footer-copyright">
+				<div class="container">
+					<div class="row mb-0">
+						<div class="col s12 m7 l7">
+							<span class="right">
+								Copyright Edel Assurance LLP ©
+								<script type="text/javascript">
+									document.write(new Date().getFullYear());
+								</script>
+							</span>
+						</div>
+						<div class="col s12 m5 l5">
+							<span class="right">
+								Designed &amp; Developed by Bluetick Consultants
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- ================================================
+			Scripts
+			================================================ -->
+		<!-- jQuery Library -->
+		<script type="text/javascript" src="static/js/jquery-3.2.1.min.js"></script>
+		<!--materialize js-->
+		<script type="text/javascript" src="static/js/materialize.min.js"></script>
+		<!--scrollbar-->
+        <script type="text/javascript" src="static/js/perfect-scrollbar.min.js"></script>
+
+		<script type="text/javascript" src="static/js/baseurl.js"></script>
+
+		<!--plugins.js - Some Specific JS codes for Plugin Settings-->
+		<script type="text/javascript" src="static/js/plugins.js"></script>
+		<!-- scriptjs -->
+
+		<script type="text/javascript" src="static/js/storage.js"></script>
+
+		<script type="text/javascript" src="static/js/contact_view.js"></script>
+		
+		<script type="text/javascript" src="static/js/role.js"></script>
+
+		<!-- <script type="text/javascript" src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script> -->
+
+</html>

@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="msapplication-tap-highlight" content="no">
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<title>Edel Assurance LLP</title>
+		<!-- Favicons-->
+		<link rel="icon" href="static/images/favicon.ico" sizes="32x32">
+		<!-- Favicons-->
+		<link rel="apple-touch-icon-precomposed" href="static/images/favicon.ico">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<!-- For iPhone -->
+		<meta name="msapplication-TileColor" content="#00bcd4">
+		<meta name="msapplication-TileImage" content="static/images/mstile-144x144.png">
+		<!-- For Windows Phone -->
+		<!-- CORE CSS-->
+		<link href="static/css/materialize.css" type="text/css" rel="stylesheet">
+		<!-- Custome CSS-->
+		<link href="static/css/custom.css" type="text/css" rel="stylesheet">
+		<link href="static/css/style.css" type="text/css" rel="stylesheet">
+		<link href="static/css/theme.css" type="text/css" rel="stylesheet">
+		<!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
+    	<link href="static/css/perfect-scrollbar.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+
+	<!-- Attachment Preview Structure -->
+	<div id="modal1" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <h4 class="view-modal"></h4>
+            <div class="attachment-box">
+				<div class="view-attachment"></div>
+                    <!-- <embed src="static/images/sample.pdf" style="width: 100%; height: 100%; position: absolute; left: 0; top: 0;"> -->
+                    <!-- <img src="" alt=""/> -->
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+        </div>
+    </div>
+
+
+	<!-- Attachment Preview Structure -->
+	<div id="modal2" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <h4 class="view-modal"></h4>
+            <div class="attachment-box">
+				<div class="view-email-attachment"></div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+        </div>
+    </div>
+
+	<div id="modal3" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <h4 class="view-modal"></h4>
+            <div class="attachment-box">
+				<div class="won-view-email-attachment"></div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+        </div>
+    </div>
+
+		<header id="header" class="page-topbar">
+			<!-- start header nav-->
+			<div class="navbar-fixed">
+				<nav class="navbar-color ahthemecolor gradient-shadow">
+					<div class="nav-wrapper">
+						<ul class="right hide-on-med-and-down fixedonmob">
+							<li class="last_login">
+								<p>Welcome <span class="login_name_txt_white display_username"></span></p>
+								<p class="login_name_txt_white"><em id="datetime"></em></p>
+							</li>
+							<li>
+								<a href="javascript:void(0);" class="waves-effect waves-block waves-light profile-button" data-activates="profile-dropdown">
+								<span class="avatar-status avatar-online">
+								<img src="static/images/avatar-7.png" alt="avatar">
+								<i></i>
+								</span>
+								</a>
+								<ul id="profile-dropdown" class="dropdown-content">
+									<li class="mobuser">
+										<a class="grey-text text-darken-1">
+										<i class="material-icons">account_circle</i><span class="display_username"></span></a>
+									</li>
+									<li>
+										<a id="logout_link" class="grey-text text-darken-1">
+										<i class="material-icons">keyboard_tab</i> Logout</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</header>
+		<!-- Start Page Loading -->
+		<div id="loader-wrapper">
+			<div id="loader"></div>
+			<div class="loader-section section-left"></div>
+			<div class="loader-section section-right"></div>
+		</div>
+		<div class="loader-wrapper">
+			<img src="static/images/loading.gif" alt="">
+		</div>
+		<!-- End Page Loading -->
+		<!-- //////////////////////////////////////////////////////////////////////////// -->
+		<!-- START HEADER -->
+		<!-- END HEADER -->
+		<!-- //////////////////////////////////////////////////////////////////////////// -->
+		<!-- START MAIN -->
+		<div id="main">
+			<div class="wrapper">
+				<!-- START LEFT SIDEBAR NAV-->
+				<aside id="left-sidebar-nav" class="nav-expanded nav-lock nav-collapsible">
+					<div class="brand-sidebar">
+						<h1 class="logo-wrapper">
+							<a href="#" class="brand-logo darken-1">
+							<img src="static/images/edel-assurance-logo.svg" alt="materialize logo" class="logofordesktop">
+							<img src="static/images/edel-assurance-logo.svg" alt="materialize logo" class="logoformobile">
+							</a>
+						</h1>
+					</div>
+					<ul id="slide-out" class="leftbarthemecolor side-nav fixed leftside-navigation">
+						<li class="report_dashboard">
+							<a href="dashboard.html">
+							<i class="material-icons">dashboard</i>
+							<span class="nav-text">Dashboard</span>
+							</a>
+						</li>
+						<li class="hos-target">
+							<a href="target.html">
+							<i class="material-icons">dashboard</i>
+							<span class="nav-text">Targets</span>
+							</a>
+						</li>
+						<li class="user-target my-target">
+							<a href="user-target.html">
+							<i class="material-icons">dashboard</i>
+							<span class="nav-text">My Target</span>
+							</a>
+						</li>
+						<li class="no-padding">
+							<ul class="collapsible" data-collapsible="accordion">
+								<li class="bold contacts-listing">
+									<a class="collapsible-header waves-effect waves-cyan">
+									<i class="material-icons">verified_user</i>
+									<span class="nav-text">Contacts</span>
+									</a>
+									<div class="collapsible-body">
+										<ul>
+											<li>
+												<a href="contacts-listing.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="acc_all_list">All ()</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="acc_todays_followup">Today's Followup ()</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="acc_pending_followup">Pending Followup ()</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="future_followup">Future Followup ()</span>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</li>
+								<li class="lead-listing">
+									<a class="collapsible-header waves-effect waves-cyan active">
+									<i class="material-icons">verified_user</i>
+									<span class="nav-text">Leads</span>
+									</a>
+									<div id="leftstatus" class="collapsible-body">
+										<ul>
+											<li class="active">
+												<a href="leads-listing.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="all_lead_count">All ()</span>
+												</a>
+											</li>
+											<div class="followups">
+											<li>
+												<a href="#">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="followups_leads">Today's Followup ()</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="pending_followups">Pending Followup</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="future_followups">Future Followup</span>
+												</a>
+											</li>
+											<li class="not-updated-leads">
+												<a href="#">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="not_updated">Not Updated Leads ()</span>
+												</a>
+											</li>
+											</div>
+										</ul>
+									</div>
+								</li>
+								<li class="eval_scheduled">
+									<a class="collapsible-header waves-effect waves-cyan active">
+									<i class="material-icons">verified_user</i>
+									<span class="nav-text">Evaluation Scheduled</span>
+									</a>
+									<div id="leftstatus" class="collapsible-body">
+										<ul>
+											<li>
+												<a href="all-evaluation.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="all_lead_count">All (<span class="all_eval_count"></span>)</span>
+												</a>
+											</li>
+											<li>
+												<a href="today-evaluation.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="followups_leads">Today's (<span class="today_eval_count"></span>)</span>
+												</a>
+											</li>
+											<li>
+												<a href="pending-evaluation.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="pending_followups">Pending (<span class="pending_eval_count"></span>)</span>
+												</a>
+											</li>
+											<li>
+												<a href="future-evaluation.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="future_followups">Future (<span class="future_eval_count"></span>)</span>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li class="eval-tracker">
+							<a href="evaluation-tracker.html">
+							<i class="material-icons">schedule</i>
+							<span class="nav-text">Evaluation Tracker</span>
+							</a>
+						</li>
+						<li class="eval-report">
+							<a href="reports.html">
+							<i class="material-icons">dashboard</i>
+							<span class="nav-text">Reports</span>
+							</a>
+						</li>
+					</ul>
+					<a href="#" data-activates="slide-out"
+						class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only slideoutnavbtn">
+					<i class="material-icons">menu</i>
+					</a>
+				</aside>
+				<!-- END LEFT SIDEBAR NAV-->
+				<!-- //////////////////////////////////////////////////////////////////////////// -->
+				<!-- START CONTENT -->
+				
+		        <section id="content">
+		   			<!--start container-->
+		          	<div class="container">
+			            <div class="row mrgntopbtm10">
+			              <div class="col s12 m12 l12">
+			                  <div class="viewform">
+			                    <div class="view-row">
+			                      <h5 class="left">View Lead</h5>
+			                      <a onclick="if(localStorage.getItem('cpath')){ location.href = localStorage.getItem('cpath');} else {location.href = '/leads-listing.html';}" title="back to list">
+			                        <span class="backtolist"><i class="material-icons">subdirectory_arrow_left</i> 
+			                          <div class="left">back to list</div>
+			                        </span>
+			                      </a>
+			                    </div>
+			                    <div class="col s12 m12 l8">
+			                      <fieldset>
+			                        <legend>Customer</legend>
+			                        <div class="col s12 m6 l6 nopadd">
+			                            <div class="col s12 m12 l12">
+			                            <div class="col s6 m6 l6">
+			                              <label for="view_id">Lead ID:</label>
+			                            </div>
+			                            <div class="col s6 m6 l6">
+			                              <input id="view_id" name="view_id" type="text" value="" disabled>
+			                            </div>
+			                          </div>
+			                          <div class="col s12 m12 l12">
+			                            <div class="col s6 m6 l6">
+			                              <label for="view_name">Name:</label>
+			                            </div>
+			                            <div class="col s6 m6 l6">
+			                              <input id="view_name" name="view_name" type="text" value="" disabled>
+			                            </div>
+			                          </div>
+			                          <div class="col s12 m12 l12">
+			                            <div class="col s6 m6 l6">
+			                              <label for="view_phone">Mobile:</label>
+			                            </div>
+			                            <div class="col s6 m6 l6">
+			                              <input id="view_phone" name="view_phone" type="text" value="" disabled>
+			                            </div>
+			                          </div>
+			                          <div class="col s12 m12 l12">
+			                            <div class="col s6 m6 l6">
+			                              <label for="view_stage">Stage:</label>
+			                            </div>
+			                            <div class="col s6 m6 l6">
+			                              <input id="view_stage" name="view_stage" type="text" value="" disabled>
+			                            </div>
+			                          </div>
+			                            <div class="col s12 m12 l12">
+			                            <div class="col s6 m6 l6">
+			                              <label for="view_temp">Lead Temprature:</label>
+			                            </div>
+			                            <div class="col s6 m6 l6">
+			                              <input id="view_temp" name="view_temp" type="text" value="" disabled>
+			                            </div>
+			                          </div>
+			                        </div>
+			                        <div class="col s12 m6 l6 nopadd">
+			                          <div class="col s12 m12 l12">
+			                            <div class="col s6 m6 l6">
+			                              <label for="view_source">Source:</label>
+			                            </div>
+			                            <div class="col s6 m6 l6">
+			                              <input id="view_source" name="view_source" type="text" value="" disabled>
+			                            </div>
+			                          </div>
+			                          <div class="col s12 m12 l12">
+			                            <div class="col s6 m6 l6">
+			                              <label for="view_subsource">Sub-Source:</label>
+			                            </div>
+			                            <div class="col s6 m6 l6">
+			                              <input id="view_subsource" name="view_subsource" type="text" value="" disabled>
+			                            </div>
+			                          </div>
+			                          <div class="col s12 m12 l12">
+			                            <div class="col s6 m6 l6">
+			                              <label for="view_state">State:</label>
+			                            </div>
+			                            <div class="col s6 m6 l6">
+			                              <input id="view_state" name="view_state" type="text" value="" disabled>
+			                            </div>
+			                          </div>
+			                          <div class="col s12 m12 l12">
+			                            <div class="col s6 m6 l6">
+			                              <label for="view_asignee">Assigned To:</label>
+			                            </div>
+			                            <div class="col s6 m6 l6">
+			                              <input id="view_asignee" name="view_asignee" type="text" value="" disabled>
+			                            </div>
+			                          </div>
+			                          <div class="col s12 m12 l12">
+			                            <div class="col s6 m6 l6">
+			                              <label for="view_location">Location</label>
+			                            </div>
+			                            <div class="col s6 m6 l6">
+			                              <input id="view_location" name="view_location" type="text" value="" disabled>
+			                            </div>
+			                          </div>
+			                        </div>
+			                      </fieldset>
+			                      <fieldset>
+			                        <legend>Car</legend>
+			                        <div class="col s12 m6 l6 nopadd">
+			                            <div class="col s12 m12 l12">
+			                              <div class="col s6 m6 l6">
+			                                <label for="view_make">Make:</label>
+			                              </div>
+			                              <div class="col s6 m6 l6">
+			                                <input id="view_make" name="view_make" type="text" value="" disabled>
+			                              </div>
+			                            </div>
+			                            <div class="col s12 m12 l12">
+			                                <div class="col s6 m6 l6">
+			                                  <label for="view_model">Model:</label>
+			                                </div>
+			                                <div class="col s6 m6 l6">
+			                                  <input id="view_model" name="view_model" type="text" value="" disabled>
+			                                </div>
+			                            </div>
+			                            <div class="col s12 m12 l12">
+			                              <div class="col s6 m6 l6">
+			                                <label for="view_variant">Variant:</label>
+			                              </div>
+			                              <div class="col s6 m6 l6">
+			                                <input id="view_variant" name="view_variant" type="text" value="" disabled>
+			                              </div>
+			                            </div>
+			                            <div class="col s12 m12 l12">
+			                              <div class="col s6 m6 l6">
+			                                <label for="view_current_km">Current KM:</label>
+			                              </div>
+			                              <div class="col s6 m6 l6">
+			                                <input id="view_current_km" name="view_current_km" type="text" value="" disabled>
+			                              </div>
+			                            </div>
+			                          </div>
+			                        <div class="col s12 m6 l6 nopadd">
+			                          <div class="col s12 m12 l12">
+			                              <div class="col s6 m6 l6">
+			                                <label for="view_car_mfg_date">Manufacture Date:</label>
+			                              </div>
+			                              <div class="col s6 m6 l6">
+			                                <input id="view_car_mfg_date" name="view_car_mfg_date" type="text" value="" disabled>
+			                              </div>
+			                          </div>
+			                          <div class="col s12 m12 l12">
+			                              <div class="col s6 m6 l6">
+			                                <label for="view_car_reg_date">Registration Date:</label>
+			                              </div>
+			                              <div class="col s6 m6 l6">
+			                                <input id="view_car_reg_date" name="view_car_reg_date" type="text" value="" disabled>
+			                              </div>
+			                          </div>
+			                          <div class="col s12 m12 l12">
+			                              <div class="col s6 m6 l6">
+			                                <label for="view_car_vehicle_no">Vehicle Number:</label>
+			                              </div>
+			                              <div class="col s6 m6 l6">
+			                                <input id="view_car_vehicle_no" name="view_car_vehicle_no" type="text" value="" class="uppercase" disabled>
+			                              </div>
+			                          </div>
+			                          <div class="col s12 m12 l12">
+			                              <div class="col s6 m6 l6">
+			                                <label for="blank"></label>
+			                              </div>
+			                              <div class="col s6 m6 l6">
+			                                <input id="blank" name="blank" type="text">
+			                              </div>
+			                          </div>
+			                        </div>
+			                        <div class="col s12">
+				                        <fieldset>
+					                        <legend>Vehicle Information</legend>
+					                        <div class="col s12 m6 l6 nopadd">
+					                            <div class="col s12 m12 l12">
+					                              <div class="col s6 m6 l6">
+					                                <label for="view_vin_no">VIN Number:</label>
+					                              </div>
+					                              <div class="col s6 m6 l6">
+					                                <input id="view_vin_no" name="view_vin_no" type="text" value="" disabled>
+					                              </div>
+					                            </div>
+					                          </div>
+					                        <div class="col s12 m6 l6 nopadd">
+					                          <div class="col s12 m12 l12">
+					                              <div class="col s6 m6 l6">
+					                                <label for="view_engine_no">Engine Number:</label>
+					                              </div>
+					                              <div class="col s6 m6 l6">
+					                                <input id="view_engine_no" name="view_engine_no" type="text" value="" disabled>
+					                              </div>
+					                          </div>
+					                        </div>
+					                     </fieldset>
+				                     </div>
+				                     <div class="col s12">
+				                        <fieldset>
+					                        <legend>Insurance</legend>
+					                        <div class="col s12 m12 l12 nopadd">
+					                            <div class="col s6 m3 l3">
+					                                <label for="view_service_provider">Service Provider:</label>
+					                            </div>
+				                              <div class="col s6 m9 l9">
+				                                <input id="view_service_provider" name="view_service_provider" type="text" value="" disabled>
+				                              </div>
+				                            </div>
+					                        <div class="col s12 m6 l6 nopadd">
+					                          <div class="col s12 m12 l12">
+					                              <div class="col s6 m6 l6">
+					                                <label for="view_start_date">Start Date:</label>
+					                              </div>
+					                              <div class="col s6 m6 l6">
+					                                <input id="view_start_date" name="view_start_date" type="text" value="" disabled>
+					                              </div>
+					                          </div>
+					                        </div>
+					                        <div class="col s12 m6 l6 nopadd">
+					                          <div class="col s12 m12 l12">
+					                              <div class="col s6 m6 l6">
+					                                <label for="view_end_date">End Date:</label>
+					                              </div>
+					                              <div class="col s6 m6 l6">
+					                                <input id="view_end_date" name="view_end_date" type="text" value="" disabled>
+					                              </div>
+					                          </div>
+					                        </div>
+					                    </fieldset>
+				                     </div>
+				                     <div class="col s12 m6 l6 nopadd">
+				                          <div class="col s12 m12 l12">
+				                              <div class="col s6 m6 l6">
+				                                <label for="view_idv_amt">IDV Amount:</label>
+				                              </div>
+				                              <div class="col s6 m6 l6">
+				                                <input id="view_idv_amt" name="view_idv_amt" type="text" value="" disabled>
+				                              </div>
+				                          </div>
+				                     </div>
+				                     <div class="col s12 m6 l6 nopadd">
+				                          <div class="col s12 m12 l12">
+				                              <div class="col s6 m6 l6">
+				                                <label for="view_policy_age">Policy Age:</label>
+				                              </div>
+				                              <div class="col s6 m6 l6">
+				                                <input id="view_policy_age" name="view_policy_age" type="text" value="" disabled>
+				                              </div>
+				                          </div>
+				                     </div>
+				                     <div class="col s12 nopadd">
+				                     	<div class="col s12 m12 l12">
+				                              <div class="col s6 m3 l3">
+				                                <label for="view_lead_remark">Remark:</label>
+				                              </div>
+				                              <div class="col s6 m9 l9">
+				                                <textarea class="materialize-textarea" id="view_lead_remark" name="view_lead_remark" disabled></textarea>
+				                              </div>
+				                        </div>
+				                     </div>
+			                      </fieldset>
+								  <div class="col s12 m12 l12 pl-0 quote_pdf">
+									<fieldset>
+										<legend>Quotation</legend>
+										<div id="quote_pdf_list"></div>
+										<!-- <hr/> -->
+										<div id="current_url" class="current-quote left"></div>
+										<div id="customer-preview"></div>
+										<button class="smallbtn" id="quote_send_to_customer">Send to Customer</button>
+									</fieldset>
+								  </div>
+
+								  <div class="col s12 m12 l12 pl-0 negotiation">
+									<fieldset>
+										<legend>Final Quotation</legend>
+										<div class="row">
+											<div class="col s12 m6 l6 nopadd">
+												<div class="col s12 m12 l12">
+													<div class="col s6 m6 l6">
+													  <label for="warranty_covered_km">Warraty Covered Km:</label>
+													</div>
+													<div class="col s6 m6 l6">
+													  <input id="warranty_covered_km" name="warranty_covered_km" type="text" value="" disabled>
+													</div>
+												</div>
+										   </div>
+										   <div class="col s12 m6 l6 nopadd">
+												<div class="col s12 m12 l12">
+													<div class="col s6 m6 l6">
+													<label for="warranty_discount">Discount:</label>
+													</div>
+													<div class="col s6 m6 l6">
+													<input id="warranty_discount" name="warranty_discount" type="text" value="" disabled>
+													</div>
+												</div>
+									   		</div>
+										</div>
+										<button class="smallbtn nego_sm_approval" id="nego_sm_approval">Approve by SM</button>										
+									</fieldset>
+								  </div>
+
+								  <div class="col s12 m12 l12 pl-0 pay_done">
+									<fieldset>
+										<legend>Payment Done</legend>
+										<div class="row">
+											<div class="col s12 m6 l6 nopadd">
+												<div class="col s12 m12 l12">
+													<div class="col s6 m6 l6">
+													  <label for="payment_amount">Amount:</label>
+													</div>
+													<div class="col s6 m6 l6">
+													  <input id="payment_amount" name="payment_amount" type="text" value="" disabled>
+													</div>
+												</div>
+										   </div>
+										   <div class="col s12 m6 l6 nopadd">
+												<div class="col s12 m12 l12">
+													<div class="col s6 m6 l6">
+													<label for="payment_mode">Mode:</label>
+													</div>
+													<div class="col s6 m6 l6">
+													<input id="payment_mode" name="payment_mode" type="text" value="" disabled>
+													</div>
+												</div>
+									   		</div>
+											   <div class="col s12 nopadd">
+												<div class="col s12 m12 l12">
+													<div class="col s6 m3 l3">
+													<label for="payment_des">Description:</label>
+													</div>
+													<div class="col s6 m9 l9">
+													<textarea class="materialize-textarea" id="payment_des" name="payment_des" type="text" value="" disabled></textarea>
+													</div>
+												</div>
+									   		</div>
+										</div>									
+									</fieldset>
+								  </div>
+
+								  <div class="col s12 pl-0 warranty_policy_section">
+									<fieldset>
+										<legend>Warranty Policy</legend>
+										<div class="row">
+											<div class="col s12 m12 l12 nopadd">
+												<div class="col s12 m12 l12">
+													<div class="col s6 m3 l3">
+													<label for="warranty_pdf_url">Warranty PDF URL:</label>
+													</div>
+													<div class="col s6 m9 l9">
+														<div id="warranty_attachment"></div>
+													</div>
+												</div>
+									   		</div>
+										</div>
+										<hr/>
+										<!-- <a href="#" class="smallbtn">Send to Customer</a> -->
+										<div id="won-customer-preview"></div>
+										<button class="smallbtn policy_cra_approval" id="policy_cra_approval">Approve by CRA</button>
+										<button class="smallbtn policy_hos_approval" id="policy_hos_approval">Approve by HOS</button>
+									</fieldset>
+								  </div>
+
+								  <div class="col s12 pl-0">
+									<fieldset>
+										<legend>Won - Attachment</legend>
+											<div class="col s12 description eval_checksheet">
+												<div id="lead_attachment1"></div>
+											</div>
+									</fieldset>
+								  </div>
+								  
+								  <div class="col s12 pl-0">
+									<fieldset>
+										<legend>Evaluation Completed - CheckSheet</legend>
+											<div class="col s12 description eval_checksheet">
+												<div class="view-remarks-wrap">
+												<div id="lead_checksheet"></div>
+												<p>
+													<span class="view-date left"><strong>Criteria:</strong> <span class="criteria"></span></span>
+												</p>
+												<p>
+													<span class="view-date left"><strong>Checksheet Additional Remarks:</strong> <span class="checksheet_additional_remarks"></span></span>
+												</p>
+												<p>
+													<span class="view-date left"><strong>Comments:</strong> <span class="evaluation_completed_comments"></span></span>
+												</p>
+												</div>
+											</div> 
+									</fieldset>
+								  </div>
+
+								  <div class="col s12 pl-0">
+									<fieldset>
+										<legend>Evaluation Completed - Attachment</legend>
+											<div class="col s12 description eval_checksheet">
+												<div id="lead_attachment"></div>
+											</div>
+									</fieldset>
+								  </div>
+
+			                        <section id="timeline" class="timeline-outer">
+			                            <div class="container" id="content">
+			                              <ul class="timeline">
+			                                <!-- <li class="event" data-date="{{ log.date }}">
+			                                  <h3>{{ log.field }}</h3>
+			                                  <p>
+			                                    Changed from <strong>{{ log.old_value }}</strong> To <strong>{{ log.new_value }}</strong> by {{ log.created_by }}
+			                                  </p>
+			                                </li> -->
+			                              </ul>
+			                            </div>
+			                        </section>
+			                    </div>
+			                    <div class="col s12 m12 l4">
+			                      <ul class="tabs">
+			                        <li class="tab col s3"><a class="active" href="#test1">Follow-ups</a></li>
+			                        <li class="tab col s3"><a href="#test2">Evaluations</a></li>
+			                        <!-- <li class="tab col s3"><a href="#test3">After Sales<br/>Attachments</a></li>
+			                        <li class="tab col s3"><a href="#test4">Sales<br/>Attachments</a></li> -->
+			                      </ul>
+			                      <div id="test1" class="col s12 description">
+									<div id="lead_followup"></div>
+			                      </div>
+
+			                      <div id="test2" class="col s12 description">
+			                      	<div id="eval_followup"></div>
+								  </div>
+			                      <!-- <div id="test3" class="col s12 description">
+									<ul class="tabs ase_attach">
+										<li class="tab col s3"><a class="active" href="#attachment">Attachment</a></li>
+										<li class="tab col s3"><a href="#checksheet">Checksheet</a></li>
+									</ul>
+									<div id="attachment" class="col s12 description" style="height: 160px;">
+										<div id="lead_attachment"></div>
+									</div>
+									<div id="checksheet" class="col s12 description" style="height: 160px;">
+										<div class="view-remarks-wrap">
+										<div id="lead_checksheet"></div>
+										<p>
+											<span class="view-date left"><strong>Criteria:</strong> <span class="criteria"></span></span>
+										</p>
+										<p>
+											<span class="view-date left"><strong>Checksheet Additional Remarks:</strong> <span class="checksheet_additional_remarks"></span></span>
+										</p>
+										<p>
+											<span class="view-date left"><strong>Comments:</strong> <span class="evaluation_completed_comments"></span></span>
+										</p>
+										</div>
+									</div>
+			                      </div> -->
+
+			                      <!-- <div id="test4" class="col s12 description">
+									  <div id="lead_attachment1"></div>
+								  </div> -->
+
+								  <div class="row">
+									  <div class="col s12 head_after_sales">
+										<div class="head_after_sales_hide_show">
+										  <h6>Evaluation Action</h6>
+											<button class="smallbtn" id="approve">Approve</button>
+											<button class="smallbtn" id="reject">Reject</button>
+											<button class="smallbtn" id="hold">Hold</button>
+										</div>
+									  </div>
+									  <!-- <div class="col s12 policy_action">
+										<h6>Policy Action</h6>
+										  <a class="waves-effect waves-light btn ahbtncolor light-green accent-4 box-shadow colorbtn won_hos_approv" id="hos_approv">HOS Approval</a>
+										  <a class="waves-effect waves-light btn ahbtncolor amber accent-4 box-shadow colorbtn won_cra_approv" id="cra_approv">CR Admin Approval</a>
+									</div> -->
+								  </div>
+			                    </div>
+			                  </div>
+			              </div>
+			            </div>
+		        	</div>
+		            <!--end container-->
+		        </section>
+		        <!-- END CONTENT -->
+				
+		</div>
+		</div>
+		<!-- END MAIN -->
+		<!-- //////////////////////////////////////////////////////////////////////////// -->
+		<!-- START FOOTER -->
+		<footer class="page-footer ahthemecolor">
+			<div class="footer-copyright">
+				<div class="container">
+					<div class="row mb-0">
+						<div class="col s12 m7 l7">
+							<span class="right">
+								Copyright Edel Assurance LLP ©
+								<script type="text/javascript">
+									document.write(new Date().getFullYear());
+								</script>
+							</span>
+						</div>
+						<div class="col s12 m5 l5">
+							<span class="right">
+								Designed &amp; Developed by Bluetick Consultants
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- ================================================
+			Scripts
+			================================================ -->
+		<!-- jQuery Library -->
+		<script type="text/javascript" src="static/js/jquery-3.2.1.min.js"></script>
+
+		<script type="text/javascript" src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+		<!--materialize js-->
+		<script type="text/javascript" src="static/js/materialize.min.js"></script>
+
+		
+		<!--plugins.js - Some Specific JS codes for Plugin Settings-->
+
+		<script type="text/javascript" src="static/js/baseurl.js"></script>
+
+		<script type="text/javascript" src="static/js/plugins.js"></script>
+		<!--scrollbar-->
+        <script type="text/javascript" src="static/js/perfect-scrollbar.min.js"></script>
+		<!-- scriptjs -->
+		<!-- scriptjs -->
+		<script type="text/javascript" src="static/js/storage.js"></script>
+
+		<script type="text/javascript" src="static/js/lead_view.js"></script>
+
+		<script type="text/javascript" src="static/js/role.js"></script>
+
+</html>

@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="msapplication-tap-highlight" content="no">
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<title>Edel Assurance LLP</title>
+		<!-- Favicons-->
+		<link rel="icon" href="static/images/favicon.ico" sizes="32x32">
+		<!-- Favicons-->
+		<link rel="apple-touch-icon-precomposed" href="static/images/favicon.ico">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<!-- For iPhone -->
+		<meta name="msapplication-TileColor" content="#00bcd4">
+		<meta name="msapplication-TileImage" content="static/images/mstile-144x144.png">
+		<!-- For Windows Phone -->
+		<!-- CORE CSS-->
+		<link href="static/css/materialize.css" type="text/css" rel="stylesheet">
+		<!-- Custome CSS-->
+		<link href="static/css/custom.css" type="text/css" rel="stylesheet">
+		<link href="static/css/style.css" type="text/css" rel="stylesheet">
+		<link href="static/css/theme.css" type="text/css" rel="stylesheet">
+		<!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
+    	<link href="static/css/perfect-scrollbar.css" type="text/css" rel="stylesheet">
+    	<!-- <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css"> -->
+	</head>
+	<body>
+		<header id="header" class="page-topbar">
+			<!-- start header nav-->
+			<div class="navbar-fixed">
+				<nav class="navbar-color ahthemecolor gradient-shadow">
+					<div class="nav-wrapper">
+						<ul class="right hide-on-med-and-down fixedonmob">
+							<li class="last_login">
+								<p>Welcome <span class="login_name_txt_white display_username"></span></p>
+								<p class="login_name_txt_white"><em id="datetime"></em></p>
+							</li>
+							<li>
+								<a href="javascript:void(0);" class="waves-effect waves-block waves-light profile-button" data-activates="profile-dropdown">
+								<span class="avatar-status avatar-online">
+								<img src="static/images/avatar-7.png" alt="avatar">
+								<i></i>
+								</span>
+								</a>
+								<ul id="profile-dropdown" class="dropdown-content">
+									<li class="mobuser">
+										<a class="grey-text text-darken-1">
+										<i class="material-icons">account_circle</i><span class="display_username"></span></a>
+									</li>
+									<li>
+										<a id="logout_link" class="grey-text text-darken-1">
+										<i class="material-icons">keyboard_tab</i> Logout</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</header>
+		<!-- Start Page Loading -->
+		<div id="loader-wrapper">
+			<div id="loader"></div>
+			<div class="loader-section section-left"></div>
+			<div class="loader-section section-right"></div>
+		</div>
+		<!-- End Page Loading -->
+		<!-- //////////////////////////////////////////////////////////////////////////// -->
+		<!-- START HEADER -->
+		<!-- END HEADER -->
+		<!-- //////////////////////////////////////////////////////////////////////////// -->
+		<!-- START MAIN -->
+		<div id="main">
+			<div class="wrapper">
+				<!-- START LEFT SIDEBAR NAV-->
+				<aside id="left-sidebar-nav" class="nav-expanded nav-lock nav-collapsible">
+					<div class="brand-sidebar">
+						<h1 class="logo-wrapper">
+							<a href="#" class="brand-logo darken-1">
+							<img src="static/images/edel-assurance-logo.svg" alt="materialize logo" class="logofordesktop">
+							<img src="static/images/edel-assurance-logo.svg" alt="materialize logo" class="logoformobile">
+							</a>
+						</h1>
+					</div>
+					<ul id="slide-out" class="leftbarthemecolor side-nav fixed leftside-navigation">
+						<li class="report_dashboard">
+							<a href="dashboard.html">
+							<i class="material-icons">dashboard</i>
+							<span class="nav-text">Dashboard</span>
+							</a>
+						</li>
+						<li class="hos-target active">
+							<a href="target.html">
+							<i class="material-icons">dashboard</i>
+							<span class="nav-text">Target</span>
+							</a>
+						</li>
+						<li class="user-target my-target">
+							<a href="user-target.html">
+							<i class="material-icons">dashboard</i>
+							<span class="nav-text">My Target</span>
+							</a>
+						</li>
+						<li class="no-padding">
+							<ul class="collapsible" data-collapsible="accordion">
+								<li class="bold contacts-listing">
+									<a class="collapsible-header waves-effect waves-cyan">
+									<i class="material-icons">verified_user</i>
+									<span class="nav-text">Contacts</span>
+									</a>
+									<div class="collapsible-body">
+										<ul>
+											<li>
+												<a href="contacts-listing.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="acc_all_list">All (<span class="contact_count"></span>)</span>
+												</a>
+											</li>
+											<li>
+												<a href="contacts-todays-followup.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="acc_todays_followup">Today's Followup (<span class="todays_followup_count"></span>)</span>
+												</a>
+											</li>
+											<li>
+												<a href="contacts-pending-followup.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="acc_pending_followup">Pending Followup (<span class="pending_followup_count"></span>)</span>
+												</a>
+											</li>
+											<li>
+												<a href="contacts-future-followup.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="future_followup">Future Followup (<span class="future_followup_count"></span>)</span>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</li>
+								<li class="lead-listing">
+									<a class="collapsible-header waves-effect waves-cyan">
+									<i class="material-icons">verified_user</i>
+									<span class="nav-text">Leads</span>
+									</a>
+									<div id="leftstatus" class="collapsible-body">
+										<ul>
+											<li>
+												<a href="leads-listing.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="all_lead_count">All ()</span>
+												</a>
+											</li>
+											<div class="followups">
+											<li>
+												<a href="#">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="followups_leads">Today's Followup ()</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="pending_followups">Pending Followup</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="future_followups">Future Followup</span>
+												</a>
+											</li>
+											<li class="not-updated-leads">
+												<a href="#">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="not_updated">Not Updated Leads ()</span>
+												</a>
+											</li>
+											</div>
+										</ul>
+									</div>
+								</li>
+								<li class="eval_scheduled">
+									<a class="collapsible-header waves-effect waves-cyan">
+									<i class="material-icons">verified_user</i>
+									<span class="nav-text">Evaluation Scheduled</span>
+									</a>
+									<div id="leftstatus" class="collapsible-body">
+										<ul>
+											<li>
+												<a href="#">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="all_lead_count">All ()</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="followups_leads">Today's ()</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="pending_followups">Pending ()</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="future_followups">Future ()</span>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li class="eval-tracker">
+							<a href="evaluation-tracker.html">
+							<i class="material-icons">schedule</i>
+							<span class="nav-text">Evaluation Tracker</span>
+							</a>
+						</li>
+						<li class="eval-report">
+							<a href="reports.html">
+							<i class="material-icons">dashboard</i>
+							<span class="nav-text">Reports</span>
+							</a>
+						</li>
+					</ul>
+					<a href="#" data-activates="slide-out"
+						class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only slideoutnavbtn">
+					<i class="material-icons">menu</i>
+					</a>
+				</aside>
+				<!-- END LEFT SIDEBAR NAV-->
+				<!-- //////////////////////////////////////////////////////////////////////////// -->
+				<!-- START CONTENT -->
+            	<section id="content">
+                <!--start container-->
+	                <div class="container dashboard">
+	                        <div class="row">
+	                            <div class="col s12">
+	                                <h5><i class="material-icons">insert_chart</i> Targets
+										<a class="waves-effect waves-light btn ahbtncolor box-shadow chat-collapse right ml-2" data-activates="addtarget-crm-slide-out"><i class="material-icons">add</i>Add Target For CRM</a>
+	                                	<a class="waves-effect waves-light btn ahbtncolor box-shadow chat-collapse right" data-activates="addtarget-sesm-slide-out"><i class="material-icons">add</i>Add Target For SE/SM</a>										
+	                                </h5>
+	                            </div>
+	                        </div>
+	                        <!-- <div class="row">
+						         <div class="col s12 m6 l6 xl3">
+						            <div class="card gradient-45deg-light-blue-cyan gradient-shadow min-height-100 white-text animate fadeLeft">
+						               <div class="padding-4">
+						                  <div class="row">
+						                     <div class="col s4 m4">
+						                        <i class="fa fa-dot-circle-o background-round mt-5" aria-hidden="true"></i>
+						                        <p>Target</p>
+						                     </div>
+						                     <div class="col s8 m8 right-align">
+						                        <h5 class="mb-0 white-text">5,00,000/-</h5>
+						                        <p class="no-margin">Month</p>
+						                        <p class="mt-0">April 2021</p>
+						                     </div>
+						                  </div>
+						               </div>
+						            </div>
+						         </div>
+						         <div class="col s12 m6 l6 xl3">
+						            <div class="card gradient-45deg-green-teal gradient-shadow min-height-100 white-text animate fadeRight">
+						               <div class="padding-4">
+						                  <div class="row">
+						                     <div class="col s4 m4">
+						                        <i class="fa fa-thumbs-up background-round mt-5" aria-hidden="true"></i>
+						                        <p>Achieved</p>
+						                     </div>
+						                     <div class="col s8 m8 right-align">
+						                        <h5 class="mb-0 white-text">3,00,000/-</h5>
+						                        <p class="no-margin">Month</p>
+						                        <p class="mt-0">April 2021</p>
+						                     </div>
+						                  </div>
+						               </div>
+						            </div>
+						         </div>
+						         <div class="col s12 m6 l6 xl3">
+						            <div class="card gradient-45deg-amber-amber gradient-shadow min-height-100 white-text animate fadeRight">
+						               <div class="padding-4">
+						                  <div class="row">
+						                     <div class="col s4 m4">
+						                        <i class="fa fa-thumbs-down background-round mt-5" aria-hidden="true"></i>
+						                        <p>Pending</p>
+						                     </div>
+						                     <div class="col s8 m8 right-align">
+						                        <h5 class="mb-0 white-text">2,00,000/-</h5>
+						                        <p class="no-margin">Month</p>
+						                        <p class="mt-0">April 2021</p>
+						                     </div>
+						                  </div>
+						               </div>
+						            </div>
+						         </div>
+						    </div> -->
+						    <div class="row">
+                            <div class="col s12 m12 l12">
+								<!-- <ul class="tabs">
+                                    <li class="tab" id="sales_tab"><a class="active" href="#test1">SE/SM</a></li>
+                                    <li class="tab" id="lead_tab"><a href="#test2">CRM</a></li>
+								</ul> -->
+								<!-- <div id="test1" class="col s12"> -->
+									<table role="table" class="lead-management">
+										<thead role="rowgroup">
+											<tr role="row">
+												<!-- <th role="columnheader">&nbsp;</th> -->
+												<!-- <th role="columnheader">Id</th> -->
+												<th role="columnheader">Month</th>
+												<th role="columnheader">Year</th>
+												<th role="columnheader">Assigned To</th>
+												<th role="columnheader">Target</th>
+												<th role="columnheader">&nbsp;</th>
+											</tr>
+										</thead>
+										<tbody role="rowgroup" id="target_table">
+											<!-- <tr role="row" class="topborder">
+												<td role="cell">
+													<div class="table_show_on_mobile">Id</div>
+													<strong>11111</strong>
+												</td>
+												<td role="cell">
+													<div class="table_show_on_mobile"><strong>Month</strong></div>
+													April
+												</td>
+												<td role="cell">
+													<div class="table_show_on_mobile"><strong>Year</strong></div>
+													2021
+												</td>
+												<td role="cell">
+													<div class="table_show_on_mobile"><strong>Assigned To</strong></div>
+													<p>Sales Manager 1</p>
+												</td>
+												<td role="cell">
+													<div class="table_show_on_mobile"><strong>Target</strong></div>
+													1,00,000/-
+												</td>
+												<td role="cell">
+													<a href="javascript:void(0);" class="waves-effect waves-block waves-light profile-button threedotsmob right" data-activates="moreoption-dropdown">
+														<i class="material-icons more_vert_mob right">more_vert</i>
+													</a>
+													<ul id="moreoption-dropdown" class="dropdown-content">
+														<li>
+															<a href="#" class="grey-text text-darken-1 chat-collapse openEditSalesLeadForm" data-activates="editsalesleadform-slide-out">
+																<i class="material-icons">edit</i> Edit Target
+															</a>
+														</li>
+													</ul>
+												</td>
+											</tr> -->
+										</tbody>
+									</table>
+								<!-- </div> -->
+								<!-- <div id="test2" class="col s12">
+									<table role="table" class="lead-management">
+										<thead role="rowgroup">
+											<tr role="row">
+												<th role="columnheader">Month</th>
+												<th role="columnheader">Year</th>
+												<th role="columnheader">Assigned To</th>
+												<th role="columnheader">Target</th>
+												<th role="columnheader">&nbsp;</th>
+											</tr>
+										</thead>
+										<tbody role="rowgroup" id="crm_target_table">
+											
+										</tbody>
+									</table>
+								</div> -->
+
+                                <!-- <div id="clear_filter" class="chip filter-chips">
+                                    <a>Clear filter<i class="close material-icons">close</i></a>
+                                </div> -->
+                                
+
+                                <div class="pagination">
+                                    <span class="step-links">
+                                        <a class="waves-effect" onclick="return followURL(this,'Previous','{{ all_leads.previous_page_number }}');">Previous</a>
+
+                                    <span class="current active waves-effect">
+                                        Page  of .
+                                    </span>
+
+                                        <a class="waves-effect" onclick="return followURL(this,'Next','{{ all_leads.next_page_number }}');">Next</a>
+                                    </span>
+                                </div>
+                            </div>
+                        	</div>
+	                        <!-- //////////////////////////////////////////////////////////////////////////// -->
+	                </div>
+                    <!-- END WRAPPER -->
+            </section>
+
+            <ul id="addtarget-sesm-slide-out" class="side-nav rightside-navigation common-slide-out" style="overflow-y: auto;">
+	            <li class="li-hover">
+	                <form method="post" id="add_target_to_se_sm">
+	                    <!-- Start - Add New Lead Form -->
+	                    <div class="addnewleadform">
+	                        <h5>Add New Target For SE/SM</h5>
+	                        <form method="POST">
+	                        <div class="row">
+	                        	<div class="col s12 m4 l4">
+	                            	<label for="add_assigned_to_SE_SM">Assigned To<span class="asterik">*</span></label>
+	                                <select class="browser-default" id="add_assigned_to_SE_SM" name="add_assigned_to_SE_SM" required>
+                                        <option value="" selected>Choose</option>
+                                    </select>
+	                            </div>
+	                        	<div class="col s12 m4 l4"> 
+									<label for="add_target_month_SE_SM">Month<span class="asterik">*</span></label>
+									<select class="browser-default" id="add_target_month_SE_SM" name="add_target_month_SE_SM" required>
+										<option value="" selected>Choose</option>
+										<option value="1">January</option>
+										<option value="2">February</option>
+										<option value="3">March</option>
+										<option value="4">April</option>
+										<option value="5">May</option>
+										<option value="6">June</option>
+										<option value="7">July</option>
+										<option value="8">August</option>
+										<option value="9">September</option>
+										<option value="10">October</option>
+										<option value="11">November</option>
+										<option value="12">December</option>
+									</select>
+	                            </div>
+	                            <div class="col s12 m4 l4">
+									<label for="add_target_year_SE_SM">Year<span class="asterik">*</span></label>
+									<select class="browser-default" id="add_target_year_SE_SM" name="add_target_year_SE_SM" required>
+										<option value="" selected>Choose</option>
+										<option value="2021">2021</option>
+										<option value="2022">2022</option>
+										<option value="2023">2023</option>
+										<option value="2024">2024</option>
+										<option value="2025">2025</option>
+										<option value="2026">2026</option>
+										<option value="2027">2027</option>
+										<option value="2028">2028</option>
+										<option value="2029">2029</option>
+										<option value="2030">2030</option>
+									</select>
+	                            </div>
+
+	                            <div class="col s12 m4 l4 mt-2">
+	                            	<label for="add_target_amt_SE_SM">Target Amount<span class="asterik">*</span></label>
+	                                <input type="number" id="add_target_amt_SE_SM" name="add_target_amt_SE_SM" required>
+	                            </div>
+	                        	<div class="input-field col s12">
+                                    <button class="btn waves-effect waves-light ahbtncolor submit" type="submit" id="create_lead_submit">Submit
+                                        <i class="material-icons right">send</i>
+                                    </button>
+                                </div>
+	                        </div>
+	                    	</form>
+	                    </div>
+	                </form>
+	            </li>
+	        </ul>
+
+			<ul id="addtarget-crm-slide-out" class="side-nav rightside-navigation common-slide-out" style="overflow-y: auto;">
+	            <li class="li-hover">
+	                <form method="post" id="add_target_to_crm">
+	                    <!-- Start - Add New Lead Form -->
+	                    <div class="addnewleadform">
+	                        <h5>Add New Target For CRM</h5>
+	                        <form method="POST">
+	                        <div class="row">
+	                        	<div class="col s12 m4 l4">
+	                            	<label for="add_assigned_to_crm">Assigned To<span class="asterik">*</span></label>
+	                                <select class="browser-default" id="add_assigned_to_crm" name="add_assigned_to_crm" required>
+                                        <option value="" selected>Choose</option>
+                                    </select>
+	                            </div>
+	                        	<div class="col s12 m4 l4">
+									<label for="add_target_month_crm">Month<span class="asterik">*</span></label>
+									<select class="browser-default" id="add_target_month_crm" name="add_target_month_crm" required>
+										<option value="" selected>Choose</option>
+										<option value="1">January</option>
+										<option value="2">February</option>
+										<option value="3">March</option>
+										<option value="4">April</option>
+										<option value="5">May</option>
+										<option value="6">June</option>
+										<option value="7">July</option>
+										<option value="8">August</option>
+										<option value="9">September</option>
+										<option value="10">October</option>
+										<option value="11">November</option>
+										<option value="12">December</option>
+									</select>
+	                            </div>
+	                            <div class="col s12 m4 l4">
+									<label for="add_target_year_crm">Year<span class="asterik">*</span></label>
+									<select class="browser-default" id="add_target_year_crm" name="add_target_year_crm" required>
+										<option value="" selected>Choose</option>
+										<option value="2021">2021</option>
+										<option value="2022">2022</option>
+										<option value="2023">2023</option>
+										<option value="2024">2024</option>
+										<option value="2025">2025</option>
+										<option value="2026">2026</option>
+										<option value="2027">2027</option>
+										<option value="2028">2028</option>
+										<option value="2029">2029</option>
+										<option value="2030">2030</option>
+									</select>
+	                            </div>
+
+	                            <div class="col s12 m4 l4 mt-2">
+	                            	<label for="add_target_amt_crm">Target Number<span class="asterik">*</span></label>
+	                                <input type="number" id="add_target_amt_crm" name="add_target_amt_crm" required>
+	                            </div>
+	                        	<div class="input-field col s12">
+                                    <button class="btn waves-effect waves-light ahbtncolor submit" type="submit" id="create_lead_submit2">Submit
+                                        <i class="material-icons right">send</i>
+                                    </button>
+                                </div>
+	                        </div>
+	                    	</form>
+	                    </div>
+	                </form>
+	            </li>
+	        </ul>
+
+            <ul id="editsalesleadform-slide-out" class="side-nav rightside-navigation common-slide-out" style="overflow-y: auto;">
+                <li class="li-hover">
+                    <form method="POST" action="" >
+                        <!-- Start - Edit Lead Form -->
+                        <div class="addnewleadform">
+                            <h5>Edit Target</h5>
+                            <div class="row">
+	                            <div class="col s12 m4 l4">
+	                            	<label for="edit_target_month">Target Month</label>
+	                                <input type="date" id="edit_target_month" name="edit_target_month">
+	                            </div>
+	                            <div class="col s12 m4 l4">
+	                            	<label for="edit_assigned_to">Assigned To</label>
+	                                <select class="browser-default" id="edit_assigned_to" name="edit_assigned_to">
+                                        <option value="" selected>Choose</option>
+                                        <option value="Sales Manager 1">Sales Manager 1</option>
+                                        <option value="Sales Executive 1">Sales Executive 1</option>
+                                    </select>
+	                            </div>
+	                            <div class="col s12 m4 l4">
+	                            	<label for="edit_target_amt">Target Amount</label>
+	                                <input type="number" id="edit_target_amt" name="edit_target_amt">
+	                            </div>
+	                            <div class="input-field col s12">
+	                                <button class="btn waves-effect waves-light ahbtncolor submit" id="edit_lead_form_submit">Update
+	                                    <i class="material-icons right">send</i>
+	                                </button>
+	                            </div>
+                            </div>
+                        </div>
+                        <!-- End - Edit Lead Form -->
+                    </form>
+                </li>
+            </ul>
+		</div>
+		</div>
+		<!-- END MAIN -->
+		<!-- //////////////////////////////////////////////////////////////////////////// -->
+		<!-- START FOOTER -->
+		<footer class="page-footer ahthemecolor">
+			<div class="footer-copyright">
+				<div class="container">
+					<div class="row mb-0">
+						<div class="col s12 m7 l7">
+							<span class="right">
+								Copyright Edel Assurance LLP ©
+								<script type="text/javascript">
+									document.write(new Date().getFullYear());
+								</script>
+							</span>
+						</div>
+						<div class="col s12 m5 l5">
+							<span class="right">
+								Designed &amp; Developed by Bluetick Consultants
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- ================================================
+			Scripts
+			================================================ -->
+		<!-- jQuery Library -->
+		<script type="text/javascript" src="static/js/jquery-3.2.1.min.js"></script>
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script> -->
+		<!--materialize js-->
+		<script type="text/javascript" src="static/js/materialize.min.js"></script>
+
+		<!--plugins.js - Some Specific JS codes for Plugin Settings-->
+		<script type="text/javascript" src="static/js/plugins.js"></script>
+
+		<script type="text/javascript" src="static/js/baseurl.js"></script>
+
+		<!--scrollbar-->
+        <script type="text/javascript" src="static/js/perfect-scrollbar.min.js"></script>
+        <!-- scriptjs -->
+		<script type="text/javascript" src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+
+		<script type="text/javascript" src="static/js/storage.js"></script>
+
+		<script type="text/javascript" src="static/js/target.js"></script>
+
+		<script type="text/javascript" src="static/js/role.js"></script>
+
+</html>

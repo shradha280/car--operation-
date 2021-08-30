@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="msapplication-tap-highlight" content="no">
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<title>Edel Assurance LLP</title>
+		<!-- Favicons-->
+		<link rel="icon" href="static/images/favicon.ico" sizes="32x32">
+		<!-- Favicons-->
+		<link rel="apple-touch-icon-precomposed" href="static/images/favicon.ico">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<!-- For iPhone -->
+		<meta name="msapplication-TileColor" content="#00bcd4">
+		<meta name="msapplication-TileImage" content="static/images/mstile-144x144.png">
+		<!-- For Windows Phone -->
+		<!-- CORE CSS-->
+		<link href="static/css/materialize.css" type="text/css" rel="stylesheet">
+		<!-- Custome CSS-->
+		<link href="static/css/custom.css" type="text/css" rel="stylesheet">
+		<link href="static/css/style.css" type="text/css" rel="stylesheet">
+		<link href="static/css/theme.css" type="text/css" rel="stylesheet">
+		<!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
+    	<link href="static/css/perfect-scrollbar.css" type="text/css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+	</head>
+	<body>
+		<header id="header" class="page-topbar">
+			<!-- start header nav-->
+			<div class="navbar-fixed">
+				<nav class="navbar-color ahthemecolor gradient-shadow">
+					<div class="nav-wrapper">
+						<ul class="right hide-on-med-and-down fixedonmob">
+							<li class="last_login">
+								<p>Welcome <span class="login_name_txt_white display_username"></span></p>
+								<p class="login_name_txt_white"><em id="datetime"></em></p>
+							</li>
+							<li>
+								<a href="javascript:void(0);" class="waves-effect waves-block waves-light profile-button" data-activates="profile-dropdown">
+								<span class="avatar-status avatar-online">
+								<img src="static/images/avatar-7.png" alt="avatar">
+								<i></i>
+								</span>
+								</a>
+								<ul id="profile-dropdown" class="dropdown-content">
+									<li class="mobuser">
+										<a class="grey-text text-darken-1">
+										<i class="material-icons">account_circle</i><span class="display_username"></span></a>
+									</li>
+									<li>
+										<a id="logout_link" class="grey-text text-darken-1">
+										<i class="material-icons">keyboard_tab</i> Logout</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</header>
+		<!-- Start Page Loading -->
+		<div id="loader-wrapper">
+			<div id="loader"></div>
+			<div class="loader-section section-left"></div>
+			<div class="loader-section section-right"></div>
+		</div>
+		<div class="loader-wrapper">
+			<img src="static/images/loading.gif" alt="">
+		</div>
+		<!-- End Page Loading -->
+		<!-- //////////////////////////////////////////////////////////////////////////// -->
+		<!-- START HEADER -->
+		<!-- END HEADER -->
+		<!-- //////////////////////////////////////////////////////////////////////////// -->
+		<!-- START MAIN -->
+		<div id="main">
+			<div class="wrapper">
+				<!-- START LEFT SIDEBAR NAV-->
+				<aside id="left-sidebar-nav" class="nav-expanded nav-lock nav-collapsible">
+					<div class="brand-sidebar">
+						<h1 class="logo-wrapper">
+							<a href="#" class="brand-logo darken-1">
+							<img src="static/images/edel-assurance-logo.svg" alt="materialize logo" class="logofordesktop">
+							<img src="static/images/edel-assurance-logo.svg" alt="materialize logo" class="logoformobile">
+							</a>
+						</h1>
+					</div>
+					<ul id="slide-out" class="leftbarthemecolor side-nav fixed leftside-navigation">
+						<li class="report_dashboard">
+							<a href="dashboard.html">
+							<i class="material-icons">dashboard</i>
+							<span class="nav-text">Dashboard</span>
+							</a>
+						</li>
+						<li class="hos-target">
+							<a href="target.html">
+							<i class="material-icons">dashboard</i>
+							<span class="nav-text">Targets</span>
+							</a>
+						</li>
+						<li class="user-target my-target">
+							<a href="user-target.html">
+							<i class="material-icons">dashboard</i>
+							<span class="nav-text">My Target</span>
+							</a>
+						</li>
+						<li class="no-padding">
+							<ul class="collapsible" data-collapsible="accordion">
+								<li class="bold contacts-listing">
+									<a class="collapsible-header waves-effect waves-cyan">
+									<i class="material-icons">verified_user</i>
+									<span class="nav-text">Contacts</span>
+									</a>
+									<div class="collapsible-body">
+										<ul>
+											<li>
+												<a href="contacts-listing.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="acc_all_list">All (<span class="contact_count"></span>)</span>
+												</a>
+											</li>
+											<li>
+												<a href="contacts-todays-followup.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="acc_todays_followup">Today's Followup (<span class="todays_followup_count"></span>)</span>
+												</a>
+											</li>
+											<li>
+												<a href="contacts-pending-followup.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="acc_pending_followup">Pending Followup (<span class="pending_followup_count"></span>)</span>
+												</a>
+											</li>
+											<li>
+												<a href="contacts-future-followup.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="future_followup">Future Followup (<span class="future_followup_count"></span>)</span>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</li>
+								<li class="lead-listing">
+									<a class="collapsible-header waves-effect waves-cyan">
+									<i class="material-icons">verified_user</i>
+									<span class="nav-text">Leads</span>
+									</a>
+									<div id="leftstatus" class="collapsible-body">
+										<ul>
+											<li>
+												<a href="leads-listing.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="all_lead_count">All ()</span>
+												</a>
+											</li>
+											<div class="followups">
+											<li>
+												<a href="#">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="followups_leads">Today's Followup ()</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="pending_followups">Pending Followup</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="future_followups">Future Followup</span>
+												</a>
+											</li>
+											<li class="not-updated-leads">
+												<a href="#">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="not_updated">Not Updated Leads ()</span>
+												</a>
+											</li>
+											</div>
+										</ul>
+									</div>
+								</li>
+								<li class="eval_scheduled">
+									<a class="collapsible-header waves-effect waves-cyan">
+									<i class="material-icons">verified_user</i>
+									<span class="nav-text">Evaluation Scheduled</span>
+									</a>
+									<div id="leftstatus" class="collapsible-body">
+										<ul>
+											<li>
+												<a href="all-evaluation.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="all_lead_count">All (<span class="all_eval_count"></span>)</span>
+												</a>
+											</li>
+											<li>
+												<a href="today-evaluation.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="followups_leads">Today's (<span class="today_eval_count"></span>)</span>
+												</a>
+											</li>
+											<li>
+												<a href="pending-evaluation.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="pending_followups">Pending (<span class="pending_eval_count"></span>)</span>
+												</a>
+											</li>
+											<li>
+												<a href="future-evaluation.html">
+												<i class="material-icons">keyboard_arrow_right</i>
+												<span id="future_followups">Future (<span class="future_eval_count"></span>)</span>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li class="eval-tracker active">
+							<a href="evaluation-tracker.html">
+							<i class="material-icons">schedule</i>
+							<span class="nav-text">Evaluation Tracker (<span class="tracker_eval_count"></span>)</span>
+							</a>
+						</li>
+						<li class="eval-report">
+							<a href="reports.html">
+							<i class="material-icons">dashboard</i>
+							<span class="nav-text">Reports</span>
+							</a>
+						</li>
+					</ul>
+					<a href="#" data-activates="slide-out"
+						class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only slideoutnavbtn">
+					<i class="material-icons">menu</i>
+					</a>
+				</aside>
+				<!-- END LEFT SIDEBAR NAV-->
+				<!-- //////////////////////////////////////////////////////////////////////////// -->
+				<!-- START CONTENT -->
+            <section id="content">
+                <!--start container-->
+                <div class="container">
+                    <div id="daily-data-chart">
+                        <div class="row mrgntopbtm10">
+                            <div class="col s12 m3 l3">
+                                <p class="left leads">All</p>
+                                <div class="chip teal darken-4 tracker_eval_count"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 m12 l12">
+                                <!-- <div id="clear_filter" class="chip filter-chips">
+                                    <a>Clear filter<i class="close material-icons">close</i></a>
+                                </div> -->
+                                <table role="table" class="lead-management">
+                                    <thead role="rowgroup">
+                                        <tr role="row">
+                                            <!-- <th role="columnheader">&nbsp;</th> -->
+                                            <th width="1%" role="columnheader">Id</th>
+                                            <th width="6%" role="columnheader">Scheduled Date</th>
+											<th width="10%" role="columnheader">Booked by</th>
+											<th width="6%" role="columnheader">Sales Executive</th>
+											<th width="11%" role="columnheader">Customer Name</th>
+											<th width="20%" role="columnheader">Location</th>
+                                            <th width="10%" role="columnheader">Time</th>
+											<th width="10%" role="columnheader">Asigned To ASE</th>
+                                            <th width="10%" role="columnheader">Vehicle Make/Model</th>
+											<th width="18%" role="columnheader">Remark</th>
+											<th width="1%" role="columnheader">&nbsp;</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody role="rowgroup" id="eval_tracker_list">
+                                        <!-- <tr role="row" class="topborder">
+                                            <td role="cell">
+                                                <div class="table_show_on_mobile">Id</div>
+                                                11111
+                                            </td>
+                                            <td role="cell">
+                                                <div class="table_show_on_mobile"><strong>Date</strong></div>
+                                                6-4-2021
+                                            </td>
+                                            <td role="cell">
+                                                <div class="table_show_on_mobile"><strong>Time</strong></div>
+                                                11am - 1pm
+                                            </td>
+                                            <td role="cell">
+                                                <div class="table_show_on_mobile"><strong>Customer Name</strong></div>
+                                                Sanman Mandlik
+                                             </td>
+                                             <td role="cell">
+                                                <div class="table_show_on_mobile"><strong>Location</strong></div>
+                                                <p>Home Address</p>
+                                                <p>1011/C, Jewel chriss, Pandit Gunidas Road, Mahim West, Mumbai 400016</p>
+                                             </td>
+                                            <td role="cell">
+                                                <div class="table_show_on_mobile"><strong>Vehicle Make/Model</strong></div>
+                                                <p>Mercedes-Benz</p>
+                                                <p>GLC</p>
+                                            </td>
+                                            <td role="cell">
+                                                <div class="table_show_on_mobile"><strong>Booked by</strong></div>
+                                                <p>After Sales Manager 1</p>
+                                            </td>
+                                            <td role="cell">
+                                                <div class="table_show_on_mobile"><strong>Asigned To</strong></div>
+                                                After Sales Executive 1
+                                            </td>
+
+                                        </tr> -->
+                                    </tbody>
+                                </table>
+
+								<div class="pagination">
+                                    <span class="step-links">
+										<a class="waves-effect" href="javascript:prevPage()" id="btn_prev">Previous</a>
+										<span class="current active waves-effect">
+											page: <span id="page"></span>
+										</span>
+										<a class="waves-effect" href="javascript:nextPage()" id="btn_next">Next</a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //////////////////////////////////////////////////////////////////////////// -->
+                    </div>
+                    <!-- END WRAPPER -->
+                </div>
+
+            </div>
+            </div>
+            </section>
+		</div>
+		</div>
+		<!-- END MAIN -->
+		<!-- //////////////////////////////////////////////////////////////////////////// -->
+		<!-- START FOOTER -->
+		<footer class="page-footer ahthemecolor">
+			<div class="footer-copyright">
+				<div class="container">
+					<div class="row mb-0">
+						<div class="col s12 m7 l7">
+							<span class="right">
+								Copyright Edel Assurance LLP ©
+								<script type="text/javascript">
+									document.write(new Date().getFullYear());
+								</script>
+							</span>
+						</div>
+						<div class="col s12 m5 l5">
+							<span class="right">
+								Designed &amp; Developed by Bluetick Consultants
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- ================================================
+			Scripts
+			================================================ -->
+		<!-- jQuery Library -->
+		<script type="text/javascript" src="static/js/jquery-3.2.1.min.js"></script>
+		<!--materialize js-->
+		<script type="text/javascript" src="static/js/materialize.min.js"></script>
+		<!--plugins.js - Some Specific JS codes for Plugin Settings-->
+
+		<script type="text/javascript" src="static/js/baseurl.js"></script>
+
+		<script type="text/javascript" src="static/js/plugins.js"></script>
+		<!--scrollbar-->
+        <script type="text/javascript" src="static/js/perfect-scrollbar.min.js"></script>
+		<!-- scriptjs -->
+		<script type="text/javascript" src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+
+		<script type="text/javascript" src="static/js/storage.js"></script>
+
+		<script type="text/javascript" src="static/js/evaluation.js"></script>
+
+		<script type="text/javascript" src="static/js/role.js"></script>
+
+		<script type="text/javascript">
+        $(document).ready(function(){
+  var red = ["2021-04-02","2021-04-04","2021-04-06"];
+  var yellow = ["2021-04-09"];
+  var green = ["2021-04-10","2021-04-11"];
+
+  $("#calendar").datepicker({
+    // defaultDate: '08/07/2017',      // Just for this demo longevity on SO ;)
+
+    beforeShowDay: function(date){
+      var dateISO = $.datepicker.formatDate('yy-mm-dd', date);
+      //console.log(dateISO);
+
+      if(red.indexOf(dateISO)>-1){
+        return [true,"red"]        // Enabled, class
+      }
+      if(yellow.indexOf(dateISO)>-1){
+        return [true,"yellow"]
+      }
+      if(green.indexOf(dateISO)>-1){
+        return [true,"green"]
+      }
+      return [true]  // If not found, must at least return the enabled boolean.
+    }
+  });
+});
+    </script>
+    <style>
+        .red a{
+  background-color: red !important;
+  border-radius: 20px; line-height: normal !important; height: auto !important;
+}
+.yellow a{
+  background-color: yellow !important;
+  border-radius: 20px; line-height: normal !important; height: auto !important;
+}
+.green a{
+  background-color: green !important;
+  border-radius: 20px; line-height: normal !important; height: auto !important;
+}
+    </style>
+
+
+</html>
