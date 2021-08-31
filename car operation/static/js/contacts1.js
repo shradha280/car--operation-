@@ -5,10 +5,9 @@ function contact_view(contact_id, contact_list_current_page) {
     localStorage.setItem('contact_list_current_page', contact_list_current_page)
     localStorage.removeItem('cpath')
     localStorage.setItem('cpath', location.href)
-    location = 'file:///C:/Users/gshik/Downloads/edel-lms-fe-main/edel-lms-fe-main/contacts-view.html?id='+ contact_id
-    // location.href = location.origin + '/contacts-view.html?id=' + contact_id
+    location = 'file:///C:/Users/gshik/Downloads/edel-lms-fe-main1/edel-lms-fe-main/contacts-view.html?id='+ contact_id
+    //location.href = location.origin + '/contacts-view.html?id=' + contact_id
 }
-
 function today_contact_view(contact_id, today_contact_list_current_page) {
     // var contact_id = localStorage.getItem('contactId');
     // console.log(contact_id)
@@ -16,7 +15,7 @@ function today_contact_view(contact_id, today_contact_list_current_page) {
     localStorage.setItem('today_contact_list_current_page', today_contact_list_current_page)
     localStorage.removeItem('cpath')
     localStorage.setItem('cpath', location.href)
-    location = 'file:///C:/Users/Advantage/Desktop/edel-frontend/edel-lms-fe/contacts-view.html?id='+ contact_id
+    location = 'file:///C:/Users/gshik/Downloads/edel-lms-fe-main1/edel-lms-fe-main/contacts-view.html?id='+ contact_id
     //location.href = location.origin + '/contacts-view.html?id=' + contact_id
 }
 function pending_contact_view(contact_id, pending_contact_list_current_page) {
@@ -26,7 +25,7 @@ function pending_contact_view(contact_id, pending_contact_list_current_page) {
     localStorage.setItem('pending_contact_list_current_page', pending_contact_list_current_page)
     localStorage.removeItem('cpath')
     localStorage.setItem('cpath', location.href)
-    location = 'file:///C:/Users/Advantage/Desktop/edel-frontend/edel-lms-fe/contacts-view.html?id='+ contact_id
+    location = 'file:///C:/Users/gshik/Downloads/edel-lms-fe-main1/edel-lms-fe-main/contacts-view.html?id='+ contact_id
     //location.href = location.origin + '/contacts-view.html?id=' + contact_id
 }
 function future_contact_view(contact_id, future_contact_list_current_page) {
@@ -36,10 +35,9 @@ function future_contact_view(contact_id, future_contact_list_current_page) {
     localStorage.setItem('future_contact_list_current_page', future_contact_list_current_page)
     localStorage.removeItem('cpath')
     localStorage.setItem('cpath', location.href)
-    location = 'file:///C:/Users/Advantage/Desktop/edel-frontend/edel-lms-fe/contacts-view.html?id='+ contact_id
+    location = 'file:///C:/Users/gshik/Downloads/edel-lms-fe-main1/edel-lms-fe-main/contacts-view.html?id='+ contact_id
     //location.href = location.origin + '/contacts-view.html?id=' + contact_id
 }
-
 
 function loader_hide() {
     $(".loader-wrapper").hide();
@@ -63,8 +61,6 @@ var token = localStorage.getItem('token').replace(/"/g, "");
 
 var ulocation = localStorage.getItem('ulocation');
 console.log(ulocation);
-
-// document.getElementById('clear_filter').style.display='none';
 $("#clear_filter").css("display", "none");
 var total_pages = null;
 function prevPage() {
@@ -77,6 +73,7 @@ function prevPage() {
     getALLContact(contact_filter_string, contact_list_current_page);
 }
 function nextPage() {
+   
     console.log(total_pages);
     var contact_list_current_page = localStorage.getItem('contact_list_current_page');
 
@@ -87,6 +84,7 @@ function nextPage() {
     var contact_filter_string = localStorage.getItem('contact_filter_string');
     console.log(total_pages)
     getALLContact(contact_filter_string, contact_list_current_page);
+
 }
 var today_total_pages=null;
 function todayprevPage() {
@@ -154,7 +152,6 @@ function futurenextPage() {
     console.log(future_total_pages)
     future_contact(future_contact_list_current_page);
 }
-
 function filter() {
     var filter_first_name = $("#filter_first_name").val();
     var filter_last_name = $("#filter_last_name").val();
@@ -178,23 +175,21 @@ function filter() {
     return filter_str;
 }
 $("#filtercontactform").submit(function (e) {
-    e.preventDefault()
+    page_reload();
+    //e.preventDefault()
     var contact_filter_string = filter();
-    if(contact_filter_string=='?source='){
-        Materialize.toast('enter details to continue', 4000, 'red');
-        return false;
-    }
     localStorage.setItem('contact_filter_string', contact_filter_string);
     console.log(contact_filter_string)
     localStorage.setItem('contact_list_current_page', 1);
     getALLContact(contact_filter_string, 1);
     $("#sidenav-overlay").hide();
-    $("body").css("overflow-y","auto");
     document.getElementById('clear_filter').style.display = '';
+
 });
 
 
 function add_contacts_to_table(data) {
+    loader_hide();
     var all_contact_count = data.pagination.total_items;
     // var current_page = parseInt(data.pagination.current_page);
     //localStorage.setItem('current_page',current_page);
@@ -203,44 +198,36 @@ function add_contacts_to_table(data) {
     // localStorage.setItem('read_contact_id',JSON.stringify(data.contacts.id))
     $("#all_contact_data").empty();
     $.each(data.contacts, function () {
-        if (this.sub_source === "Choose")
-            var subsource = "";
-        else {
-            var subsource = this.sub_source;
-        }
-        $("#all_contact_data").append(this.id +  this.created_date.split('T')[0] + this.first_name +  this.last_name +  this.contact_phone_number.primary_number  + this.primary_email_id + this.source + "</p><p>" + subsource + this.status + this.updated_next_followup_date + this.id );
+        $("#all_contact_data").append("<tr role='row' class='topborder'><td width='5%' role='cell'><div class='table_show_on_mobile'><strong>Id</strong></div>" + this.id + "</td><td width='10%' role='cell'><div class='table_show_on_mobile'><strong>Created Date</strong></div>" + this.created_date.split('T')[0] + "</td><td width='10%' role='cell'><div class='table_show_on_mobile'><strong>First Name</strong></div><p class='name_style'><a onclick='contact_view(" + this.id + "," + contact_list_current_page + ")' title='Click to view'>" + this.first_name + "</a></p></td><td width='10%' role='cell'><div class='table_show_on_mobile'><strong>Last Name</strong></div><p>" + this.last_name + "</p></td><td width='10%' role='cell'><div class='table_show_on_mobile'><strong>Mobile Number</strong></div><span>" + this.contact_phone_number.primary_number + "</span></td><td width='10%' role='cell'><div class='table_show_on_mobile'><strong>Email Id</strong></div><p>" + this.primary_email_id + "</p></td><td width='10%' role='cell'><div class='table_show_on_mobile'><strong>Contact Status</strong></div><p>" + this.status + "</p></td><td width='10%' role='cell'><div class='table_show_on_mobile'><strong>Next Follow-up Date</strong></div><p>" + this.updated_next_followup_date + "</p></td><td width='5%' role='cell'><a href='javascript:void(0);'class='waves-effect waves-block waves-light profile-button threedotsmob right' data-activates='moreoption-dropdown__" + this.id + "'><i class='material-icons more_vert_mob right'>more_vert</i></a><ul id='moreoption-dropdown__" + this.id + "' class='dropdown-content'><li><a href='#' class='grey-text text-darken-1 chat-collapse openEditCustomerForm' data-activates='editcontactform-slide-out' data-id=\"" + this.id + "\"><i class='material-icons'>edit</i> Edit Info</a></li><li><a href='#' class='grey-text text-darken-1 chat-collapse accountfollowUpForm' data-activates='contactfollowup-slide-out' data-id=\"" + this.id + "\"><i class='material-icons'>contact_phone</i>Add Follow-Up</a></li><li><a href='#' class='grey-text text-darken-1 chat-collapse sendproposalform' data-activates='sendproposalform-slide-out' data-id=\"" + this.id + "\"><i class='material-icons'>send</i>Send Proposal</a></li></ul></td></tr>");
         // $('.dropdown-content').dropdown();
 
     });
-    
-    
+    $('.threedotsmob').dropdown({
+        inDuration: 300,
+        outDuration: 225,
+        constrainWidth: false, // Does not change width of dropdown to that of the activator
+        click: true, // Activate on click
+        gutter: 0, // Spacing from edge
+        belowOrigin: false, // Displays dropdown below the button
+        alignment: 'left', // Displays dropdown with edge aligned to the left of button
+        stopPropagation: false // Stops event propagation
+    });
+    $('.chat-collapse').sideNav({
+        menuWidth: 300, // Default is 300
+        edge: 'right', // Choose the horizontal origin
+        closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+        draggable: true, // Choose whether you can drag to open on touch screens,
+    });
+    attach_contact_edit_event();
+    create_contact_followup();
+    edel_proposal_attach();
 }
 
 function attach_contact_edit_event() {
     $(".openEditCustomerForm").click(function () {
-      
-        $("#edit_contact_subsource").empty();
-        
-      
+        var contact_id = $(this).data("id");
 
-        $.ajax({
-            url: baseURL + '/sub_source/getall?source=' + source,
-            method: 'GET',
-            dataType: 'json',
-            contentType: 'application/json',
-            beforeSend: function (xhr) {
-                xhr.setRequestHeader('Authorization', 'Token ' + token);
-            },
-            success: function (data) {
-                // console.log(data)
-                // $("#edit_contact_subsource").append("<option value='Choose'>Choose</option>");
-                if (data.Status == true && data.Message == "Record found successfully") {
-                    $.each(data.Data, function () {
-                        $("#edit_contact_subsource").append("<option value='" + this + "'>" + this + "</option>");
-                    });
-                }
-            }
-        });
+        $(".contact_id").html(contact_id);
 
         $.ajax({
             url: baseURL + '/read_contact?id=' + contact_id,
@@ -297,11 +284,8 @@ function attach_contact_edit_event() {
                 $("#edit_contact_status").val(append_contact_read_data.Contact.status);
                 $("#edit_contact_notinterested").val(append_contact_read_data.Contact.close_reason);
                 $("#edit_contact_outofcriteria").val(append_contact_read_data.Contact.close_comment);
-                $("#edit_contact_source").val(append_contact_read_data.Contact.source);
-                $("#edit_contact_subsource").val(append_contact_read_data.Contact.sub_source);
             },
         });
-
     });
 }
 
@@ -310,6 +294,7 @@ $("#clear_filter").on('click', function () {
     localStorage.removeItem("contact_list_current_page");
     localStorage.removeItem("contact_filter_string");
 });
+
 var contact_list_current_page = localStorage.getItem('contact_list_current_page')
 if (contact_list_current_page == null) {
     contact_list_current_page = 1;
@@ -329,6 +314,7 @@ var token = localStorage.getItem('token').replace(/"/g, "");
 getALLContact(contact_filter_string, contact_list_current_page);
 
 function getALLContact(contact_filter_string, contact_list_current_page) {
+    loader_show();
     $.ajax({
         url: baseURL + '/contact/getall' + contact_filter_string + '&page=' + contact_list_current_page,
         method: 'GET',
@@ -349,17 +335,14 @@ function getALLContact(contact_filter_string, contact_list_current_page) {
             // Validate page
             if (contact_list_current_page < 1) contact_list_current_page = 1;
             if (contact_list_current_page > total_pages) contact_list_current_page = total_pages;
-            if(page_span!=null){
             page_span.innerHTML = contact_list_current_page + "/" + data.pagination.total_pages;
-            }
-            if(btn_prev!=null){
+
             if (contact_list_current_page == 1) {
                 btn_prev.style.visibility = "hidden";
             } else {
                 btn_prev.style.visibility = "visible";
             }
-        }
-        if(btn_next!=null){
+
             if (contact_list_current_page == total_pages) {
                 btn_next.style.visibility = "hidden";
             } else {
@@ -369,7 +352,6 @@ function getALLContact(contact_filter_string, contact_list_current_page) {
             if (total_pages == 1) {
                 btn_next.style.visibility = "hidden";
             }
-        }
         }
 
     });
@@ -429,8 +411,6 @@ $("#createcontact").submit(function (e) {
         var contact_nfd_date = $("#contact_nfd_date").val();
         var contact_notinterested = $("#contact_notinterested").val();
         var contact_outofcriteria = $("#contact_outofcriteria").val();
-        var contact_source = $("#contact_source").val();
-        var contact_subsource = $("#contact_subsource").val();
 
         var contact_owner = localStorage.getItem('username').replace(/"/g, "");
         var create_contact_data = {
@@ -487,9 +467,7 @@ $("#createcontact").submit(function (e) {
                     "country": other_country,
                     "pincode": other_zipcode
                 },
-                "contact_type": customer_type,
-                "source": contact_source,
-                "sub_source": contact_subsource,
+                "contact_type": customer_type
             }
         }
         console.log(create_contact_data);
@@ -585,8 +563,6 @@ $("#updatecontactform").submit(function (e) {
         var edit_contact_status = $("#edit_contact_status").val();
         var edit_contact_notinterested = $("#edit_contact_notinterested").val();
         var edit_contact_outofcriteria = $("#edit_contact_outofcriteria").val();
-        var edit_contact_source = $("#edit_contact_source").val();
-        var edit_contact_subsource = $("#edit_contact_subsource").val();
 
         lead_owner = localStorage.getItem('username').replace(/"/g, "");
         var update_contact_data = {
@@ -605,8 +581,6 @@ $("#updatecontactform").submit(function (e) {
             "status": edit_contact_status,
             "close_reason": edit_contact_notinterested,
             "close_comment": edit_contact_outofcriteria,
-            "source": edit_contact_source,
-            "sub_source": edit_contact_subsource,
             "contact_address": {
                 "address_type": "Home",
                 "street": edit_home_street,
@@ -669,69 +643,71 @@ $("#updatecontactform").submit(function (e) {
     return false;
 });
 
-var contactID = null;
+
+											
 function create_contact_followup() {
+    
     $(".accountfollowUpForm").click(function () {
         
+        ;
+        var contact_id = $(this).data("id");
         var baseURL = localStorage.getItem('baseURL');
         var token = localStorage.getItem('token').replace(/"/g, "");
-        
 
-      
-        // $("#create_contact_followup").empty();
-        
+        $(".contact_id").html(contact_id);
+
+        $("#create_contact_followup").submit(function (e) {
+           
+            e.preventDefault()
+            loader_show();
+            if ($("#contact_follow_up_remark,#contact_nfd_date2,#contact_follow_up_time_interval2").val().length > 0) {
+
+                var today_followup_date = $("#contact_follow_up_date").val();
+                var contact_follow_up_remark = $("#contact_follow_up_remark").val();
+                
+                var contact_nfd_date2 = $("#contact_nfd_date2").val();
+                var contact_follow_up_time_interval2 = $("#contact_follow_up_time_interval2").val();
+                var followup_contact_status = $("#followup_contact_status").val();
+
+                var create_contact_followup = {
+                    "contact": contact_id,
+                    "followup_date": today_followup_date,
+                    "next_followup_date": contact_nfd_date2,
+                    "remarks": contact_follow_up_remark,
+                    "time_slot": contact_follow_up_time_interval2,
+                    "status": followup_contact_status
+                }
+                console.log(create_contact_followup)
+                $.ajax({
+                    url: baseURL + '/contact_followup_create',
+                    type: 'POST',
+                    contentType: "application/json",
+                    dataType: "json",
+                    data: JSON.stringify(create_contact_followup),
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader('Authorization', 'Token ' + token);
+                    },
+                    success: function (data) {
+                        console.log(data)
+                        loader_hide();
+                        Materialize.toast('Contact Followup Created Successfully', 4000, 'green');
+                        page_reload();
+                        // alert("Contact Followup Added Successfully")
+                        // window.location.reload();
+                    },
+                    error: function (jqXhr, textStatus, errorThrown) {
+                        loader_hide();
+                        error_popup();
+                        console.log(errorThrown);
+                    },
+                });
+            } else {
+
+            }
+            return false;
+        });
     });
 }
-
-$("#create_contact_followup").submit(function (e) {
-    e.preventDefault()
-    loader_show();
-    if ($("#contact_follow_up_remark,#contact_nfd_date2,#contact_follow_up_time_interval2,#followup_contact_status").val().length > 0) {
-
-        var today_followup_date = $("#contact_follow_up_date").val();
-        var contact_follow_up_remark = $("#contact_follow_up_remark").val();
-        var contact_nfd_date2 = $("#contact_nfd_date2").val();
-        var contact_follow_up_time_interval2 = $("#contact_follow_up_time_interval2").val();
-        var followup_contact_status = $("#followup_contact_status").val();
-
-        var create_contact_followup = {
-            "contact": contactID,
-            "followup_date": today_followup_date,
-            "next_followup_date": contact_nfd_date2,
-            "remarks": contact_follow_up_remark,
-            "time_slot": contact_follow_up_time_interval2,
-            "status": followup_contact_status
-        }
-        console.log(create_contact_followup)
-        $.ajax({
-            url: baseURL + '/contact_followup_create',
-            type: 'POST',
-            contentType: "application/json",
-            dataType: "json",
-            data: JSON.stringify(create_contact_followup),
-            beforeSend: function (xhr) {
-                xhr.setRequestHeader('Authorization', 'Token ' + token);
-            },
-            success: function (data) {
-                console.log(data)
-                loader_hide();
-                Materialize.toast('Contact Followup Created Successfully', 4000, 'green');
-                page_reload();
-                // alert("Contact Followup Added Successfully")
-                // window.location.reload();
-            },
-            error: function (jqXhr, textStatus, errorThrown) {
-                loader_hide();
-                error_popup();
-                console.log(errorThrown);
-            },
-        });
-    } else {
-
-    }
-    return false;
-});
-
 var today_contact_list_current_page= localStorage.getItem('today_contact_list_current_page');
 if (today_contact_list_current_page == null) {
     today_contact_list_current_page = 1;
@@ -756,7 +732,7 @@ $.ajax({
         var todays_followup_count = data.pagination.total_items;
         $(".todays_followup_count").html(todays_followup_count);
         $.each(data.Followups, function () {
-           
+            $("#contact_todays_followup_list").append("<tr role='row' class='topborder'><td width='5%' role='cell'><div class='table_show_on_mobile'><strong>Id</strong></div>" + this.contact.id + "</td><td width='10%' role='cell'><div class='table_show_on_mobile'><strong>Created Date</strong></div>" + this.contact.created_date + "</td><td width='10%' role='cell'><div class='table_show_on_mobile'><strong>First Name</strong></div><p class='name_style'><a onclick='today_contact_view(" + this.contact.id + "," + today_contact_list_current_page + ")' title='Click to view'>" + this.contact.first_name + "</a></p></td><td width='10%' role='cell'><div class='table_show_on_mobile'><strong>Last Name</strong></div><p>" + this.contact.last_name + "</p></td><td width='10%' role='cell'><div class='table_show_on_mobile'><strong>Mobile Number</strong></div><span>" + this.contact.contact_phone_number.primary_number + "</span></td><td width='10%' role='cell'><div class='table_show_on_mobile'><strong>Email Id</strong></div><p>" + this.contact.primary_email_id + "</p></td><td width='10%' role='cell'><div class='table_show_on_mobile'><strong>Contact Status</strong></div><p>" + this.contact.status + "</p></td><td width='10%' role='cell'><div class='table_show_on_mobile'><strong>Next Follow-up Date</strong></div><p>" + this.next_followup_date + "</p></td></tr>");
         });
         loader_hide();
          today_total_pages = data.pagination.total_pages;
@@ -767,18 +743,14 @@ $.ajax({
         // Validate page
         if (today_contact_list_current_page < 1) today_contact_list_current_page = 1;
         if (today_contact_list_current_page >today_total_pages) today_contact_list_current_page = today_total_pages;
-        if(today_page_span!=null){
         today_page_span.innerHTML = today_contact_list_current_page + "/" + data.pagination.total_pages;
-        }
-        if(today_btn_prev!=null){
 
         if (today_contact_list_current_page == 1) {
             today_btn_prev.style.visibility = "hidden";
         } else {
             today_btn_prev.style.visibility = "visible";
         }
-    }
-    if(today_btn_next!=null){
+
         if (today_contact_list_current_page == today_total_pages) {
             today_btn_next.style.visibility = "hidden";
         } else {
@@ -788,7 +760,7 @@ $.ajax({
         if (today_total_pages == 1) {
             today_btn_next.style.visibility = "hidden";
         }
-    }
+
     },
     
 
@@ -802,7 +774,7 @@ if (pending_contact_list_current_page == null) {
 localStorage.setItem('pending_contact_list_current_page', pending_contact_list_current_page)
 pending_contact(pending_contact_list_current_page);
 function pending_contact(pending_contact_list_current_page){
-    loader_show();
+    //loader_show();
 $.ajax({
     url: baseURL + '/contact_followup_lists?viewby=pending&page='+pending_contact_list_current_page,
     method: 'GET',
@@ -819,9 +791,9 @@ $.ajax({
         var pending_followup_count =  data.pagination.total_items;
         $(".pending_followup_count").html(pending_followup_count);
         $.each(data.Followups, function () {
-          
+            $("#contact_pending_followup_list").append("<tr role='row' class='topborder'><td width='5%' role='cell'><div class='table_show_on_mobile'><strong>Id</strong></div>" + this.contact.id + "</td><td width='10%' role='cell'><div class='table_show_on_mobile'><strong>Created Date</strong></div>" + this.contact.created_date + "</td><td width='10%' role='cell'><div class='table_show_on_mobile'><strong>First Name</strong></div><p class='name_style'><a onclick='contact_view(" + this.contact.id + "," + contact_list_current_page + ")' title='Click to view'>" + this.contact.first_name + "</a></p></td><td width='10%' role='cell'><div class='table_show_on_mobile'><strong>Last Name</strong></div><p>" + this.contact.last_name + "</p></td><td width='10%' role='cell'><div class='table_show_on_mobile'><strong>Mobile Number</strong></div><span>" + this.contact.contact_phone_number.primary_number + "</span></td><td width='10%' role='cell'><div class='table_show_on_mobile'><strong>Email Id</strong></div><p>" + this.contact.primary_email_id + "</p></td><td width='10%' role='cell'><div class='table_show_on_mobile'><strong>Contact Status</strong></div><p>" + this.contact.status + "</p></td><td width='10%' role='cell'><div class='table_show_on_mobile'><strong>Next Follow-up Date</strong></div><p>" + this.next_followup_date + "</p></td></tr>");
         });
-        loader_hide();
+        // loader_hide();
         pending_total_pages = data.pagination.total_pages;
         var pending_btn_next = document.getElementById("pending_btn_next");
         var pending_btn_prev = document.getElementById("pending_btn_prev");
@@ -830,17 +802,14 @@ $.ajax({
         // Validate page
         if (pending_contact_list_current_page < 1) pending_contact_list_current_page = 1;
         if (pending_contact_list_current_page >pending_total_pages) pending_contact_list_current_page = pending_total_pages;
-        if(pending_page_span!=null){
         pending_page_span.innerHTML = pending_contact_list_current_page + "/" + data.pagination.total_pages;
-        }
-        if(pending_btn_prev!=null){
+
         if (pending_contact_list_current_page == 1) {
             pending_btn_prev.style.visibility = "hidden";
         } else {
             pending_btn_prev.style.visibility = "visible";
         }
-    }
-    if(pending_btn_next!=null){
+
         if (pending_contact_list_current_page == pending_total_pages) {
            pending_btn_next.style.visibility = "hidden";
         } else {
@@ -851,7 +820,7 @@ $.ajax({
             pending_btn_next.style.visibility = "hidden";
         }
 
-    }
+ 
     },
 
 });
@@ -881,7 +850,7 @@ $.ajax({
         var future_followup_count =  data.pagination.total_items;
         $(".future_followup_count").html(future_followup_count);
         $.each(data.Followups, function () {
-          
+            $("#contact_future_followup_list").append("<tr role='row' class='topborder'><td width='5%' role='cell'><div class='table_show_on_mobile'><strong>Id</strong></div>" + this.contact.id + "</td><td width='10%' role='cell'><div class='table_show_on_mobile'><strong>Created Date</strong></div>" + this.contact.created_date + "</td><td width='10%' role='cell'><div class='table_show_on_mobile'><strong>First Name</strong></div><p class='name_style'><a onclick='contact_view(" + this.contact.id + "," + contact_list_current_page + ")' title='Click to view'>" + this.contact.first_name + "</a></p></td><td width='10%' role='cell'><div class='table_show_on_mobile'><strong>Last Name</strong></div><p>" + this.contact.last_name + "</p></td><td width='10%' role='cell'><div class='table_show_on_mobile'><strong>Mobile Number</strong></div><span>" + this.contact.contact_phone_number.primary_number + "</span></td><td width='10%' role='cell'><div class='table_show_on_mobile'><strong>Email Id</strong></div><p>" + this.contact.primary_email_id + "</p></td><td width='10%' role='cell'><div class='table_show_on_mobile'><strong>Contact Status</strong></div><p>" + this.contact.status + "</p></td><td width='10%' role='cell'><div class='table_show_on_mobile'><strong>Next Follow-up Date</strong></div><p>" + this.next_followup_date + "</p></td></tr>");
         });
         
         future_total_pages = data.pagination.total_pages;
@@ -892,17 +861,14 @@ $.ajax({
         // Validate page
         if (future_contact_list_current_page < 1) future_contact_list_current_page = 1;
         if (future_contact_list_current_page >future_total_pages) future_contact_list_current_page = future_total_pages;
-        if(future_page_span!=null){
        future_page_span.innerHTML = future_contact_list_current_page + "/" + data.pagination.total_pages;
-        }
-        if(future_btn_prev!=null){
+
         if (future_contact_list_current_page == 1) {
             future_btn_prev.style.visibility = "hidden";
         } else {
             future_btn_prev.style.visibility = "visible";
         }
-    }
-    if(future_btn_next!=null){
+
         if (future_contact_list_current_page == future_total_pages) {
            future_btn_next.style.visibility = "hidden";
         } else {
@@ -913,21 +879,19 @@ $.ajax({
             future_btn_next.style.visibility = "hidden";
         }
 
-    }
+ 
     },
 
 });
 
 }
-
-
 function edel_proposal_attach() {
     $(".sendproposalform").click(function () {
-      
+        var contact_id = $(this).data("id");
         var baseURL = localStorage.getItem('baseURL');
         var token = localStorage.getItem('token').replace(/"/g, "");
 
-     
+        $(".contact_id").html(contact_id);
 
         $.ajax({
             url: baseURL + '/edel_attachments/getall',
@@ -1002,7 +966,7 @@ function edel_proposal_attach() {
 
 function view_proposal_attachment() {
     $(".modal-trigger").click(function () {
-        
+        var viewattach = $(this).data("attach");
         $(".view-attachment1").append("<embed src='" + viewattach + "' style='width: 100%; height: 100%; position: absolute; left: 0; top: 0;'></embed>")
     });
 }
@@ -1072,141 +1036,3 @@ $.ajax({
         }
     }
 });
-
-function contact_to_lead() {
-$(".contact_to_lead").click(function () {
-	// loader_show();
-    
-
-    $.ajax({
-        url: baseURL + '/read_contact?id=' + contact_id,
-        method: 'GET',
-        dataType: 'json',
-        contentType: 'application/json',
-        beforeSend: function (xhr) {
-            xhr.setRequestHeader('Authorization', 'Token ' + token);
-        },
-        success: function (data) {
-            console.log(data)
-
-            var contact_details = data.Contact
-            var contact_name_id_mob = contact_details.first_name+'('+contact_details.id+')-'+contact_details.contact_phone_number.primary_number
-            console.log(contact_name_id_mob)
-            var contact_source_subsource = [contact_details.source,contact_details.sub_source]
-            localStorage.setItem('contact_to_lead', contact_name_id_mob)
-            localStorage.setItem('contact_src_subsrc', contact_source_subsource)
-            window.location.href = 'leads-listing.html';
-        },
-    });
-
-    
-
-});
-}
-
-// GET ALL SOURCE
-$.ajax({
-    url: baseURL + '/source/getall',
-    method: 'GET',
-    dataType: 'json',
-    contentType: 'application/json',
-    beforeSend: function (xhr) {
-        xhr.setRequestHeader('Authorization', 'Token ' + token);
-    },
-    success: function (data) {
-        if (data.Status == true && data.Message == "Record found successfully") {
-            $.each(data.Data, function () {
-                $("#contact_source").append("<option value='" + this + "'>" + this + "</option>");
-            });
-            $.each(data.Data, function () {
-                $("#edit_contact_source").append("<option value='" + this + "'>" + this + "</option>");
-            })
-            // $.each(data.Data, function () {
-            //     $("#filter_contact_source").append("<option value='" + this + "'>" + this + "</option>");
-            // })
-        }
-    }
-});
-
-// GET ALL SOURCE
-$("#contact_source").change(function () {
-    $("#contact_subsource").empty();
-   
-    $.ajax({
-        url: baseURL + '/sub_source/getall?source=' + source,
-        method: 'GET',
-        dataType: 'json',
-        contentType: 'application/json',
-        // data: JSON.stringify({
-        //     "source": "Dealer"
-        //   }),
-        beforeSend: function (xhr) {
-            xhr.setRequestHeader('Authorization', 'Token ' + token);
-        },
-        success: function (data) {
-            // console.log(data)
-            $("#contact_subsource").append("<option value=''>Choose</option>");
-            if (data.Status == true && data.Message == "Record found successfully") {
-                $.each(data.Data, function () {
-                    $("#contact_subsource").append("<option value='" + this + "'>" + this + "</option>");
-                });
-                // $.each(data.Data, function () {
-                //     $("#filter_contact_subsource").append("<option value='" + this + "'>" + this + "</option>");
-                // });
-                $.each(data.Data, function () {
-                    $("#edit_contact_subsource").append("<option value='" + this + "'>" + this + "</option>");
-                });
-            }
-        }
-    });
-});
-$("#edit_contact_source").change(function () {
- 
-    $("#edit_contact_subsource").empty();
-    $.ajax({
-        url: baseURL + '/sub_source/getall?source=' + source,
-        method: 'GET',
-        dataType: 'json',
-        contentType: 'application/json',
-        // data: JSON.stringify({
-        //     "source": "Dealer"
-        //   }),
-        beforeSend: function (xhr) {
-            xhr.setRequestHeader('Authorization', 'Token ' + token);
-        },
-        success: function (data) {
-            // console.log(data)
-            $("#edit_contact_subsource").append("<option value=''>Choose</option>");
-            if (data.Status == true && data.Message == "Record found successfully") {
-                $.each(data.Data, function () {
-                    $("#edit_contact_subsource").append("<option value='" + this + "'>" + this + "</option>");
-                });
-            }
-        }
-    });
-});
-// $("#filter_contact_source").change(function () {
-//     var source = $(this).val();
-//     $("#filter_contact_subsource").empty();
-//     $.ajax({
-//         url: baseURL + '/sub_source/getall?source=' + source,
-//         method: 'GET',
-//         dataType: 'json',
-//         contentType: 'application/json',
-//         // data: JSON.stringify({
-//         //     "source": "Dealer"
-//         //   }),
-//         beforeSend: function (xhr) {
-//             xhr.setRequestHeader('Authorization', 'Token ' + token);
-//         },
-//         success: function (data) {
-//             // console.log(data)
-//             $("#filter_contact_subsource").append("<option value=''>Choose</option>");
-//             if (data.Status == true && data.Message == "Record found successfully") {
-//                 $.each(data.Data, function () {
-//                     $("#filter_contact_subsource").append("<option value='" + this + "'>" + this + "</option>");
-//                 });
-//             }
-//         }
-//     });
-// });
